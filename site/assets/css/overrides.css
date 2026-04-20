@@ -1,0 +1,718 @@
+/* ============================================================
+   READTOMATO — SITE OVERRIDES
+   Extends the design system for full-bleed image display,
+   market tiles, ecosystem cards, and homepage sections.
+   ============================================================ */
+
+
+/* ── IMAGE DISPLAY — 100% FULL SIZE, NO CROP ────────────────── */
+/*
+  Spec: All images at 100% FULL SIZE. DO NOT TRIM OR CUT TO FIT.
+  Using <img> tags with width:100% scales proportionally.
+  No object-fit:cover. No background-size:cover on image sections.
+  Text overlays positioned at bottom of image per spec §8a.
+*/
+
+/* Remove decorative circles — spec §8b: no unnecessary elements */
+#hero::before,
+#hero::after,
+.prod-page-hero::before,
+.partner-hero::before {
+  display: none;
+}
+
+/* Full-bleed image section wrapper */
+.img-section-wrap {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* The actual <img> — full width, natural aspect ratio, never cropped */
+.img-full-bleed {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+/* Text overlay at BOTTOM of image (spec §8a) */
+.img-text-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 0 80px;
+  background: linear-gradient(
+    to top,
+    rgba(11, 31, 44, 0.82) 0%,
+    rgba(11, 31, 44, 0.45) 40%,
+    transparent 100%
+  );
+}
+
+.img-text-bottom .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Centered CTA overlay variant */
+.img-text-center {
+  text-align: center;
+}
+.img-text-center .hero-headline,
+.img-text-center .cta-band-headline,
+.img-text-center .section-label,
+.img-text-center .section-body,
+.img-text-center .page-hero-eyebrow,
+.img-text-center .page-hero-title,
+.img-text-center .page-hero-sub {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.img-text-center .hero-actions {
+  justify-content: center;
+}
+
+/* Section image with text at bottom (1920×1400) */
+.img-section-inner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 0 80px;
+  background: linear-gradient(
+    to top,
+    rgba(11, 31, 44, 0.88) 0%,
+    rgba(11, 31, 44, 0.55) 35%,
+    transparent 100%
+  );
+}
+
+
+/* ── NAV LOGO IMAGE ─────────────────────────────────────────── */
+
+.nav-logo-img {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-logo-img img {
+  display: block;
+  height: 34px;
+  width: auto;
+}
+
+
+/* ── HOMEPAGE — INTRO STATS ─────────────────────────────────── */
+
+.stats-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.stat-block + .stat-block {
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--color-border);
+}
+
+.stat-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 32px 0;
+}
+
+
+/* ── MARKETS GRID — 5 TILES (full viewport width) ───────────── */
+
+.markets-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.market-tile {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.market-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease;
+}
+
+.market-tile:hover img {
+  transform: scale(1.03);
+}
+
+.market-tile-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 18px 20px;
+  background: linear-gradient(to top, rgba(11,31,44,0.88) 0%, transparent 100%);
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: 12px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.market-tile-label span {
+  display: block;
+  font-weight: var(--fw-regular);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: rgba(255,255,255,0.6);
+  margin-top: 3px;
+}
+
+
+/* ── ECOSYSTEM CARDS ────────────────────────────────────────── */
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+  margin-top: 56px;
+}
+
+.ecosystem-card {
+  display: block;
+  text-decoration: none;
+  background: var(--color-white);
+  transition: box-shadow 0.2s;
+}
+
+.ecosystem-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+.ecosystem-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ecosystem-card-body {
+  padding: 24px 28px 28px;
+}
+
+.ecosystem-logo {
+  margin-bottom: 14px;
+}
+
+.ecosystem-logo img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.ecosystem-desc {
+  font-family: var(--font);
+  font-weight: var(--fw-regular);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+
+
+/* ── CLIENT LOGOS ───────────────────────────────────────────── */
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 44px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 48px;
+}
+
+.clients-grid img {
+  max-height: 46px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter 0.25s;
+}
+
+.clients-grid img:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+
+/* ── BLOG PREVIEW CARD ──────────────────────────────────────── */
+
+.blog-preview-card {
+  display: block;
+  text-decoration: none;
+  background: var(--color-navy-mid);
+}
+
+.blog-preview-card:hover .blog-preview-card-img {
+  opacity: 0.9;
+}
+
+.blog-preview-card-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.2s;
+}
+
+.blog-preview-body {
+  padding: 28px 32px 32px;
+}
+
+.blog-preview-title {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: 20px;
+  color: var(--color-white);
+  line-height: 1.2;
+  margin-top: 14px;
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+
+.blog-preview-excerpt {
+  font-family: var(--font);
+  font-weight: var(--fw-regular);
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+
+/* ── SECTION IMAGE — TEXT AT BOTTOM ────────────────────────── */
+/* For 1920×1400 section images with content overlay */
+
+.section-img-wrap {
+  position: relative;
+}
+
+.section-img-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.section-img-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 0 80px;
+  background: linear-gradient(
+    to top,
+    rgba(11, 31, 44, 0.88) 0%,
+    rgba(11, 31, 44, 0.50) 40%,
+    transparent 100%
+  );
+}
+
+/* Cream/light section image overlay */
+.section-img-content.light-bg {
+  background: linear-gradient(
+    to top,
+    rgba(235, 231, 212, 0.92) 0%,
+    rgba(235, 231, 212, 0.60) 40%,
+    transparent 100%
+  );
+}
+
+.section-img-content.light-bg h2,
+.section-img-content.light-bg h3,
+.section-img-content.light-bg p {
+  color: var(--color-navy);
+}
+
+.section-img-content.light-bg .section-body {
+  color: var(--color-text-muted);
+}
+
+
+/* ── PRODUCT PAGE LAYOUT ────────────────────────────────────── */
+
+.prod-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--col-gap);
+  align-items: start;
+  margin-top: 56px;
+}
+
+.prod-feature-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid var(--color-border);
+}
+
+.prod-feature-item {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.prod-feature-item:last-child {
+  border-bottom: none;
+}
+
+.prod-feature-bar {
+  width: 3px;
+  background: var(--color-red);
+  flex-shrink: 0;
+  align-self: stretch;
+  min-height: 32px;
+}
+
+.prod-feature-text {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+.prod-feature-text strong {
+  display: block;
+  font-weight: var(--fw-bold);
+  font-size: 15px;
+  color: var(--color-navy);
+  margin-bottom: 3px;
+}
+
+
+/* ── PRICING CARDS ──────────────────────────────────────────── */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--color-border);
+  margin-top: 56px;
+}
+
+.pricing-card {
+  background: var(--color-white);
+  padding: 44px 36px;
+}
+
+.pricing-card.featured {
+  background: var(--color-navy);
+}
+
+.pricing-tier {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.pricing-price {
+  font-family: var(--font);
+  font-weight: var(--fw-light);
+  font-size: 52px;
+  color: var(--color-navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.pricing-card.featured .pricing-price {
+  color: var(--color-white);
+}
+
+.pricing-price sup {
+  font-size: 24px;
+  vertical-align: super;
+  font-weight: var(--fw-regular);
+}
+
+.pricing-cycle {
+  font-family: var(--font);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.pricing-card.featured .pricing-cycle {
+  color: rgba(255,255,255,0.45);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.pricing-features li {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.pricing-card.featured .pricing-features li {
+  color: rgba(255,255,255,0.65);
+}
+
+.pricing-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 2px;
+  background: var(--color-red);
+}
+
+
+/* ── CONTACT FORM ───────────────────────────────────────────── */
+
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 56px;
+}
+
+
+/* ── MARKETS INDIVIDUAL PAGE ────────────────────────────────── */
+
+.market-challenges-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--color-border);
+  margin-top: 48px;
+}
+
+.market-challenge-card {
+  background: var(--color-white);
+  padding: 36px 32px;
+}
+
+.market-challenge-card.navy {
+  background: var(--color-navy);
+}
+
+.market-challenge-num {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: 44px;
+  color: var(--color-cream-dark);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.market-challenge-card.navy .market-challenge-num {
+  color: rgba(255,255,255,0.12);
+}
+
+.market-challenge-title {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: 17px;
+  color: var(--color-navy);
+  margin-bottom: 10px;
+  text-wrap: balance;
+}
+
+.market-challenge-card.navy .market-challenge-title {
+  color: var(--color-white);
+}
+
+.market-challenge-body {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.market-challenge-card.navy .market-challenge-body {
+  color: rgba(255,255,255,0.5);
+}
+
+
+/* ── BREADCRUMB ─────────────────────────────────────────────── */
+
+.breadcrumb-bar {
+  background: var(--color-navy-mid);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.breadcrumb-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.breadcrumb-inner a {
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-inner a:hover {
+  color: var(--color-white);
+}
+
+.breadcrumb-inner .sep {
+  color: rgba(255,255,255,0.2);
+}
+
+.breadcrumb-inner .current {
+  color: rgba(255,255,255,0.7);
+}
+
+
+/* ── BLOG PAGE ──────────────────────────────────────────────── */
+
+.blog-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 68px;
+}
+
+.blog-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 32px 0 48px;
+  justify-content: center;
+}
+
+.blog-cat-btn {
+  font-family: var(--font);
+  font-weight: var(--fw-bold);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.blog-cat-btn:hover,
+.blog-cat-btn.active {
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .markets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .markets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ecosystem-grid,
+  .prod-two-col,
+  .contact-split,
+  .market-challenges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 28px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .img-text-bottom {
+    padding: 40px 0 60px;
+  }
+
+  .blog-categories {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .markets-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── NAV LINK STYLE FIX ────────────────────────────────── */
+.nav-menu-link {
+  font-family:      var(--font);
+  font-weight:      var(--fw-bold);
+  font-size:        13px;
+  letter-spacing:   0.08em;
+  text-transform:   uppercase;
+  color:            rgba(255,255,255,0.6);
+  padding:          6px 14px;
+  cursor:           pointer;
+  display:          block;
+  transition:       color 0.2s;
+}
+.nav-menu-link:hover {
+  color: var(--color-white);
+}
+
+/* Blog card image position fix */
+.blog-card-img {
+  position: relative;
+  overflow: hidden;
+}
