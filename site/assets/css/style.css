@@ -836,7 +836,7 @@ footer,
   font-family:      var(--font);
   font-weight:      var(--fw-light);
   font-size:        36px;
-  line-height:      0.85;
+  line-height:      0.72;
   color:            var(--color-white);
   max-width:        60ch;
   margin-bottom:    28px;
