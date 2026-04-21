@@ -684,6 +684,23 @@
     align-items: center;
   }
 
+  /* All body copy: 16px, semi-bold, white */
+  p,
+  .section-body,
+  .hero-sub,
+  .prod-tagline,
+  .ecosystem-desc,
+  .blog-preview-excerpt,
+  .number-label,
+  .page-hero-sub,
+  .footer-brand p,
+  .footer-col a,
+  .footer-bottom p {
+    font-size:   16px;
+    font-weight: 600;
+    color:       var(--color-white);
+  }
+
   /* Blog card tags centered */
   .blog-preview-body {
     text-align: center;
