@@ -1309,6 +1309,13 @@ br.d-br { display: block; }
     margin-top:  10px;
   }
 
+  /* Image sections touch — zero out any margin between consecutive wrappers */
+  .img-section-wrap,
+  .prod-image-section {
+    margin:  0 !important;
+    padding: 0 !important;
+  }
+
   /* What We Do + Ecosystem sections: navy body copy on cream bg */
   .section--cream .section-body,
   .section--cream p,

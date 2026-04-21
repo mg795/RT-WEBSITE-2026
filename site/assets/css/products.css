@@ -172,9 +172,9 @@
     text-align: center !important;
   }
 
-  /* Image section: drop content to 37px from bottom (matches hero) */
+  /* Image section: bullets sit ≥50px from image bottom */
   .prod-image-section .img-text-bottom {
-    bottom:  37px !important;
+    bottom:  50px !important;
     padding: 0 !important;
   }
 
