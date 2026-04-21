@@ -36,6 +36,9 @@
   .page-about .hero-headline {
     font-size: 36px;
   }
+  .page-about .hero-sub {
+    margin-bottom: 31px;
+  }
 }
 
 @media (max-width: 768px) {
