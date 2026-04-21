@@ -928,6 +928,7 @@
   .cta-left-dark .section-title,
   .cta-left-dark p,
   .cta-left-dark .section-body {
+    color:      var(--color-white) !important;
     text-align: center !important;
   }
 
