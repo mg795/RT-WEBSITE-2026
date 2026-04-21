@@ -242,16 +242,10 @@
 }
 
 .clients-grid img {
-  max-height: 46px;
+  max-height: 58px;
   width: auto;
   max-width: 100%;
   display: block;
-  filter: grayscale(100%) opacity(0.55);
-  transition: filter 0.25s;
-}
-
-.clients-grid img:hover {
-  filter: grayscale(0%) opacity(1);
 }
 
 
