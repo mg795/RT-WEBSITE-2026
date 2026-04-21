@@ -45,16 +45,27 @@
 
 @media (min-width: 769px) {
   .page-blog .hero-wrap .img-text-bottom {
-    top:            118px;
-    bottom:         auto;
-    padding-top:    0;
-    padding-bottom: 0;
+    top:            118px   !important;
+    bottom:         auto    !important;
+    padding-top:    0       !important;
+    padding-bottom: 0       !important;
   }
   .page-blog .hero-copy {
     max-width: 52%;
   }
   .page-blog .hero-headline {
-    font-size: 36px;
+    font-size:   36px;
+    color:       #ffffff !important;
+    text-align:  left   !important;
+  }
+  .page-blog .page-hero-eyebrow {
+    color:      #ffffff !important;
+    text-align: left    !important;
+  }
+  .page-blog .hero-sub {
+    color:      #ffffff !important;
+    text-align: left    !important;
+    max-width:  52%     !important;
   }
 }
 
