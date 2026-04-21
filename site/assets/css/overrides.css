@@ -746,6 +746,55 @@
     text-align: center;
   }
 
+  /* Footer — all elements centered */
+  footer,
+  .footer-inner,
+  .footer-top,
+  .footer-brand,
+  .footer-col,
+  .footer-col ul,
+  .footer-col ul li,
+  .footer-col h5,
+  .footer-bottom,
+  .footer-legal {
+    text-align: center;
+  }
+
+  .footer-brand .nav-logo-img {
+    justify-content: center;
+  }
+
+  .footer-col ul {
+    padding-left: 0;
+    list-style:   none;
+  }
+
+  /* All logos centered */
+  .nav-logo-img {
+    justify-content: center;
+  }
+
+  .clients-grid img,
+  .eco-card-logo,
+  .ecosystem-logo img {
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  /* Buttons — explicitly centered outside cards */
+  .btn-red {
+    display: block;
+    width:   fit-content;
+    margin:  0 auto;
+  }
+
+  .prod-card .btn-red {
+    display:      inline-block;
+    margin-left:  0;
+    margin-right: 0;
+    width:        auto;
+  }
+
   .markets-grid {
     grid-template-columns: repeat(2, 1fr);
   }
