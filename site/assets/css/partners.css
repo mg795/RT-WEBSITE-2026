@@ -83,12 +83,12 @@
 
 .partner-testimonial {
   margin-top:     20px;
-  font-family:    var(--font);
-  font-weight:    var(--fw-regular);
-  font-size:      15px;
-  letter-spacing: 0.08em;
-  color:          #e6e6e6;
-  line-height:    1.6;
+  font-family:    var(--font)      !important;
+  font-weight:    var(--fw-regular)!important;
+  font-size:      15px             !important;
+  letter-spacing: 0.08em           !important;
+  color:          #ffffff          !important;
+  line-height:    1.6              !important;
   text-align:     left;
 }
 
@@ -201,7 +201,10 @@
   }
 
   .partner-testimonial {
-    text-align: center !important;
+    text-align:     center !important;
+    font-size:      15px   !important;
+    line-height:    1.6    !important;
+    letter-spacing: 0.08em !important;
   }
 
   .partner-image-section .img-text-bottom {
