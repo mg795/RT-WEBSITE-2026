@@ -1301,4 +1301,13 @@ br.d-br { display: block; }
     padding-top: 10px;
     margin-top:  10px;
   }
+
+  /* What We Do + Ecosystem sections: navy body copy on cream bg */
+  .section--cream .section-body,
+  .section--cream p,
+  .section--cream .number-label,
+  .ecosystem-section .prod-tagline,
+  .ecosystem-section .prod-bullets li {
+    color: var(--color-navy) !important;
+  }
 }
