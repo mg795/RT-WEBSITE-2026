@@ -751,3 +751,12 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   background-size: cover;
   background-position: center;
 }
+
+/* ── TEXT ON IMAGES — always white, never red/taupe/beige ───── */
+.blog-news-section .section-label,
+.img-text-bottom .section-label,
+.img-section-inner .section-label,
+.section-img-content .section-label,
+.img-text-center .section-label {
+  color: var(--color-white);
+}
