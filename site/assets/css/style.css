@@ -1129,11 +1129,11 @@ footer,
 .prod-bullets li {
   font-family:      var(--font);
   font-weight:      var(--fw-regular);
-  font-size:        14px;
-  color:            rgba(255, 255, 255, 0.65);
+  font-size:        var(--text-md);
+  color:            #ffffff;
   padding-left:     18px;
   position:         relative;
-  line-height:      1.55;
+  line-height:      1.75;
 }
 
 .prod-bullets li::before {
