@@ -200,6 +200,11 @@
 
   .market-cta-actions {
     justify-content: center;
+    margin-top:      12px !important;
+  }
+
+  .market-cta .cta-left-dark {
+    bottom: 15px !important;
   }
 
   .market-overview-btn {
