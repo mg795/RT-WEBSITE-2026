@@ -93,9 +93,10 @@
    ─────────────────────────────────────────────────────────── */
 
 .blog-index {
-  background: var(--color-white);
+  background:     var(--color-white);
   padding-top:    64px;
   padding-bottom: 80px;
+  margin-top:     -75px;
 }
 
 .blog-index .section-label {
