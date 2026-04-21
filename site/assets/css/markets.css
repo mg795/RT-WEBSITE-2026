@@ -182,6 +182,13 @@
     margin-top: 68px !important;
   }
 
+  /* Mobile header standard — matches site-wide rule in overrides.css
+     H1 / hero-headline: 28px   |   H2 / section-title: 24px          */
+  .page-market h1,
+  .page-market .hero-headline  { font-size: 28px !important; line-height: 1.3 !important; }
+  .page-market h2,
+  .page-market .section-title  { font-size: 24px !important; line-height: 1.3 !important; }
+
   .market-testimonial {
     text-align: center !important;
   }
