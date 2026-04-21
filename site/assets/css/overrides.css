@@ -1052,3 +1052,9 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 .footer-col a:hover {
   color: var(--color-white);
 }
+
+/* Stats: reduce vertical padding between cards by 40% */
+.number-card {
+  padding-top:    29px;
+  padding-bottom: 29px;
+}
