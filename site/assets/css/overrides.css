@@ -1062,3 +1062,11 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   padding-top:    29px;
   padding-bottom: 29px;
 }
+
+/* ── HAMBURGER — remove browser default button background ───── */
+.nav-hamburger {
+  background: transparent;
+  border:     none;
+  outline:    none;
+  padding:    4px;
+}
