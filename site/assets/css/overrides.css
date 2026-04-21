@@ -1262,4 +1262,8 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   .cta-left-dark .hero-actions {
     justify-content: center !important;
   }
+
+  .hte-testimonial {
+    text-align: center !important;
+  }
 }
