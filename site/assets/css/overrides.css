@@ -722,6 +722,13 @@
   align-items: start;
 }
 
+.prod-grid .prod-card {
+  background: var(--color-navy-mid);
+}
+.prod-grid .prod-card:hover {
+  background: var(--color-navy-light);
+}
+
 .prod-card-btn {
   display:    inline-block;
   margin-top: 28px;
