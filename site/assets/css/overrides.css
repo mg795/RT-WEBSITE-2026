@@ -1228,3 +1228,28 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   outline:    none;
   padding:    4px;
 }
+
+/* ── MOBILE FINAL OVERRIDES — must come last to win cascade ──── */
+@media (max-width: 768px) {
+  .cta-left-dark {
+    top:         auto !important;
+    bottom:      50px !important;
+    display:     block !important;
+    align-items: unset !important;
+    padding:     0 !important;
+  }
+
+  .cta-left-dark .section-label,
+  .cta-left-dark h1,
+  .cta-left-dark h2,
+  .cta-left-dark .section-title,
+  .cta-left-dark p,
+  .cta-left-dark .section-body {
+    color:      var(--color-white) !important;
+    text-align: center !important;
+  }
+
+  .cta-left-dark .hero-actions {
+    justify-content: center !important;
+  }
+}
