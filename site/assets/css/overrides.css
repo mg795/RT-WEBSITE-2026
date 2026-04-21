@@ -832,6 +832,16 @@
     width:        auto !important;
   }
 
+  /* Market tiles — larger text, centered on mobile */
+  .market-tile-label {
+    text-align:  center;
+    font-size:   21px;
+  }
+
+  .market-tile-label span {
+    font-size:   19px;
+  }
+
   .markets-grid {
     grid-template-columns: repeat(2, 1fr);
   }
