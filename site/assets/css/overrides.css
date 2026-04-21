@@ -913,6 +913,28 @@
     padding: 40px 0 60px;
   }
 
+  /* CTA left-dark: revert to centered, bottom-positioned on mobile */
+  .cta-left-dark {
+    top:         auto !important;
+    bottom:      0 !important;
+    display:     block !important;
+    align-items: unset !important;
+    padding:     40px 0 60px !important;
+  }
+
+  .cta-left-dark .section-label,
+  .cta-left-dark h1,
+  .cta-left-dark h2,
+  .cta-left-dark .section-title,
+  .cta-left-dark p,
+  .cta-left-dark .section-body {
+    text-align: center !important;
+  }
+
+  .cta-left-dark .hero-actions {
+    justify-content: center !important;
+  }
+
   /* Hero mobile: centered, 20px from bottom */
   .hero-wrap .img-text-bottom {
     bottom:          37px !important;
