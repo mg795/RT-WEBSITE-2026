@@ -193,6 +193,13 @@
     margin-top: 68px !important;
   }
 
+  /* Partner logo: centered and scaled to 60% (120px) on mobile */
+  .partner-logo {
+    max-width:    120px !important;
+    margin-left:  auto  !important;
+    margin-right: auto  !important;
+  }
+
   .partner-testimonial {
     text-align: center !important;
   }
