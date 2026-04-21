@@ -30,7 +30,7 @@
     max-width: 52%;
   }
   .page-partner .hero-headline {
-    font-size: clamp(32px, 4.9vw, 56px);
+    font-size: 36px;
   }
 }
 
