@@ -186,20 +186,7 @@
   overflow:           hidden;
 }
 
-/* Date */
-.blog-card-meta {
-  font-family:    var(--font);
-  font-weight:    var(--fw-regular);
-  font-size:      11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color:          var(--color-text-muted) !important;
-  text-align:     center;
-  margin-bottom:  16px;
-  margin-top:     auto;
-}
-
-/* >> READ MORE */
+/* READ MORE */
 .blog-card-link {
   font-family:     var(--font);
   font-weight:     var(--fw-bold);
