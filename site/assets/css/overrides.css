@@ -684,6 +684,14 @@
     align-items: center;
   }
 
+  /* Blog card tags centered */
+  .blog-preview-body {
+    text-align: center;
+  }
+  .blog-preview-body .prod-tag {
+    display: inline-block;
+  }
+
   /* Product/ecosystem cards stay left-aligned on mobile */
   .prod-card,
   .prod-card h1,
