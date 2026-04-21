@@ -21,8 +21,11 @@
    ─────────────────────────────────────────────────────────── */
 
 @media (min-width: 769px) {
+  .page-about .hero-wrap {
+    margin-top: 68px;
+  }
   .page-about .hero-wrap .img-text-bottom {
-    top:            118px;
+    top:            50px;
     bottom:         auto;
     padding-top:    0;
     padding-bottom: 0;
