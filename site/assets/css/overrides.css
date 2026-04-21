@@ -761,7 +761,11 @@
     align-items: center;
   }
 
-  .eco-card-logo {
+  .eco-card-logo,
+  .ecosystem-logo img,
+  .nav-logo-img img,
+  .clients-grid img {
+    display:      block;
     margin-left:  auto;
     margin-right: auto;
   }
