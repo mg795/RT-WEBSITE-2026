@@ -1014,6 +1014,9 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   width:        100%;
   max-width:    200px;
   height:       auto;
+  margin-top:    0;
+  margin-left:   auto;
+  margin-right:  auto;
   margin-bottom: 20px;
 }
 
