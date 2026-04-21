@@ -203,26 +203,12 @@
 .blog-card-link {
   font-family:     var(--font);
   font-weight:     var(--fw-bold);
-  font-size:       11px;
-  letter-spacing:  0.18em;
+  font-size:       13px;
+  letter-spacing:  0.08em;
   text-transform:  uppercase;
   color:           var(--color-red) !important;
   text-decoration: none;
   text-align:      center;
-}
-
-.blog-card-link:hover {
-  text-decoration: underline;
-}
-
-.blog-card-link {
-  font-family:     var(--font);
-  font-weight:     var(--fw-bold);
-  font-size:       10px;
-  letter-spacing:  0.14em;
-  text-transform:  uppercase;
-  color:           var(--color-red) !important;
-  text-decoration: none;
   white-space:     nowrap;
 }
 
