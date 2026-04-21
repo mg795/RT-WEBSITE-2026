@@ -1276,15 +1276,18 @@ br.d-br { display: block; }
     text-wrap: balance;
   }
 
-  /* Body copy: pretty avoids orphan words on the last line */
+  /* Body copy: pretty avoids single-word orphans */
   p,
-  li,
   .section-body,
   .hero-sub,
-  .prod-tagline,
-  .prod-bullets li,
   .blog-preview-excerpt {
     text-wrap: pretty;
+  }
+
+  /* Bullets: balance distributes words evenly — prevents 2-word last lines */
+  li,
+  .prod-bullets li {
+    text-wrap: balance;
   }
 
   /* Bullets on mobile: no bullet markers, red separator between items */
