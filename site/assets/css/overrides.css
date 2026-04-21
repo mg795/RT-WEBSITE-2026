@@ -871,19 +871,12 @@
     margin-right: auto;
   }
 
-  /* Buttons — explicitly centered outside cards, override inline styles */
+  /* Buttons — explicitly centered on mobile, override inline styles */
   .btn-red {
     display:      block !important;
     width:        fit-content !important;
     margin-left:  auto !important;
     margin-right: auto !important;
-  }
-
-  .prod-card .btn-red {
-    display:      inline-block !important;
-    margin-left:  0 !important;
-    margin-right: 0 !important;
-    width:        auto !important;
   }
 
   /* Market tiles — larger text, centered on mobile */
@@ -1032,10 +1025,40 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 
 /* ── TEXT ON IMAGES — always white, never red/taupe/beige ───── */
 .blog-news-section .section-label,
+.blog-news-section h1,
+.blog-news-section h2,
+.blog-news-section h3,
+.blog-news-section p,
+.blog-news-section .section-title,
+.blog-news-section .section-body,
 .img-text-bottom .section-label,
+.img-text-bottom h1,
+.img-text-bottom h2,
+.img-text-bottom h3,
+.img-text-bottom p,
+.img-text-bottom .section-title,
+.img-text-bottom .section-body,
 .img-section-inner .section-label,
+.img-section-inner h1,
+.img-section-inner h2,
+.img-section-inner h3,
+.img-section-inner p,
+.img-section-inner .section-title,
+.img-section-inner .section-body,
 .section-img-content .section-label,
-.img-text-center .section-label {
+.section-img-content h1,
+.section-img-content h2,
+.section-img-content h3,
+.section-img-content p,
+.section-img-content .section-title,
+.section-img-content .section-body,
+.img-text-center .section-label,
+.img-text-center h1,
+.img-text-center h2,
+.img-text-center h3,
+.img-text-center p,
+.img-text-center .section-title,
+.img-text-center .section-body {
   color: var(--color-white);
 }
 
