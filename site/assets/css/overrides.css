@@ -46,6 +46,16 @@
   background: none;
 }
 
+/* Homepage hero: anchor content 50px below nav on desktop */
+@media (min-width: 769px) {
+  .page-home .hero-wrap .img-text-bottom {
+    top:            50px;
+    bottom:         auto;
+    padding-top:    0;
+    padding-bottom: 0;
+  }
+}
+
 .img-text-bottom .container {
   position: relative;
   z-index: 1;
