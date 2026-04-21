@@ -1051,12 +1051,18 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   margin-bottom: 20px;
 }
 
-/* Ecosystem cards: 30% transparent white background, no hover state */
+/* Ecosystem grid: 1px red dividers between cards via gap trick */
+.ecosystem-section .grid-2.prod-grid {
+  background: var(--color-red);
+  gap:        1px;
+}
+
+/* Ecosystem cards: no background block — cream fills from section */
 .ecosystem-section .prod-card {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-cream);
 }
 .ecosystem-section .prod-card:hover {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-cream);
 }
 .ecosystem-section .prod-tagline {
   color: var(--color-text-muted);
