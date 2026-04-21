@@ -131,22 +131,20 @@
 
 /* Image wrapper — clips the zoomed image, no black bleed */
 .blog-card-img-wrap {
-  width:    100%;
-  height:   210px;
-  overflow: hidden;
-  position: relative;
+  width:       100%;
+  height:      210px;
+  overflow:    hidden;
   flex-shrink: 0;
 }
 
 .blog-card-img {
-  position:         absolute;
-  top:              50%;
-  left:             50%;
-  width:            140%;
-  height:           140%;
+  display:          block;
+  width:            100%;
+  height:           210px;
   object-fit:       cover;
   object-position:  center center;
-  transform:        translate(-50%, -50%);
+  transform:        scale(1.55);
+  transform-origin: center center;
 }
 
 /* Card body — all centered */
