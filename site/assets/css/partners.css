@@ -82,28 +82,24 @@
 /* ── PARTNER TESTIMONIAL ──────────────────────────────────── */
 
 .page-partner .partner-testimonial {
-  margin-top:     20px;
-  font-family:    var(--font)      !important;
-  font-weight:    var(--fw-regular)!important;
-  font-size:      15px             !important;
-  letter-spacing: 0.08em           !important;
-  color:          #ffffff          !important;
-  line-height:    1.6              !important;
-  text-align:     left;
+  margin-top:  20px;
+  font-family: var(--font)      !important;
+  font-weight: var(--fw-regular)!important;
+  font-size:   var(--text-md)   !important;
+  color:       #ffffff          !important;
+  line-height: 1.75             !important;
+  text-align:  left;
 }
 
 
 /* ── IMAGE SECTION TESTIMONIAL ──────────────────────────────
    Pull-quote below the H2 on full-bleed image overlay sections.
-   Higher specificity overrides the broad .page-partner p rule
-   to preserve 15px / 1.6 leading as a distinct visual.
    ─────────────────────────────────────────────────────────── */
 
 .partner-image-section .partner-testimonial {
-  color:          #ffffff !important;
-  font-size:      15px    !important;
-  letter-spacing: 0.08em  !important;
-  line-height:    1.6     !important;
+  color:       #ffffff        !important;
+  font-size:   var(--text-md) !important;
+  line-height: 1.75           !important;
 }
 
 
@@ -201,10 +197,9 @@
   }
 
   .page-partner .partner-testimonial {
-    text-align:     center !important;
-    font-size:      15px   !important;
-    line-height:    1.6    !important;
-    letter-spacing: 0.08em !important;
+    text-align:  center         !important;
+    font-size:   var(--text-md) !important;
+    line-height: 1.75           !important;
   }
 
   .partner-image-section .img-text-bottom {
