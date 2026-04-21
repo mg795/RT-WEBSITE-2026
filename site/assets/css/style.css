@@ -2579,11 +2579,6 @@ footer,
   cursor:           pointer;
 }
 
-.blog-card:hover {
-  border-color:     var(--color-navy);
-  transform:        translateY(-2px);
-}
-
 .blog-card-img {
   height:           180px;
   background:       var(--color-navy);
