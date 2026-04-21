@@ -940,7 +940,7 @@
   /* Body copy: 14px, max 3 lines — hide forced <br> so text reflows */
   .hero-wrap .hero-sub {
     font-size:     14px !important;
-    margin-bottom: 39px;
+    margin-bottom: 20px;
   }
 
   .hero-wrap .hero-sub br {
