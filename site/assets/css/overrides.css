@@ -1272,6 +1272,19 @@ br.d-br { display: block; }
     text-align: center !important;
   }
 
+  /* All copy: balance lines so no line has fewer than 3 words */
+  p,
+  li,
+  .section-body,
+  .hero-sub,
+  .prod-tagline,
+  .prod-bullets li,
+  .blog-preview-excerpt,
+  .section-title,
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
   /* Bullets on mobile: no red dashes, semi-bold, white */
   .prod-bullets li::before {
     display: none !important;
