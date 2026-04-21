@@ -781,18 +781,19 @@
     margin-right: auto;
   }
 
-  /* Buttons — explicitly centered outside cards */
+  /* Buttons — explicitly centered outside cards, override inline styles */
   .btn-red {
-    display: block;
-    width:   fit-content;
-    margin:  0 auto;
+    display:      block !important;
+    width:        fit-content !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
   }
 
   .prod-card .btn-red {
-    display:      inline-block;
-    margin-left:  0;
-    margin-right: 0;
-    width:        auto;
+    display:      inline-block !important;
+    margin-left:  0 !important;
+    margin-right: 0 !important;
+    width:        auto !important;
   }
 
   .markets-grid {
