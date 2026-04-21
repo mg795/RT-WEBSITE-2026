@@ -54,7 +54,7 @@
 
 .partner-logo {
   display:       block;
-  max-width:     200px;
+  max-width:     240px;
   height:        auto;
   margin-bottom: 24px;
 }
@@ -191,7 +191,7 @@
 
   /* Partner logo: centered and scaled to 168px on mobile (120px + 40%) */
   .partner-logo {
-    max-width:    168px !important;
+    max-width:    202px !important;
     margin-left:  auto  !important;
     margin-right: auto  !important;
   }
