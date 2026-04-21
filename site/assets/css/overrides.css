@@ -920,6 +920,26 @@
     padding: 40px 0 60px;
   }
 
+  /* Hero mobile: 50px from bottom, fully centered */
+  .hero-wrap .img-text-bottom {
+    bottom: 50px !important;
+  }
+
+  .hero-wrap .hero-copy {
+    max-width: 100% !important;
+    text-align: center;
+  }
+
+  .hero-wrap .page-hero-eyebrow,
+  .hero-wrap .hero-headline,
+  .hero-wrap .hero-sub {
+    text-align: center;
+  }
+
+  .hero-wrap .hero-actions {
+    justify-content: center;
+  }
+
   .blog-categories {
     justify-content: flex-start;
   }
