@@ -716,3 +716,16 @@
   position: relative;
   overflow: hidden;
 }
+
+/* ── PRODUCTS GRID — 2×2 layout, top-aligned cards ─────────── */
+.prod-grid {
+  align-items: start;
+}
+
+/* Prod-name: single line, no forced wrapping */
+.prod-grid .prod-name {
+  white-space: nowrap;
+  overflow:    hidden;
+  text-overflow: ellipsis;
+  font-size:   22px;
+}
