@@ -1063,6 +1063,22 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   padding-bottom: 29px;
 }
 
+/* ── NAV — 10px gap between items, Contact Us red text (no block) */
+#nav .nav-menu {
+  gap: 10px;
+}
+
+.nav-contact-link {
+  color: var(--color-red) !important;
+  background: transparent !important;
+  padding: 6px 14px !important;
+}
+
+.nav-contact-link:hover {
+  color: var(--color-red) !important;
+  opacity: 0.8;
+}
+
 /* ── HAMBURGER — remove browser default button background ───── */
 .nav-hamburger {
   background: transparent;
