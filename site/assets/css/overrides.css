@@ -920,9 +920,10 @@
     padding: 40px 0 60px;
   }
 
-  /* Hero mobile: 50px from bottom, fully centered */
+  /* Hero mobile: centered, 20px from bottom */
   .hero-wrap .img-text-bottom {
-    bottom: 20px !important;
+    bottom:          20px !important;
+    padding-bottom:  0 !important;
   }
 
   .hero-wrap .hero-copy {
@@ -934,6 +935,16 @@
   .hero-wrap .hero-headline,
   .hero-wrap .hero-sub {
     text-align: center;
+  }
+
+  /* Body copy: 14px, max 3 lines — hide forced <br> so text reflows */
+  .hero-wrap .hero-sub {
+    font-size:     14px !important;
+    margin-bottom: 39px;
+  }
+
+  .hero-wrap .hero-sub br {
+    display: none;
   }
 
   .hero-wrap .hero-actions {
