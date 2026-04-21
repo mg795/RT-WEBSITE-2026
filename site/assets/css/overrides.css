@@ -760,6 +760,16 @@
     justify-content: center;
   }
 
+  .footer-bottom {
+    justify-content: center;
+    flex-direction:  column;
+    align-items:     center;
+  }
+
+  .footer-contact {
+    justify-content: center;
+  }
+
   .footer-col ul {
     padding-left: 0;
     list-style:   none;
@@ -940,4 +950,15 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 }
 .hero-copy {
   max-width: 65%;
+}
+
+/* ── FOOTER — 100% white text, no transparency (desktop + mobile) */
+.footer-brand p,
+.footer-col h5,
+.footer-col a,
+.footer-bottom p,
+.footer-contact a,
+.footer-contact a:hover,
+.footer-col a:hover {
+  color: var(--color-white);
 }
