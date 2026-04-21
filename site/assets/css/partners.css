@@ -1,0 +1,202 @@
+/* ============================================================
+   READTOMATO — PARTNER PAGE TEMPLATE  v1
+   Load order: style.css → overrides.css → partners.css
+   Apply to all pages under /partners/*.html
+   Body must carry: class="page-partner page-partner-[slug]"
+   ============================================================
+
+   SECTION TYPES — use these classes on every partner page:
+
+   1. .partner-overview   navy bg, 2-col: label+headline+quote LEFT / body+btn RIGHT
+   2. .partner-image-section  full-bleed 1920×1400 image, grid-2 overlay at bottom
+   3. .partner-cta        full-bleed 1920×800 image, left-col content (cta-left-dark)
+
+   ============================================================ */
+
+
+/* ── HERO — standard positioning & sizing ───────────────────
+   Content anchored 50px below the fixed nav (nav = 68px → top: 118px).
+   Desktop: top-anchored. Mobile: bottom-anchored at 37px.
+   ─────────────────────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .page-partner .hero-wrap .img-text-bottom {
+    top:            118px;
+    bottom:         auto;
+    padding-top:    0;
+    padding-bottom: 0;
+  }
+  .page-partner .hero-copy {
+    max-width: 52%;
+  }
+  .page-partner .hero-headline {
+    font-size: clamp(32px, 4.9vw, 56px);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-partner .hero-wrap .img-text-bottom {
+    top:    auto !important;
+    bottom: 37px !important;
+  }
+  .page-partner .hero-sub {
+    max-width:    100%   !important;
+    text-align:   center !important;
+    margin-left:  auto   !important;
+    margin-right: auto   !important;
+  }
+}
+
+
+/* ── PARTNER LOGO ───────────────────────────────────────────
+   Displayed in the overview section above the headline.
+   ─────────────────────────────────────────────────────────── */
+
+.partner-logo {
+  display:       block;
+  max-width:     200px;
+  height:        auto;
+  margin-bottom: 24px;
+}
+
+
+/* ── OVERVIEW SECTION ───────────────────────────────────────
+   Structure:
+     <section class="section section--navy partner-overview">
+       <div class="container">
+         <div class="grid-2">
+           <div>  LEFT: logo · label · h2 · testimonial
+           <div>  RIGHT: section-body · btn
+   ─────────────────────────────────────────────────────────── */
+
+.partner-overview .grid-2 {
+  align-items: start;
+}
+
+.partner-overview-btn {
+  display:    inline-block;
+  margin-top: 32px;
+}
+
+
+/* ── PARTNER TESTIMONIAL ──────────────────────────────────── */
+
+.partner-testimonial {
+  margin-top:     20px;
+  font-family:    var(--font);
+  font-weight:    var(--fw-regular);
+  font-size:      15px;
+  letter-spacing: 0.08em;
+  color:          #e6e6e6;
+  line-height:    1.6;
+  text-align:     left;
+}
+
+
+/* ── IMAGE SECTIONS ─────────────────────────────────────────
+   Full-bleed 1920×1400 image with content overlay at bottom.
+   ─────────────────────────────────────────────────────────── */
+
+.partner-image-section .img-text-bottom {
+  bottom: 75px;
+}
+
+.partner-image-section .grid-2 {
+  align-items: start;
+}
+
+
+/* ── CTA SECTION ────────────────────────────────────────────
+   Full-bleed 1920×800 image. Text always white.
+   ─────────────────────────────────────────────────────────── */
+
+.partner-cta-actions {
+  margin-top:      32px;
+  justify-content: flex-start;
+}
+
+.page-partner .cta-left-dark .section-label,
+.page-partner .cta-left-dark h2,
+.page-partner .cta-left-dark .section-title,
+.page-partner .cta-left-dark p,
+.page-partner .cta-left-dark .section-body {
+  color:      #ffffff !important;
+  text-align: left    !important;
+}
+
+
+/* ── BODY COPY — white, regular, 17px, 1.75 leading ─────────
+   Applies to all paragraphs and list items on partner pages.
+   ─────────────────────────────────────────────────────────── */
+
+.page-partner p,
+.page-partner .section-body,
+.page-partner li,
+.page-partner .prod-bullets li {
+  color:       #ffffff          !important;
+  font-family: var(--font)      !important;
+  font-weight: var(--fw-regular)!important;
+  font-size:   var(--text-md)   !important;
+  line-height: 1.75             !important;
+}
+
+
+/* ── DESKTOP BULLETS — red separators, no dash markers ──────
+   Image-overlay bullet lists: hide red dash, 1px red line
+   between items. Desktop only.
+   ─────────────────────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .partner-image-section .prod-bullets li::before {
+    display:    none        !important;
+    content:    none        !important;
+    background: transparent !important;
+    width:      0           !important;
+    height:     0           !important;
+  }
+  .partner-image-section .prod-bullets li {
+    padding-left: 0    !important;
+    text-align:   left !important;
+  }
+  .partner-image-section .prod-bullets li + li {
+    border-top:  1px solid var(--color-red) !important;
+    padding-top: 12px !important;
+    margin-top:  12px !important;
+  }
+}
+
+
+/* ── MOBILE ─────────────────────────────────────────────────
+   Breakpoint: 768px
+   ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .partner-testimonial {
+    text-align: center !important;
+  }
+
+  .partner-image-section .img-text-bottom {
+    bottom:  50px !important;
+    padding: 0    !important;
+  }
+
+  .partner-cta-actions {
+    justify-content: center;
+  }
+
+  .partner-overview-btn {
+    display:      block       !important;
+    width:        fit-content !important;
+    margin-left:  auto        !important;
+    margin-right: auto        !important;
+  }
+
+  .page-partner .cta-left-dark .section-label,
+  .page-partner .cta-left-dark h2,
+  .page-partner .cta-left-dark .section-title,
+  .page-partner .cta-left-dark p,
+  .page-partner .cta-left-dark .section-body {
+    text-align: center !important;
+  }
+}
