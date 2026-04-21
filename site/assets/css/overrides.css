@@ -1169,6 +1169,16 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   max-width: 65%;
 }
 
+/* ── NAVY SECTIONS — body copy always white (desktop + mobile) ── */
+.section--navy p,
+.section--navy .section-body,
+.section--navy .section-title,
+.section--navy h1,
+.section--navy h2,
+.section--navy h3 {
+  color: var(--color-white);
+}
+
 /* ── FOOTER — 100% white text, no transparency (desktop + mobile) */
 .footer-brand p,
 .footer-col h5,
