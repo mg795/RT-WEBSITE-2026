@@ -1179,6 +1179,21 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   opacity: 0.8;
 }
 
+/* ── CTA LEFT — left-column content, dark brown text, no overlay ── */
+.cta-left-dark {
+  background: none !important;
+}
+
+.cta-left-dark .section-label,
+.cta-left-dark h1,
+.cta-left-dark h2,
+.cta-left-dark .section-title,
+.cta-left-dark p,
+.cta-left-dark .section-body {
+  color: #3B2314 !important;
+  text-align: left !important;
+}
+
 /* ── HAMBURGER — remove browser default button background ───── */
 .nav-hamburger {
   background: transparent;
