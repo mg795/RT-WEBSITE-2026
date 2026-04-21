@@ -722,10 +722,10 @@
   align-items: start;
 }
 
-/* Prod-name: single line, no forced wrapping */
+/* Prod-name: single line, sized to fit the longest title */
 .prod-grid .prod-name {
   white-space: nowrap;
   overflow:    hidden;
   text-overflow: ellipsis;
-  font-size:   22px;
+  font-size:   18px;
 }
