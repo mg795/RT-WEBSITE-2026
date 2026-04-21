@@ -193,9 +193,9 @@
     margin-top: 68px !important;
   }
 
-  /* Partner logo: centered and scaled to 60% (120px) on mobile */
+  /* Partner logo: centered and scaled to 168px on mobile (120px + 40%) */
   .partner-logo {
-    max-width:    120px !important;
+    max-width:    168px !important;
     margin-left:  auto  !important;
     margin-right: auto  !important;
   }
