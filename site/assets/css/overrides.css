@@ -692,7 +692,7 @@
     display: inline-block;
   }
 
-  /* Product/ecosystem cards stay left-aligned on mobile */
+  /* Product and ecosystem cards — fully centered on mobile */
   .prod-card,
   .prod-card h1,
   .prod-card h2,
@@ -704,18 +704,24 @@
   .prod-card .prod-tagline,
   .prod-card .prod-bullets,
   .prod-card .prod-bullets li {
-    text-align: left;
+    text-align: center;
   }
 
   .prod-card .prod-bullets {
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .eco-card-logo {
+    margin-left:  auto;
+    margin-right: auto;
   }
 
   .prod-card .btn-red,
   .prod-card .prod-card-btn {
-    display:      inline-block;
-    margin-left:  0;
-    margin-right: 0;
+    display:      block !important;
+    width:        fit-content !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
   }
 
   /* Dividers and graphical lines — center via margin */
