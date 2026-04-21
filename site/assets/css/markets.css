@@ -1,0 +1,212 @@
+/* ============================================================
+   READTOMATO — MARKET PAGE TEMPLATE  v1
+   Load order: style.css → overrides.css → markets.css
+   Apply to all pages under /markets/*.html
+   Body must carry: class="page-market page-market-[slug]"
+   ============================================================
+
+   SECTION TYPES — use these classes on every market page:
+
+   1. .market-overview    navy bg, 2-col: label+headline+quote LEFT / body+btn RIGHT
+   2. .market-image-section  full-bleed 1920×1400 image, grid-2 overlay at bottom
+   3. .market-cta         full-bleed 1920×800 image, left-col content (cta-left-dark)
+
+   ============================================================ */
+
+
+/* ── HERO — standard positioning & sizing ───────────────────
+   Content anchored 50px below the fixed nav (nav = 68px → top: 118px).
+   Desktop: top-anchored. Mobile: bottom-anchored at 37px.
+   ─────────────────────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .page-market .hero-wrap .img-text-bottom {
+    top:            118px;
+    bottom:         auto;
+    padding-top:    0;
+    padding-bottom: 0;
+  }
+  .page-market .hero-copy {
+    max-width: 52%;
+  }
+  .page-market .hero-headline {
+    font-size: clamp(32px, 4.9vw, 56px);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-market .hero-wrap .img-text-bottom {
+    top:    auto !important;
+    bottom: 37px !important;
+  }
+  .page-market .hero-sub {
+    max-width:    100%   !important;
+    text-align:   center !important;
+    margin-left:  auto   !important;
+    margin-right: auto   !important;
+  }
+}
+
+
+/* ── OVERVIEW SECTION ───────────────────────────────────────
+   Structure:
+     <section class="section section--navy market-overview">
+       <div class="container">
+         <div class="grid-2">
+           <div>  LEFT: label · h2 · testimonial
+           <div>  RIGHT: section-body · btn
+   ─────────────────────────────────────────────────────────── */
+
+.market-overview .grid-2 {
+  align-items: start;
+}
+
+.market-overview-btn {
+  display:    inline-block;
+  margin-top: 32px;
+}
+
+
+/* ── MARKET TESTIMONIAL ─────────────────────────────────────
+   Pull-quote below the overview headline.
+   ─────────────────────────────────────────────────────────── */
+
+.market-testimonial {
+  margin-top:     20px;
+  font-family:    var(--font);
+  font-weight:    var(--fw-regular);
+  font-size:      15px;
+  letter-spacing: 0.08em;
+  color:          #e6e6e6;
+  line-height:    1.6;
+  text-align:     left;
+}
+
+
+/* ── IMAGE SECTION TESTIMONIAL ──────────────────────────────
+   Pull-quote below the H2 on full-bleed image overlay sections.
+   Higher specificity preserves 15px / 1.6 over broad p rule.
+   ─────────────────────────────────────────────────────────── */
+
+.market-image-section .market-testimonial {
+  color:          #ffffff !important;
+  font-size:      15px    !important;
+  letter-spacing: 0.08em  !important;
+  line-height:    1.6     !important;
+}
+
+
+/* ── IMAGE SECTIONS ─────────────────────────────────────────
+   Full-bleed image with content overlay at bottom.
+   ─────────────────────────────────────────────────────────── */
+
+.market-image-section .img-text-bottom {
+  bottom: 75px;
+}
+
+.market-image-section .grid-2 {
+  align-items: start;
+}
+
+
+/* ── CTA SECTION ────────────────────────────────────────────
+   Full-bleed 1920×800 image. Text always white.
+   ─────────────────────────────────────────────────────────── */
+
+.market-cta-actions {
+  margin-top:      32px;
+  justify-content: flex-start;
+}
+
+.page-market .cta-left-dark .section-label,
+.page-market .cta-left-dark h2,
+.page-market .cta-left-dark .section-title,
+.page-market .cta-left-dark p,
+.page-market .cta-left-dark .section-body {
+  color:      #ffffff !important;
+  text-align: left    !important;
+}
+
+
+/* ── BODY COPY — white, regular, 17px, 1.75 leading ─────────
+   Applies to all paragraphs and list items on market pages.
+   ─────────────────────────────────────────────────────────── */
+
+.page-market p,
+.page-market .section-body,
+.page-market li,
+.page-market .prod-bullets li {
+  color:       #ffffff          !important;
+  font-family: var(--font)      !important;
+  font-weight: var(--fw-regular)!important;
+  font-size:   var(--text-md)   !important;
+  line-height: 1.75             !important;
+}
+
+
+/* ── DESKTOP BULLETS — red separators, no dash markers ──────
+   Image-overlay bullet lists: hide red dash, 1px red line
+   between items. Desktop only.
+   ─────────────────────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .market-image-section .prod-bullets li::before {
+    display:    none        !important;
+    content:    none        !important;
+    background: transparent !important;
+    width:      0           !important;
+    height:     0           !important;
+  }
+  .market-image-section .prod-bullets li {
+    padding-left: 0    !important;
+    text-align:   left !important;
+  }
+  .market-image-section .prod-bullets li + li {
+    border-top:  1px solid var(--color-red) !important;
+    padding-top: 12px !important;
+    margin-top:  12px !important;
+  }
+}
+
+
+/* ── MOBILE ─────────────────────────────────────────────────
+   Breakpoint: 768px
+   ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Hero: push below fixed nav on mobile (nav = 68px).
+     Text stays anchored at bottom: 37px inside the container — no change needed.
+     Desktop positioning (top: 118px = 68px nav + 50px gap) is unaffected. */
+  .page-market .hero-wrap {
+    margin-top: 68px !important;
+  }
+
+  .market-testimonial {
+    text-align: center !important;
+  }
+
+  .market-image-section .img-text-bottom {
+    bottom:  50px !important;
+    padding: 0    !important;
+  }
+
+  .market-cta-actions {
+    justify-content: center;
+  }
+
+  .market-overview-btn {
+    display:      block       !important;
+    width:        fit-content !important;
+    margin-left:  auto        !important;
+    margin-right: auto        !important;
+  }
+
+  .page-market .cta-left-dark .section-label,
+  .page-market .cta-left-dark h2,
+  .page-market .cta-left-dark .section-title,
+  .page-market .cta-left-dark p,
+  .page-market .cta-left-dark .section-body {
+    text-align: center !important;
+  }
+}
