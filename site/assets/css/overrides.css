@@ -684,7 +684,7 @@
     align-items: center;
   }
 
-  /* All body copy: 16px, semi-bold, white */
+  /* All body copy: 16px semi-bold */
   p,
   .section-body,
   .hero-sub,
@@ -692,13 +692,38 @@
   .ecosystem-desc,
   .blog-preview-excerpt,
   .number-label,
-  .page-hero-sub,
+  .page-hero-sub {
+    font-size:   16px;
+    font-weight: 600;
+  }
+
+  /* Dark backgrounds — white body copy */
+  .section--navy p,
+  .section--navy .section-body,
+  .section--navy .prod-tagline,
+  .section--navy .number-label,
+  .blog-news-section p,
+  .blog-news-section .section-body,
+  .hero-wrap p,
+  .hero-wrap .hero-sub,
+  .prod-card .prod-tagline,
+  .blog-preview-card .blog-preview-excerpt,
+  footer p,
   .footer-brand p,
   .footer-col a,
   .footer-bottom p {
-    font-size:   16px;
-    font-weight: 600;
-    color:       var(--color-white);
+    color: var(--color-white);
+  }
+
+  /* Light backgrounds — dark navy body copy */
+  .section--cream p,
+  .section--cream .section-body,
+  .section--cream .prod-tagline,
+  .section--cream .ecosystem-desc,
+  .section--white p,
+  .section--white .section-body,
+  .section--white .number-label {
+    color: var(--color-navy);
   }
 
   /* Blog card tags centered */
