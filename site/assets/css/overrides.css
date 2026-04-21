@@ -764,8 +764,24 @@
     text-align: center;
   }
 
+  .footer-brand {
+    text-align:  center;
+    align-items: center;
+    display:     flex;
+    flex-direction: column;
+  }
+
   .footer-brand .nav-logo-img {
     justify-content: center;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  .footer-brand p {
+    text-align:  center;
+    max-width:   100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer-bottom {
