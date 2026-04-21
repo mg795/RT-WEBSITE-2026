@@ -762,3 +762,12 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 .img-text-center .section-label {
   color: var(--color-white);
 }
+
+/* Ecosystem logo inside prod-card */
+.eco-card-logo {
+  display:      block;
+  width:        100%;
+  max-width:    200px;
+  height:       auto;
+  margin-bottom: 20px;
+}
