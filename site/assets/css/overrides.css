@@ -1213,6 +1213,10 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   opacity: 0.8;
 }
 
+/* ── DESKTOP-ONLY LINE BREAK ────────────────────────────────── */
+br.d-br { display: block; }
+@media (max-width: 768px) { br.d-br { display: none; } }
+
 /* ── CTA LEFT — left-column content, dark brown text, no overlay ── */
 .cta-left-dark {
   background: none !important;
