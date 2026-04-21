@@ -1031,6 +1031,41 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 }
 .ecosystem-section .prod-bullets li {
   color: var(--color-text-muted);
+  padding-left: 0;
+  text-align: center;
+}
+
+/* Remove red dashes from ecosystem cards */
+.ecosystem-section .prod-bullets li::before {
+  display: none;
+}
+
+/* Center all ecosystem card content — desktop + mobile */
+.ecosystem-section .prod-card,
+.ecosystem-section .prod-tag,
+.ecosystem-section .prod-name,
+.ecosystem-section .prod-tagline,
+.ecosystem-section .prod-bullets,
+.ecosystem-section .prod-bullets li,
+.ecosystem-section .eco-card-logo {
+  text-align: center;
+}
+
+.ecosystem-section .prod-bullets {
+  align-items: center;
+}
+
+.ecosystem-section .eco-card-logo {
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.ecosystem-section .btn-red,
+.ecosystem-section .prod-card-btn {
+  display:      block;
+  width:        fit-content;
+  margin-left:  auto;
+  margin-right: auto;
 }
 
 /* ── HERO — white text, content 200px higher ────────────────── */
