@@ -796,6 +796,7 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 .hero-wrap .img-text-bottom {
   bottom:     200px;
   background: none;
-  right:      auto;
-  width:      65%;
+}
+.hero-copy {
+  max-width: 65%;
 }
