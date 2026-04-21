@@ -684,7 +684,7 @@
     align-items: center;
   }
 
-  /* Cards stay left-aligned on mobile */
+  /* Product/ecosystem cards stay left-aligned on mobile */
   .prod-card,
   .prod-card h1,
   .prod-card h2,
@@ -695,11 +695,7 @@
   .prod-card .prod-name,
   .prod-card .prod-tagline,
   .prod-card .prod-bullets,
-  .prod-card .prod-bullets li,
-  .blog-preview-card,
-  .blog-preview-card .blog-preview-title,
-  .blog-preview-card .blog-preview-excerpt,
-  .blog-preview-card .prod-tag {
+  .prod-card .prod-bullets li {
     text-align: left;
   }
 
