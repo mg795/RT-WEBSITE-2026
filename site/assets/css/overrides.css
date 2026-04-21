@@ -744,17 +744,10 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 .section-title      { font-size: clamp(24px, 3.375vw, 39px); }
 .cta-band-headline  { font-size: clamp(20px, 2.625vw, 32px); }
 
-/* ── BLOG NEWS SECTION — background image with dark overlay ─── */
+/* ── BLOG NEWS SECTION — background image, no overlay ──────── */
 .blog-news-section {
   position: relative;
   background-image: url('../images/RT-WEB-HOMEPAGE-BLOG-ai-news-and-education-for-small-businesses.jpg');
   background-size: cover;
   background-position: center;
-}
-.blog-news-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(11, 31, 44, 0.84);
-  z-index: 0;
 }
