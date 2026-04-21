@@ -1182,6 +1182,10 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 /* ── CTA LEFT — left-column content, dark brown text, no overlay ── */
 .cta-left-dark {
   background: none !important;
+  top:         0 !important;
+  bottom:      0 !important;
+  display:     flex;
+  align-items: center;
 }
 
 .cta-left-dark .section-label,
