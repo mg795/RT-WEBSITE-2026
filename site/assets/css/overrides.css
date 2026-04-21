@@ -800,9 +800,11 @@
 
   /* Standalone buttons outside cards */
   a.btn-red:not(.prod-card .btn-red):not(.blog-preview-card .btn-red) {
-    display: block;
-    width:   fit-content;
-    margin:  0 auto;
+    display:      block;
+    width:        fit-content;
+    margin-top:   25px;
+    margin-left:  auto;
+    margin-right: auto;
   }
 
   .section-label[style],
@@ -876,6 +878,7 @@
   .btn-red {
     display:      block !important;
     width:        fit-content !important;
+    margin-top:   25px !important;
     margin-left:  auto !important;
     margin-right: auto !important;
   }
@@ -1272,17 +1275,21 @@ br.d-br { display: block; }
     text-align: center !important;
   }
 
-  /* All copy: balance lines so no line has fewer than 3 words */
+  /* Headlines: balance distributes words evenly across all lines */
+  .section-title,
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+
+  /* Body copy: pretty avoids orphan words on the last line */
   p,
   li,
   .section-body,
   .hero-sub,
   .prod-tagline,
   .prod-bullets li,
-  .blog-preview-excerpt,
-  .section-title,
-  h1, h2, h3 {
-    text-wrap: balance;
+  .blog-preview-excerpt {
+    text-wrap: pretty;
   }
 
   /* Bullets on mobile: no bullet markers, red separator between items */
