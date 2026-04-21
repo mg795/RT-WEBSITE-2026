@@ -1363,7 +1363,7 @@ br.d-br { display: block; }
     font-family:    var(--font)    !important;
     font-weight:    var(--fw-regular) !important;
     font-size:      var(--text-md) !important;
-    line-height:    1.75           !important;
+    line-height:    1.84           !important;
     letter-spacing: 0              !important;
     color:          #ffffff !important;
   }

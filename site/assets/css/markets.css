@@ -77,7 +77,7 @@
   font-weight: var(--fw-regular)!important;
   font-size:   var(--text-md)   !important;
   color:       #ffffff          !important;
-  line-height: 1.75             !important;
+  line-height: 1.84             !important;
   text-align:  left;
 }
 
@@ -89,7 +89,7 @@
 .market-image-section .market-testimonial {
   color:       #ffffff        !important;
   font-size:   var(--text-md) !important;
-  line-height: 1.75           !important;
+  line-height: 1.84           !important;
 }
 
 
@@ -137,7 +137,7 @@
   font-family: var(--font)      !important;
   font-weight: var(--fw-regular)!important;
   font-size:   var(--text-md)   !important;
-  line-height: 1.75             !important;
+  line-height: 1.84             !important;
 }
 
 
@@ -189,7 +189,7 @@
   .page-market .market-testimonial {
     text-align:  center         !important;
     font-size:   var(--text-md) !important;
-    line-height: 1.75           !important;
+    line-height: 1.84           !important;
   }
 
   .market-image-section .img-text-bottom {

@@ -195,7 +195,7 @@ p {
   font-family:      var(--font);
   font-weight:      var(--fw-regular);
   font-size:        var(--text-md);
-  line-height:      1.75;
+  line-height:      1.84;
   color:            var(--color-text-muted);
   max-width:        60ch;            /* ~60 character line length */
   orphans:          3;
@@ -462,7 +462,7 @@ footer,
 .section-body {
   font-size:        var(--text-md);
   color:            var(--color-text-muted);
-  line-height:      1.75;
+  line-height:      1.84;
   max-width:        60ch;
   orphans:          3;
   widows:           3;
@@ -836,7 +836,7 @@ footer,
   font-family:      var(--font);
   font-weight:      var(--fw-light);
   font-size:        36px;
-  line-height:      1.0;
+  line-height:      0.85;
   color:            var(--color-white);
   max-width:        60ch;
   margin-bottom:    28px;
@@ -858,7 +858,7 @@ footer,
   color:            rgba(255, 255, 255, 0.65);
   max-width:        60ch;
   margin-bottom:    25px;
-  line-height:      1.75;
+  line-height:      1.84;
   orphans:          3;
   widows:           3;
   text-wrap:        pretty;
@@ -1133,7 +1133,7 @@ footer,
   color:            #ffffff;
   padding-left:     18px;
   position:         relative;
-  line-height:      1.75;
+  line-height:      1.84;
 }
 
 .prod-bullets li::before {
@@ -1405,7 +1405,7 @@ footer,
   font-weight:      var(--fw-regular);
   font-size:        15px;
   color:            var(--color-text-muted);
-  line-height:      1.75;
+  line-height:      1.84;
   max-width:        60ch;
   orphans:          3;
   widows:           3;
@@ -1507,7 +1507,7 @@ footer,
   font-weight:      var(--fw-regular);
   font-size:        var(--text-md);
   color:            var(--color-text-muted);
-  line-height:      1.75;
+  line-height:      1.84;
   max-width:        60ch;
   orphans:          3;
   widows:           3;
@@ -1919,7 +1919,7 @@ footer,
   font-weight:      var(--fw-regular);
   font-size:        15px;
   color:            var(--color-text-muted);
-  line-height:      1.75;
+  line-height:      1.84;
   max-width:        60ch;
   orphans:          3;
   widows:           3;
@@ -2266,7 +2266,7 @@ footer,
   font-weight:      var(--fw-regular);
   font-size:        15px;
   color:            var(--color-text);
-  line-height:      1.75;
+  line-height:      1.84;
   margin-bottom:    24px;
   border-left:      3px solid var(--color-red);
   padding-left:     20px;
@@ -2391,7 +2391,7 @@ footer,
   font-size:        17px;
   color:            rgba(255, 255, 255, 0.6);
   max-width:        60ch;
-  line-height:      1.75;
+  line-height:      1.84;
   margin-bottom:    36px;
   orphans:          3;
   widows:           3;
@@ -2961,7 +2961,7 @@ img {
   font-weight:      var(--fw-regular);
   font-size:        var(--text-md);
   color:            #4a4a4a;
-  line-height:      1.75;
+  line-height:      1.84;
   max-width:        60ch;
   orphans:          3;
   widows:           3;

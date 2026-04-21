@@ -82,14 +82,14 @@
   font-weight: var(--fw-regular) !important;
   font-size:   var(--text-md)    !important;
   color:       #ffffff           !important;
-  line-height: 1.75              !important;
+  line-height: 1.84              !important;
   text-align:  left;
 }
 
 .about-image-section .about-testimonial {
   color:       #ffffff        !important;
   font-size:   var(--text-md) !important;
-  line-height: 1.75           !important;
+  line-height: 1.84           !important;
 }
 
 
@@ -179,7 +179,7 @@
   font-family: var(--font)      !important;
   font-weight: var(--fw-regular)!important;
   font-size:   var(--text-md)   !important;
-  line-height: 1.75             !important;
+  line-height: 1.84             !important;
 }
 
 
@@ -225,7 +225,7 @@
   .page-about .about-testimonial {
     text-align:  center         !important;
     font-size:   var(--text-md) !important;
-    line-height: 1.75           !important;
+    line-height: 1.84           !important;
   }
 
   .about-image-section .img-text-bottom {
