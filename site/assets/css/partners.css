@@ -186,6 +186,13 @@
 
 @media (max-width: 768px) {
 
+  /* Hero: push below fixed nav on mobile (nav = 68px).
+     Text stays anchored at bottom: 37px inside the container — no change needed.
+     Desktop positioning (top: 118px = 68px nav + 50px gap) is unaffected. */
+  .page-partner .hero-wrap {
+    margin-top: 68px !important;
+  }
+
   .partner-testimonial {
     text-align: center !important;
   }
