@@ -93,7 +93,7 @@
    ─────────────────────────────────────────────────────────── */
 
 .blog-index {
-  background:     var(--color-white);
+  background:     #f2f2f2;
   padding-top:    64px;
   padding-bottom: 80px;
   margin-top:     -75px;
@@ -120,13 +120,6 @@
   display:        flex;
   flex-direction: column;
   background:     var(--color-white);
-  box-shadow:     0 2px 16px rgba(11,31,44,0.10);
-  transition:     transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.blog-card:hover {
-  transform:  translateY(-4px);
-  box-shadow: 0 10px 32px rgba(11,31,44,0.14);
 }
 
 /* Image wrapper — clips the zoomed image, no black bleed */
