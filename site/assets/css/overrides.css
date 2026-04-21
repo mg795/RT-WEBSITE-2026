@@ -707,14 +707,37 @@
     align-items: flex-start;
   }
 
-  .hero-actions,
-  .section-actions,
-  .prod-card-btn,
-  .btn-red {
-    display:    block;
-    text-align: center;
-    margin-left: auto;
+  .prod-card .btn-red,
+  .prod-card .prod-card-btn {
+    display:      inline-block;
+    margin-left:  0;
+    margin-right: 0;
+  }
+
+  /* Dividers and graphical lines — center via margin */
+  .divider {
+    margin-left:  auto;
     margin-right: auto;
+  }
+
+  /* Buttons and CTAs — centered, full-width feel */
+  .hero-actions,
+  .section-actions {
+    display:         flex;
+    justify-content: center;
+  }
+
+  .btn-red {
+    display:      inline-block;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  /* Standalone buttons outside cards */
+  a.btn-red:not(.prod-card .btn-red):not(.blog-preview-card .btn-red) {
+    display: block;
+    width:   fit-content;
+    margin:  0 auto;
   }
 
   .section-label[style],
