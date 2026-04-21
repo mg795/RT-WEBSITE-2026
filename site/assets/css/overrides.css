@@ -785,3 +785,14 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 .ecosystem-section .prod-bullets li {
   color: var(--color-text-muted);
 }
+
+/* ── HERO — white text, content 200px higher ────────────────── */
+.hero-wrap .page-hero-eyebrow {
+  color: var(--color-white);
+}
+.hero-wrap .hero-sub {
+  color: var(--color-white);
+}
+.hero-wrap .img-text-bottom {
+  bottom: 200px;
+}
