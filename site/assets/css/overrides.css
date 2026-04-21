@@ -1285,14 +1285,20 @@ br.d-br { display: block; }
     text-wrap: balance;
   }
 
-  /* Bullets on mobile: no red dashes, semi-bold, white */
+  /* Bullets on mobile: no bullet markers, red separator between items */
   .prod-bullets li::before {
     display: none !important;
   }
 
   .prod-bullets li {
-    font-weight: 600 !important;
-    color:       var(--color-white) !important;
-    padding-left: 0 !important;
+    font-weight:   600 !important;
+    color:         var(--color-white) !important;
+    padding-left:  0 !important;
+  }
+
+  .prod-bullets li + li {
+    border-top:  1px solid var(--color-red);
+    padding-top: 10px;
+    margin-top:  10px;
   }
 }
