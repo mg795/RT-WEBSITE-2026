@@ -1,0 +1,193 @@
+/* ============================================================
+   READTOMATO — PRODUCT PAGE TEMPLATE
+   Load order: style.css → overrides.css → products.css
+   Use on all pages under /products/*.html
+   ============================================================
+
+   FOUR SECTION TYPES — use these classes on every product page:
+
+   1. .prod-overview      navy bg, 2-col: label+headline+quote LEFT / body+btn RIGHT
+   2. .prod-image-section full-bleed 1920×1400 image, grid-2 overlay at bottom
+   3. .prod-how-it-works  full-bleed 1920×1400 image, grid-2 overlay with numbered steps
+   4. .prod-cta           full-bleed 1920×800 image, left-col content (uses .cta-left-dark)
+
+   DESKTOP BULLET LINE BREAK:
+   Use <br class="d-br"> to force a break on desktop only (hidden on mobile).
+   Rule lives in overrides.css. Always add a space before the tag to prevent
+   word merging when the break is hidden: "last word <br class="d-br">next word"
+
+   ============================================================ */
+
+
+/* ── PRODUCT HERO ───────────────────────────────────────────
+   Uses .hero-wrap from overrides.css — no extra CSS needed here.
+   Structure:
+     <div class="img-section-wrap hero-wrap" style="margin-top:68px">
+       <picture>
+         <source media="(max-width:768px)" srcset="...-600X1000.jpg">
+         <img src="...-1920X1200.jpg" class="img-full-bleed">
+       </picture>
+       <div class="img-text-bottom">
+         <div class="container">
+           <div class="hero-copy">
+             <span class="page-hero-eyebrow">PRODUCT CATEGORY</span>
+             <h1 class="hero-headline">Line one.<br>Line two.</h1>
+             <p class="hero-sub">One sentence. No more than two lines.</p>
+             <div class="hero-actions"><a href="../contact.html" class="btn-red">CTA</a></div>
+           </div>
+         </div>
+       </div>
+     </div>
+   ─────────────────────────────────────────────────────────── */
+
+
+/* ── OVERVIEW SECTION ───────────────────────────────────────
+   Structure:
+     <section class="section section--navy prod-overview">
+       <div class="container">
+         <div class="grid-2">
+           <div>  LEFT COLUMN
+             <span class="section-label">THE PRODUCT</span>
+             <h2 class="section-title">Headline<br>line two.</h2>
+             <p class="prod-testimonial">"Quote." — Attribution</p>
+           </div>
+           <div>  RIGHT COLUMN
+             <p class="section-body">Body copy.</p>
+             <a href="../contact.html" class="btn-red prod-overview-btn">Schedule a Demo</a>
+           </div>
+         </div>
+       </div>
+     </section>
+   ─────────────────────────────────────────────────────────── */
+
+.prod-overview .grid-2 {
+  align-items: start;
+}
+
+.prod-overview-btn {
+  display:    inline-block;
+  margin-top: 32px;
+}
+
+
+/* ── PRODUCT TESTIMONIAL ────────────────────────────────────
+   Sits below the section headline in the left column.
+   Always left-justified on desktop, centered on mobile.
+   ─────────────────────────────────────────────────────────── */
+
+.prod-testimonial {
+  margin-top:     20px;
+  font-family:    var(--font);
+  font-weight:    400;
+  font-size:      15px;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color:          #e6e6e6;
+  line-height:    1.6;
+  text-align:     left;
+}
+
+
+/* ── IMAGE SECTION ──────────────────────────────────────────
+   Used for "What You Receive" and "How It Works" sections.
+   Image: 1920×1400 desktop / 600×1000 mobile.
+   Content overlay sits 75px from the bottom of the image.
+
+   Structure:
+     <div class="img-section-wrap prod-image-section">
+       <picture>
+         <source media="(max-width:768px)" srcset="...-600X1000.jpg">
+         <img src="...-1920X1400.jpg" class="img-full-bleed">
+       </picture>
+       <div class="img-text-bottom">
+         <div class="container">
+           <div class="grid-2">
+             <div>  LEFT COLUMN
+               <span class="section-label">SECTION LABEL</span>
+               <h2 class="section-title">Headline<br>line two.</h2>
+             </div>
+             <div>  RIGHT COLUMN
+               <ul class="prod-bullets">
+                 <li>3–6 words per line desktop <br class="d-br">continued text</li>
+               </ul>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   ─────────────────────────────────────────────────────────── */
+
+.prod-image-section .img-text-bottom {
+  bottom: 75px;
+}
+
+.prod-image-section .grid-2 {
+  align-items: start;
+}
+
+
+/* ── CTA SECTION ────────────────────────────────────────────
+   Image: 1920×800 desktop / 600×1000 mobile.
+   Content sits in the LEFT column, vertically centered.
+   Uses .cta-left-dark from overrides.css for colors + positioning.
+
+   Structure:
+     <div class="img-section-wrap prod-cta">
+       <picture>
+         <source media="(max-width:768px)" srcset="...-600x1000.jpg">
+         <img src="...-1920X800.jpg" class="img-full-bleed">
+       </picture>
+       <div class="img-text-bottom cta-left-dark">
+         <div class="container">
+           <div class="grid-2">
+             <div>
+               <span class="section-label">GET STARTED</span>
+               <h2 class="section-title">Headline<br>line two.</h2>
+               <p class="section-body">One supporting sentence.</p>
+               <div class="hero-actions prod-cta-actions">
+                 <a href="../contact.html" class="btn-red">Schedule a Demo</a>
+               </div>
+             </div>
+             <div></div>
+           </div>
+         </div>
+       </div>
+     </div>
+   ─────────────────────────────────────────────────────────── */
+
+.prod-cta-actions {
+  margin-top:       32px;
+  justify-content:  flex-start;
+}
+
+
+/* ── MOBILE ─────────────────────────────────────────────────
+   Breakpoint: 768px
+   ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Testimonial: centered on mobile */
+  .prod-testimonial {
+    text-align: center !important;
+  }
+
+  /* Image section: drop content to 37px from bottom (matches hero) */
+  .prod-image-section .img-text-bottom {
+    bottom:  37px !important;
+    padding: 0 !important;
+  }
+
+  /* CTA actions: center button on mobile */
+  .prod-cta-actions {
+    justify-content: center;
+  }
+
+  /* Overview button: centered on mobile */
+  .prod-overview-btn {
+    display:      block !important;
+    width:        fit-content !important;
+    margin-left:  auto !important;
+    margin-right: auto !important;
+  }
+}
