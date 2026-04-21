@@ -36,19 +36,14 @@
   max-width: none;
 }
 
-/* Text overlay at BOTTOM of image (spec §8a) */
+/* Text overlay at BOTTOM of image — NO background screen ever */
 .img-text-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 60px 0 80px;
-  background: linear-gradient(
-    to top,
-    rgba(11, 31, 44, 0.82) 0%,
-    rgba(11, 31, 44, 0.45) 40%,
-    transparent 100%
-  );
+  background: none;
 }
 
 .img-text-bottom .container {
