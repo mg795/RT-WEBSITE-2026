@@ -192,12 +192,7 @@
 .ecosystem-card {
   display: block;
   text-decoration: none;
-  background: var(--color-white);
-  transition: box-shadow 0.2s;
-}
-
-.ecosystem-card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  background: transparent;
 }
 
 .ecosystem-card-img {
@@ -207,17 +202,24 @@
 }
 
 .ecosystem-card-body {
-  padding: 24px 28px 28px;
+  padding: 24px 0 0;
+  background: transparent;
 }
 
 .ecosystem-logo {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .ecosystem-logo img {
-  height: 26px;
-  width: auto;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   display: block;
+}
+
+.eco-learn-more {
+  font-weight:  var(--fw-bold);
+  color:        var(--color-red);
 }
 
 .ecosystem-desc {
