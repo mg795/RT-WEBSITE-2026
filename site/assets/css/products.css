@@ -78,7 +78,7 @@
    centered on mobile.
    ─────────────────────────────────────────────────────────── */
 
-.prod-testimonial {
+.page-product .prod-testimonial {
   margin-top:     20px;
   font-family:    var(--font)      !important;
   font-weight:    var(--fw-regular)!important;
@@ -199,7 +199,7 @@
   }
 
   /* Testimonial: centered, locked size */
-  .prod-testimonial {
+  .page-product .prod-testimonial {
     text-align:     center !important;
     font-size:      15px   !important;
     line-height:    1.6    !important;

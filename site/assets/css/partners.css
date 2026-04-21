@@ -81,7 +81,7 @@
 
 /* ── PARTNER TESTIMONIAL ──────────────────────────────────── */
 
-.partner-testimonial {
+.page-partner .partner-testimonial {
   margin-top:     20px;
   font-family:    var(--font)      !important;
   font-weight:    var(--fw-regular)!important;
@@ -200,7 +200,7 @@
     margin-right: auto  !important;
   }
 
-  .partner-testimonial {
+  .page-partner .partner-testimonial {
     text-align:     center !important;
     font-size:      15px   !important;
     line-height:    1.6    !important;
