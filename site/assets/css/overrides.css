@@ -1271,4 +1271,15 @@ br.d-br { display: block; }
   .hte-testimonial {
     text-align: center !important;
   }
+
+  /* Bullets on mobile: no red dashes, semi-bold, white */
+  .prod-bullets li::before {
+    display: none !important;
+  }
+
+  .prod-bullets li {
+    font-weight: 600 !important;
+    color:       var(--color-white) !important;
+    padding-left: 0 !important;
+  }
 }
