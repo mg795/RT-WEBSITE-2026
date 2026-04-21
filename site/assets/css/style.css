@@ -840,7 +840,7 @@ footer,
   color:            var(--color-white);
   max-width:        60ch;
   margin-bottom:    28px;
-  letter-spacing:   0.04em;
+  letter-spacing:   0.14em;
   text-wrap:        balance;
 }
 
