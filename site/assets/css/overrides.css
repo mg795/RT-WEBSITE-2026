@@ -722,6 +722,11 @@
   align-items: start;
 }
 
+.prod-card-btn {
+  display:    inline-block;
+  margin-top: 28px;
+}
+
 /* Prod-name: single line, sized to fit the longest title */
 .prod-grid .prod-name {
   white-space: nowrap;
