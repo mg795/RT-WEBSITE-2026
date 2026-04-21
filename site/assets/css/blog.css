@@ -1,0 +1,279 @@
+/* ============================================================
+   READTOMATO — BLOG PAGE TEMPLATE  v1
+   Load order: style.css → overrides.css → blog.css
+   Apply to all pages under /blog/*.html
+   Body must carry: class="page-blog page-blog-[slug]"
+   ============================================================
+
+   DESIGN TOKENS (reference — defined in style.css)
+   ─────────────────────────────────────────────────
+   --color-red:        #EC2227
+   --color-navy:       #0B1F2C
+   --color-white:      #ffffff
+   --font:             'Montserrat', sans-serif
+   --fw-light:         300
+   --fw-regular:       400
+   --fw-bold:          700
+   --text-md:          17px
+   --container-max:    1000px
+   --gutter:           50px
+
+   HEADER SIZES (site-wide standard)
+   ─────────────────────────────────────────────────
+   Desktop:  H1=36px  H2=30px  H3=26px  hero-headline=36px  section-title=30px
+   Mobile:   H1=28px  H2=24px           hero-headline=28px  section-title=24px
+
+   TESTIMONIAL STANDARD
+   ─────────────────────────────────────────────────
+   font-size: 15px  |  line-height: 1.6  |  letter-spacing: 0.08em
+   color: #ffffff   |  font-weight: 400
+   Desktop: text-align left  |  Mobile: text-align center
+
+   SECTION TYPES — use these classes on every blog page:
+
+   1. .blog-hero         full-bleed 1920×1200 hero image, text bottom-left
+   2. .blog-index        white bg card grid — the post listing
+   3. .blog-cta          full-bleed 1920×800 image, left-col content (cta-left-dark)
+
+   ============================================================ */
+
+
+/* ── HERO — standard positioning & sizing ───────────────────
+   Content anchored 50px below the fixed nav (nav = 68px → top: 118px).
+   Desktop: top-anchored. Mobile: bottom-anchored at 37px.
+   ─────────────────────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  .page-blog .hero-wrap .img-text-bottom {
+    top:            118px;
+    bottom:         auto;
+    padding-top:    0;
+    padding-bottom: 0;
+  }
+  .page-blog .hero-copy {
+    max-width: 52%;
+  }
+  .page-blog .hero-headline {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-blog .hero-wrap .img-text-bottom {
+    top:    auto !important;
+    bottom: 37px !important;
+  }
+  .page-blog .hero-sub {
+    max-width:    100%   !important;
+    text-align:   center !important;
+    margin-left:  auto   !important;
+    margin-right: auto   !important;
+  }
+}
+
+
+/* ── BLOG INDEX — post card grid ────────────────────────────
+   Structure:
+     <section class="section blog-index">
+       <div class="container">
+         <div class="blog-grid">
+           <article class="blog-card"> ... </article>
+           ...
+   ─────────────────────────────────────────────────────────── */
+
+.blog-index {
+  background: var(--color-white);
+  padding-top:    64px;
+  padding-bottom: 80px;
+}
+
+.blog-index .section-label {
+  display:     block;
+  margin-bottom: 32px;
+}
+
+/* 3-column grid desktop */
+.blog-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   40px;
+}
+
+/* Individual post card */
+.blog-card {
+  display:        flex;
+  flex-direction: column;
+  background:     var(--color-white);
+  border:         1px solid var(--color-border);
+  overflow:       hidden;
+}
+
+.blog-card-img {
+  display: block;
+  width:   100%;
+  height:  auto;
+}
+
+.blog-card-body {
+  display:        flex;
+  flex-direction: column;
+  flex:           1;
+  padding:        24px;
+}
+
+.blog-card-category {
+  font-family:    var(--font);
+  font-weight:    var(--fw-bold);
+  font-size:      var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color:          var(--color-red);
+  margin-bottom:  10px;
+}
+
+.blog-card-title {
+  font-family:    var(--font);
+  font-weight:    var(--fw-bold);
+  font-size:      var(--text-md);
+  line-height:    1.35;
+  color:          var(--color-navy);
+  margin-bottom:  12px;
+  text-wrap:      balance;
+}
+
+.blog-card-excerpt {
+  font-family:    var(--font);
+  font-weight:    var(--fw-regular);
+  font-size:      var(--text-base);
+  line-height:    1.65;
+  color:          var(--color-text-muted);
+  margin-bottom:  20px;
+  flex:           1;
+  max-width:      none;
+}
+
+.blog-card-meta {
+  font-family:    var(--font);
+  font-weight:    var(--fw-regular);
+  font-size:      var(--text-xs);
+  letter-spacing: 0.06em;
+  color:          var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom:  16px;
+}
+
+.blog-card-link {
+  font-family:    var(--font);
+  font-weight:    var(--fw-bold);
+  font-size:      var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color:          var(--color-red);
+  text-decoration: none;
+  align-self:     flex-start;
+}
+
+.blog-card-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ── BLOG TESTIMONIAL ───────────────────────────────────────
+   Same spec as market/product/partner testimonials.
+   15px / 1.6 / 0.08em — white — never overridden by broad p rule.
+   ─────────────────────────────────────────────────────────── */
+
+.blog-testimonial {
+  margin-top:     20px;
+  font-family:    var(--font)       !important;
+  font-weight:    var(--fw-regular) !important;
+  font-size:      15px              !important;
+  letter-spacing: 0.08em            !important;
+  color:          #ffffff           !important;
+  line-height:    1.6               !important;
+  text-align:     left;
+}
+
+
+/* ── CTA SECTION ────────────────────────────────────────────
+   Full-bleed 1920×800 image. Text always white.
+   ─────────────────────────────────────────────────────────── */
+
+.blog-cta-actions {
+  margin-top:      32px;
+  justify-content: flex-start;
+}
+
+.page-blog .cta-left-dark .section-label,
+.page-blog .cta-left-dark h2,
+.page-blog .cta-left-dark .section-title,
+.page-blog .cta-left-dark p,
+.page-blog .cta-left-dark .section-body {
+  color:      #ffffff !important;
+  text-align: left    !important;
+}
+
+
+/* ── BODY COPY — white, regular, 17px, 1.75 leading ─────────
+   Applies to all paragraphs on blog pages with image backgrounds.
+   ─────────────────────────────────────────────────────────── */
+
+.page-blog .img-text-bottom p,
+.page-blog .img-text-bottom .section-body {
+  color:       #ffffff          !important;
+  font-family: var(--font)      !important;
+  font-weight: var(--fw-regular)!important;
+  font-size:   var(--text-md)   !important;
+  line-height: 1.75             !important;
+}
+
+
+/* ── MOBILE ─────────────────────────────────────────────────
+   Breakpoint: 768px
+   ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  /* Hero: push below fixed nav */
+  .page-blog .hero-wrap {
+    margin-top: 68px !important;
+  }
+
+  /* Mobile header standard */
+  .page-blog h1,
+  .page-blog .hero-headline  { font-size: 28px !important; line-height: 1.3 !important; }
+  .page-blog h2,
+  .page-blog .section-title  { font-size: 24px !important; line-height: 1.3 !important; }
+
+  /* Testimonial: centered, locked */
+  .blog-testimonial {
+    text-align:     center !important;
+    font-size:      15px   !important;
+    line-height:    1.6    !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Card grid: 1 column */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* CTA: center content, lift 15px from bottom */
+  .blog-cta-actions {
+    justify-content: center;
+    margin-top:      12px !important;
+  }
+
+  .blog-cta .cta-left-dark {
+    bottom: 15px !important;
+  }
+
+  .page-blog .cta-left-dark .section-label,
+  .page-blog .cta-left-dark h2,
+  .page-blog .cta-left-dark .section-title,
+  .page-blog .cta-left-dark p,
+  .page-blog .cta-left-dark .section-body {
+    text-align: center !important;
+  }
+}
