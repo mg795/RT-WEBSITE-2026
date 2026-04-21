@@ -922,7 +922,7 @@
 
   /* Hero mobile: 50px from bottom, fully centered */
   .hero-wrap .img-text-bottom {
-    bottom: 50px !important;
+    bottom: 20px !important;
   }
 
   .hero-wrap .hero-copy {
