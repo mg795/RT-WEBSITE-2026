@@ -1031,8 +1031,8 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
 }
 .ecosystem-section .prod-bullets li {
   color: var(--color-text-muted);
-  padding-left: 0;
-  text-align: center;
+  padding-left: 0 !important;
+  text-align: center !important;
 }
 
 /* Remove red dashes from ecosystem cards */
