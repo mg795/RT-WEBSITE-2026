@@ -684,6 +684,14 @@
     align-items: center;
   }
 
+  /* Stats — center-justified on mobile */
+  .stats-col,
+  .number-card,
+  .number-big,
+  .number-label {
+    text-align: center;
+  }
+
   /* All body copy: 16px semi-bold */
   p,
   .section-body,
