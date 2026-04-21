@@ -857,7 +857,7 @@ footer,
   font-size:        var(--text-lg);
   color:            rgba(255, 255, 255, 0.65);
   max-width:        60ch;
-  margin-bottom:    44px;
+  margin-bottom:    25px;
   line-height:      1.75;
   orphans:          3;
   widows:           3;
