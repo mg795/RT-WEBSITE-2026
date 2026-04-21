@@ -1017,18 +1017,22 @@ h2                  { font-size: clamp(24px, 3vw, 39px); }
   margin-bottom: 20px;
 }
 
-/* Ecosystem cards: white background, no hover state */
+/* Ecosystem cards: 30% transparent white background, no hover state */
 .ecosystem-section .prod-card {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.7);
 }
 .ecosystem-section .prod-card:hover {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.7);
 }
 .ecosystem-section .prod-tagline {
   color: var(--color-text-muted);
+  font-size: 17px;
+  font-weight: 600;
 }
 .ecosystem-section .prod-bullets li {
   color: var(--color-text-muted);
+  font-size: 17px;
+  font-weight: 600;
 }
 
 /* ── HERO — white text, content 200px higher ────────────────── */
