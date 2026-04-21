@@ -93,6 +93,20 @@
 }
 
 
+/* ── IMAGE SECTION TESTIMONIAL ──────────────────────────────
+   Pull-quote below the H2 on full-bleed image overlay sections.
+   Higher specificity overrides the broad .page-partner p rule
+   to preserve 15px / 1.6 leading as a distinct visual.
+   ─────────────────────────────────────────────────────────── */
+
+.partner-image-section .partner-testimonial {
+  color:          #ffffff !important;
+  font-size:      15px    !important;
+  letter-spacing: 0.08em  !important;
+  line-height:    1.6     !important;
+}
+
+
 /* ── IMAGE SECTIONS ─────────────────────────────────────────
    Full-bleed 1920×1400 image with content overlay at bottom.
    ─────────────────────────────────────────────────────────── */
