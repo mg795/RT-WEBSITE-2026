@@ -38,15 +38,19 @@
    ============================================================ */
 
 
-/* ── HERO — standard positioning & sizing ───────────────────
-   Content anchored 50px below the fixed nav (nav = 68px → top: 118px).
-   Desktop: top-anchored. Mobile: bottom-anchored at 37px.
+/* ── HERO — mirrors contact.css hero block exactly ──────────
+   1920×700 image. Content 50px below fixed nav (top: 118px).
+   Left-justified, 52% wide copy block — desktop only.
    ─────────────────────────────────────────────────────────── */
 
 @media (min-width: 769px) {
+
+  /* Reset the page-wide text-align:center for the entire hero */
   .page-blog .hero-wrap {
-    margin-top: 0;
+    text-align: left !important;
   }
+
+  /* Position: 50px below the 68px fixed nav = 118px from viewport top */
   .page-blog .hero-wrap .img-text-bottom {
     top:            118px !important;
     bottom:         auto  !important;
@@ -54,26 +58,40 @@
     padding-bottom: 0     !important;
   }
 
-  .page-blog .hero-copy {
-    max-width: 52%;
+  /* Pin hero-copy block to the left edge of the container */
+  .page-blog .hero-wrap .hero-copy {
+    width:        52%  !important;
+    max-width:    52%  !important;
+    margin-left:  0    !important;
+    margin-right: auto !important;
+    text-align:   left !important;
   }
-  .page-blog .hero-headline {
-    font-size:   36px;
-    color:       #ffffff !important;
-    text-align:  left   !important;
+
+  /* Left-align and white all text elements inside hero */
+  .page-blog .hero-wrap .page-hero-eyebrow,
+  .page-blog .hero-wrap .hero-headline,
+  .page-blog .hero-wrap .hero-sub {
+    text-align:   left    !important;
+    margin-left:  0       !important;
+    margin-right: 0       !important;
+    max-width:    100%    !important;
+    color:        #ffffff !important;
   }
-  .page-blog .page-hero-eyebrow {
-    color:      #ffffff !important;
-    text-align: left    !important;
+
+  .page-blog .hero-wrap .hero-headline {
+    font-size: 36px;
   }
-  .page-blog .hero-sub {
-    color:      #ffffff !important;
-    text-align: left    !important;
-    max-width:  100%    !important;
+
+  /* Button row flush-left */
+  .page-blog .hero-wrap .hero-actions {
+    justify-content: flex-start !important;
   }
 }
 
 @media (max-width: 768px) {
+  .page-blog .hero-wrap {
+    margin-top: 68px !important;
+  }
   .page-blog .hero-wrap .img-text-bottom {
     top:    auto !important;
     bottom: 37px !important;
