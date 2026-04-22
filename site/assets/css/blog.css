@@ -46,8 +46,6 @@
 @media (min-width: 769px) {
   .page-blog .hero-wrap {
     margin-top: 0;
-    max-height: 700px;
-    overflow:   hidden;
   }
   .page-blog .hero-wrap .img-text-bottom {
     top:            118px !important;
