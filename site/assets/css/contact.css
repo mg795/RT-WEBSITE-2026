@@ -10,13 +10,16 @@
 @media (min-width: 769px) {
 
   /* Reset the page-wide text-align:center for the entire hero */
+  /* margin-top: 68px pushes the image below the fixed nav bar */
   .page-contact .hero-wrap {
     text-align: left !important;
+    margin-top: 68px !important;
   }
 
-  /* Position: 50px below the 68px fixed nav = 118px from viewport top */
+  /* Text stays visually 50px below the nav: wrapper is now at 68px,
+     so top:50px = 68+50 = 118px from viewport top — unchanged */
   .page-contact .hero-wrap .img-text-bottom {
-    top:            118px !important;
+    top:            50px  !important;
     bottom:         auto  !important;
     padding-top:    0     !important;
     padding-bottom: 0     !important;
