@@ -323,3 +323,44 @@
     text-align: center !important;
   }
 }
+
+
+/* ── BLOG HERO OVERLAY — ID rule, beats all class-based cascade ─
+   Positions text block 50px below the fixed nav (118px from top).
+   Left-justified, matching contact page exactly.
+   ─────────────────────────────────────────────────────────────── */
+
+@media (min-width: 769px) {
+  #blog-hero-overlay {
+    top:            118px !important;
+    bottom:         auto  !important;
+    padding-top:    0     !important;
+    padding-bottom: 0     !important;
+  }
+
+  #blog-hero-overlay .hero-copy {
+    width:        52%  !important;
+    max-width:    52%  !important;
+    margin-left:  0    !important;
+    margin-right: auto !important;
+    text-align:   left !important;
+  }
+
+  #blog-hero-overlay .page-hero-eyebrow,
+  #blog-hero-overlay .hero-headline,
+  #blog-hero-overlay .hero-sub {
+    text-align:   left    !important;
+    margin-left:  0       !important;
+    margin-right: 0       !important;
+    max-width:    100%    !important;
+    color:        #ffffff !important;
+  }
+
+  #blog-hero-overlay .hero-headline {
+    font-size: clamp(33px, 4.5vw, 54px);
+  }
+
+  #blog-hero-overlay .hero-actions {
+    justify-content: flex-start !important;
+  }
+}
