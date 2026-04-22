@@ -77,31 +77,28 @@
 }
 
 
-/* ── DESKTOP GRID — 3 children: intro (col1 row1), form (col2 rows1-2), details (col1 row2) */
+/* ── DESKTOP GRID — 2 children: left col (flex) + form col */
 
 @media (min-width: 769px) {
-  .contact-grid {
-    grid-template-rows: auto auto;
-    column-gap:         80px;
-    row-gap:            0;
-  }
-
-  .contact-intro-block {
-    grid-column: 1;
-    grid-row:    1;
-    text-align:  left;
+  /* Left column: intro on top, details directly below — no wasted space */
+  .contact-left {
+    display:        flex;
+    flex-direction: column;
+    text-align:     left;
   }
 
   .contact-form-wrap {
-    grid-column: 2;
-    grid-row:    1 / span 2;
-    text-align:  left;
+    text-align: left;
   }
 
+  .contact-intro-block,
   .contact-info {
-    grid-column: 1;
-    grid-row:    2;
-    text-align:  left;
+    text-align: left;
+  }
+
+  /* Push details to the bottom only if there's leftover space */
+  .contact-info {
+    margin-top: 36px;
   }
 }
 
@@ -138,13 +135,31 @@
     padding-bottom: 56px;
   }
 
+  /* Make the left-col wrapper transparent to the grid so children
+     become direct grid items and can be reordered with `order` */
+  .contact-left {
+    display: contents;
+  }
+
+  /* Order: intro (1) → form (2) → details (3) */
+  .contact-intro-block { order: 1; }
+  .contact-form-wrap   { order: 2; }
+  .contact-info        { order: 3; }
+
   .contact-grid {
-    gap: 48px;
+    display:        flex;
+    flex-direction: column;
+    gap:            48px;
   }
 
   /* Remove internal bottom margin so grid gap is the only spacing */
   .contact-intro-block .contact-intro {
     margin-bottom: 0;
+  }
+
+  /* Reset desktop margin-top on details */
+  .contact-info {
+    margin-top: 0;
   }
 
   .contact-intro-block,
