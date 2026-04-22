@@ -1,0 +1,152 @@
+/* ============================================================
+   READTOMATO — CONTACT PAGE  v2
+   Load order: style.css → overrides.css → contact.css
+   Body class: page-contact
+   ============================================================ */
+
+
+/* ── HERO — desktop: 50px below nav, left-justified ─────────── */
+
+@media (min-width: 769px) {
+
+  /* Reset the page-wide text-align:center for the entire hero */
+  .page-contact .hero-wrap {
+    text-align: left !important;
+  }
+
+  /* Position: 50px below the 68px fixed nav = 118px from viewport top */
+  .page-contact .hero-wrap .img-text-bottom {
+    top:            118px !important;
+    bottom:         auto  !important;
+    padding-top:    0     !important;
+    padding-bottom: 0     !important;
+  }
+
+  /* Pin hero-copy block to the left edge of the container */
+  .page-contact .hero-wrap .hero-copy {
+    width:        52%  !important;
+    max-width:    52%  !important;
+    margin-left:  0    !important;
+    margin-right: auto !important;
+    text-align:   left !important;
+  }
+
+  /* Left-align all text elements inside hero */
+  .page-contact .hero-wrap .page-hero-eyebrow,
+  .page-contact .hero-wrap .hero-headline,
+  .page-contact .hero-wrap .hero-sub {
+    text-align:   left  !important;
+    margin-left:  0     !important;
+    margin-right: 0     !important;
+    max-width:    100%  !important;
+  }
+
+  /* Button row flush-left */
+  .page-contact .hero-wrap .hero-actions {
+    justify-content: flex-start !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-contact .hero-wrap {
+    margin-top: 68px !important;
+  }
+  .page-contact .hero-wrap .img-text-bottom {
+    top:    auto !important;
+    bottom: 37px !important;
+  }
+  .page-contact .hero-sub {
+    max-width:    100%   !important;
+    text-align:   center !important;
+    margin-left:  auto   !important;
+    margin-right: auto   !important;
+  }
+  .page-contact h1,
+  .page-contact .hero-headline { font-size: 28px !important; line-height: 1.3 !important; }
+  .page-contact h2,
+  .page-contact .section-title  { font-size: 24px !important; line-height: 1.3 !important; }
+}
+
+
+/* ── CONTACT SECTION — white bg ─────────────────────────────── */
+
+.contact-section {
+  background:     var(--color-white);
+  padding-top:    72px;
+  padding-bottom: 80px;
+}
+
+/* Override page-level center for the info + form columns — desktop only */
+@media (min-width: 769px) {
+  .contact-info,
+  .contact-form-wrap {
+    text-align: left;
+  }
+
+  .contact-info .section-label {
+    text-align: left;
+  }
+}
+
+.contact-info .section-label {
+  display:       block;
+  margin-bottom: 16px;
+}
+
+.contact-info h2 {
+  font-family:    var(--font);
+  font-weight:    var(--fw-bold);
+  font-size:      30px;
+  color:          var(--color-navy);
+  line-height:    1.2;
+  margin-bottom:  20px;
+  text-wrap:      balance;
+}
+
+.contact-info .contact-intro {
+  font-family:    var(--font);
+  font-weight:    var(--fw-regular);
+  font-size:      var(--text-md);
+  color:          var(--color-text-muted);
+  line-height:    1.84;
+  margin-bottom:  36px;
+  max-width:      52ch;
+}
+
+
+/* ── MOBILE ─────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+  .contact-section {
+    padding-top:    48px;
+    padding-bottom: 56px;
+  }
+
+  .contact-grid {
+    gap: 40px;
+  }
+
+  .contact-form-wrap {
+    padding: 32px 24px;
+  }
+
+  .contact-info,
+  .contact-form-wrap,
+  .contact-info .section-label,
+  .contact-info h2,
+  .contact-info .contact-intro,
+  .contact-detail-label,
+  .contact-detail-val,
+  .form-title,
+  .form-row label {
+    text-align:   center !important;
+    margin-left:  auto;
+    margin-right: auto;
+  }
+
+  .contact-detail {
+    flex-direction: column;
+    align-items:    center;
+  }
+}

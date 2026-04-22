@@ -56,6 +56,27 @@
   }
 }
 
+/* Contact hero: anchor content 50px below nav, left-justified */
+@media (min-width: 769px) {
+  .page-contact .hero-wrap .img-text-bottom {
+    top:            118px;
+    bottom:         auto;
+    padding-top:    0;
+    padding-bottom: 0;
+  }
+  .page-contact .hero-wrap .hero-copy {
+    text-align: left;
+  }
+  .page-contact .hero-wrap .page-hero-eyebrow,
+  .page-contact .hero-wrap .hero-headline,
+  .page-contact .hero-wrap .hero-sub {
+    text-align: left;
+  }
+  .page-contact .hero-wrap .hero-actions {
+    justify-content: flex-start;
+  }
+}
+
 .img-text-bottom .container {
   position: relative;
   z-index: 1;
@@ -703,7 +724,7 @@
     text-align: center;
   }
 
-  /* All body copy: 16px medium weight, white */
+  /* All body copy: 17px medium weight, white */
   p,
   .section-body,
   .hero-sub,
@@ -712,7 +733,7 @@
   .blog-preview-excerpt,
   .number-label,
   .page-hero-sub {
-    font-size:   16px;
+    font-size:   17px;
     font-weight: var(--fw-regular);
     color:       var(--color-white);
   }
@@ -968,9 +989,9 @@
     text-align: center;
   }
 
-  /* Body copy: 14px, max 3 lines — hide forced <br> so text reflows */
+  /* Body copy: matches site standard 17px — hide forced <br> so text reflows */
   .hero-wrap .hero-sub {
-    font-size:     14px !important;
+    font-size:     17px !important;
     margin-bottom: 20px;
   }
 
@@ -1126,9 +1147,10 @@ h2                  { font-size: 30px; line-height: 1.3; }
   background: var(--color-cream);
 }
 .ecosystem-section .prod-tagline {
-  color: var(--color-text-muted);
-  font-size: 17px;
-  font-weight: var(--fw-regular);
+  color:       var(--color-text-muted);
+  font-size:   19px;
+  font-weight: var(--fw-bold);
+  text-wrap:   balance;
 }
 .ecosystem-section .prod-bullets li {
   color: var(--color-text-muted);
@@ -1214,6 +1236,11 @@ h2                  { font-size: 30px; line-height: 1.3; }
 /* ── NAV — 10px gap between items, Contact Us red text (no block) */
 #nav .nav-menu {
   gap: 10px;
+}
+
+#nav .nav-menu > li {
+  display:     flex;
+  align-items: center;
 }
 
 .nav-contact-link {

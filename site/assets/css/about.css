@@ -142,6 +142,16 @@
   text-align:     center;
 }
 
+.staff-title {
+  font-family:    var(--font);
+  font-weight:    var(--fw-bold);
+  font-size:      10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color:          var(--color-red);
+  text-align:     center;
+}
+
 
 /* ── CLIENT LOGO GRID — case studies ────────────────────────
    White background section. Logos grayscale by default.
