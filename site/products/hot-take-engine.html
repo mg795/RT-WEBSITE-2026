@@ -12,9 +12,23 @@
   <link rel="stylesheet" href="../assets/css/overrides.css">
   <link rel="stylesheet" href="../assets/css/products.css">
   <style>
-    /* Page-specific: CTA image has warm light background, keep body copy dark */
-    .page-product-hte .cta-left-dark .section-body,
-    .page-product-hte .cta-left-dark p { color: #3B2314 !important; }
+    /* CTA section — warm light background image */
+    /* Desktop: all text dark to match body copy */
+    @media (min-width: 769px) {
+      .page-product-hte .cta-left-dark .section-label,
+      .page-product-hte .cta-left-dark .section-title,
+      .page-product-hte .cta-left-dark h2,
+      .page-product-hte .cta-left-dark .section-body,
+      .page-product-hte .cta-left-dark p { color: #3B2314 !important; }
+    }
+    /* Mobile: all text white */
+    @media (max-width: 768px) {
+      .page-product-hte .cta-left-dark .section-label,
+      .page-product-hte .cta-left-dark .section-title,
+      .page-product-hte .cta-left-dark h2,
+      .page-product-hte .cta-left-dark .section-body,
+      .page-product-hte .cta-left-dark p { color: #ffffff !important; }
+    }
   </style>
 </head>
 <body class="page-product page-product-hte">
