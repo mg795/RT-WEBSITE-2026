@@ -1219,6 +1219,11 @@ h2                  { font-size: 30px; line-height: 1.3; }
   bottom:     200px;
   background: none;
 }
+/* Blog + contact heroes are top-anchored — override bottom:200px */
+.page-blog .hero-wrap .img-text-bottom,
+.page-contact .hero-wrap .img-text-bottom {
+  bottom: auto !important;
+}
 .hero-copy {
   max-width: 65%;
 }
