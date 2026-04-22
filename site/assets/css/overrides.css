@@ -58,21 +58,38 @@
 
 /* Contact hero: anchor content 50px below nav, left-justified */
 @media (min-width: 769px) {
-  .page-contact .hero-wrap .img-text-bottom {
+  .page-contact .hero-wrap,
+  .page-blog .hero-wrap {
+    text-align: left;
+  }
+  .page-contact .hero-wrap .img-text-bottom,
+  .page-blog .hero-wrap .img-text-bottom {
     top:            118px;
     bottom:         auto;
     padding-top:    0;
     padding-bottom: 0;
   }
-  .page-contact .hero-wrap .hero-copy {
-    text-align: left;
+  .page-contact .hero-wrap .hero-copy,
+  .page-blog .hero-wrap .hero-copy {
+    width:        52%;
+    max-width:    52%;
+    margin-left:  0;
+    margin-right: auto;
+    text-align:   left;
   }
   .page-contact .hero-wrap .page-hero-eyebrow,
   .page-contact .hero-wrap .hero-headline,
-  .page-contact .hero-wrap .hero-sub {
-    text-align: left;
+  .page-contact .hero-wrap .hero-sub,
+  .page-blog .hero-wrap .page-hero-eyebrow,
+  .page-blog .hero-wrap .hero-headline,
+  .page-blog .hero-wrap .hero-sub {
+    text-align:   left;
+    margin-left:  0;
+    margin-right: 0;
+    max-width:    100%;
   }
-  .page-contact .hero-wrap .hero-actions {
+  .page-contact .hero-wrap .hero-actions,
+  .page-blog .hero-wrap .hero-actions {
     justify-content: flex-start;
   }
 }
