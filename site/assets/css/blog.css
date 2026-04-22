@@ -45,13 +45,13 @@
 
 @media (min-width: 769px) {
   .page-blog .hero-wrap {
-    margin-top: 68px;
+    margin-top: 0;
   }
   .page-blog .hero-wrap .img-text-bottom {
-    top:            350px   !important;
-    bottom:         auto    !important;
-    padding-top:    0       !important;
-    padding-bottom: 0       !important;
+    top:            118px !important;
+    bottom:         auto  !important;
+    padding-top:    0     !important;
+    padding-bottom: 0     !important;
   }
 
   .page-blog .hero-copy {
