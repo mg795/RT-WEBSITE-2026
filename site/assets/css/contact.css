@@ -82,6 +82,8 @@
 @media (min-width: 769px) {
   .contact-grid {
     grid-template-rows: auto auto;
+    column-gap:         80px;
+    row-gap:            0;
   }
 
   .contact-intro-block {
