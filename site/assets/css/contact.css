@@ -137,7 +137,12 @@
   }
 
   .contact-grid {
-    gap: 40px;
+    gap: 48px;
+  }
+
+  /* Remove internal bottom margin so grid gap is the only spacing */
+  .contact-intro-block .contact-intro {
+    margin-bottom: 0;
   }
 
   .contact-intro-block,
