@@ -357,7 +357,7 @@
   }
 
   #blog-hero-overlay .hero-headline {
-    font-size: clamp(33px, 4.5vw, 54px);
+    font-size: 36px;
   }
 
   #blog-hero-overlay .hero-actions {
