@@ -26,18 +26,16 @@
       padding-top:    0;
       padding-bottom: 0;
     }
+    /* Desktop breaks visible, mobile break hidden by default */
+    .idx-m-br { display: none; }
     @media (max-width: 768px) {
-      /* Headline: suppress the two forced <br> tags so text reflows freely,
-         then shrink font so the full string fits in 2 balanced lines */
-      .page-partner-idxcentral .hero-headline br { display: none; }
-      .page-partner-idxcentral .hero-headline {
-        font-size:   22px;
-        text-wrap:   balance;
-      }
-      /* Body copy: balance line lengths so no line is left with 1-2 words */
-      .page-partner-idxcentral .hero-copy .hero-sub {
-        text-wrap: balance;
-      }
+      /* Swap breaks: hide desktop <br> spans, show single mobile break */
+      .idx-d-br { display: none; }
+      .idx-m-br { display: inline; }
+      /* Shrink font so "Your platform runs the listings." fits on one line */
+      .page-partner-idxcentral .hero-headline { font-size: 19px; }
+      /* Balance body copy so no line is left with 1-2 words */
+      .page-partner-idxcentral .hero-copy .hero-sub { text-wrap: balance; }
     }
   </style>
 </head>
@@ -113,7 +111,7 @@
     <div class="container">
       <div class="hero-copy">
         <span class="page-hero-eyebrow">REAL ESTATE PARTNER</span>
-        <h1 class="hero-headline">Your platform runs<br>the listings. We run<br>the audience.</h1>
+        <h1 class="hero-headline">Your platform runs<span class="idx-d-br"><br></span> the listings.<span class="idx-m-br"><br></span> We run<span class="idx-d-br"><br></span> the audience.</h1>
         <p class="hero-sub">IDXCentral handles the MLS data. ReadTomato&#8482; handles the AI-visible content that makes your brand the one buyers choose before they ever click a listing.</p>
         <div class="hero-actions">
           <a href="../contact.html" class="btn-red">Book a Partner Call</a>
