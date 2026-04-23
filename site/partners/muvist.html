@@ -15,12 +15,16 @@
     @media (min-width: 769px) {
       .page-partner-muvist .hero-wrap { margin-top: 68px !important; }
       .page-partner-muvist .hero-wrap .img-text-bottom { top: 50px !important; }
-      /* Push label + heading to bottom of cell so they align with last bullet */
+      /* Bottom-align label + heading so last line of h2 matches last bullet baseline */
       .muvist-why-left {
         display:         flex;
         flex-direction:  column;
         justify-content: flex-end;
         height:          100%;
+      }
+      /* Remove trailing margin so h2 last-line baseline sits flush at cell bottom */
+      .muvist-why-left .section-title {
+        margin-bottom: 0 !important;
       }
     }
   </style>
