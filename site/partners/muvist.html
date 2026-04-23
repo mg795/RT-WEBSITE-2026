@@ -33,6 +33,27 @@
       .muvist-why-left .section-title {
         margin-bottom: 0 !important;
       }
+      /* "Why charities": vertically center bullet group within the image */
+      .muvist-why-section .img-text-bottom {
+        top:            0;
+        bottom:         0;
+        display:        flex;
+        align-items:    center;
+        padding-top:    0;
+        padding-bottom: 0;
+      }
+      /* "What customers get": vertically center bullet group within the image */
+      .muvist-what-you-get-section picture {
+        display: block;
+      }
+      .muvist-what-you-get-section .img-text-bottom {
+        top:            0;
+        bottom:         0;
+        display:        flex;
+        align-items:    center;
+        padding-top:    0;
+        padding-bottom: 0;
+      }
     }
   </style>
 </head>
@@ -164,7 +185,7 @@
 </div>
 
 <!-- ── WHY CHARITIES NEED THIS NOW ───────────────────────────── -->
-<div class="img-section-wrap partner-image-section">
+<div class="img-section-wrap partner-image-section muvist-why-section">
   <picture>
     <source media="(max-width:768px)" srcset="../assets/images/RT-WEB-PARTNERS-MUVIST-why-charities-need-this-now-600X1000-mobile.jpg">
     <img src="../assets/images/RT-WEB-PARTNERS-MUVIST-why-charities-need-this-now-1920X800.jpg"
