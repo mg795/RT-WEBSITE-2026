@@ -26,6 +26,19 @@
       padding-top:    0;
       padding-bottom: 0;
     }
+    @media (max-width: 768px) {
+      /* Headline: suppress the two forced <br> tags so text reflows freely,
+         then shrink font so the full string fits in 2 balanced lines */
+      .page-partner-idxcentral .hero-headline br { display: none; }
+      .page-partner-idxcentral .hero-headline {
+        font-size:   22px;
+        text-wrap:   balance;
+      }
+      /* Body copy: balance line lengths so no line is left with 1-2 words */
+      .page-partner-idxcentral .hero-copy .hero-sub {
+        text-wrap: balance;
+      }
+    }
   </style>
 </head>
 <body class="page-partner page-partner-idxcentral">
