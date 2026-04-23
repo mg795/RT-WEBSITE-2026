@@ -15,6 +15,15 @@
     .instant-receive-section .section-title { margin-bottom: 10px; }
     @media (max-width: 768px) {
       .instant-receive-section .section-title br { display: none; }
+      /* All image sections: display mobile images at full natural height, no cropping */
+      .page-product-instant-take .img-section-wrap {
+        overflow:   visible !important;
+      }
+      .page-product-instant-take .img-full-bleed {
+        width:      100% !important;
+        height:     auto !important;
+        min-height: unset !important;
+      }
     }
   </style>
 </head>
