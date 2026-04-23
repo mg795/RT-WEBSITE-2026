@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="../assets/css/overrides.css">
   <link rel="stylesheet" href="../assets/css/partners.css">
   <style>
+    @media (max-width: 768px) {
+      .muvist-what-you-get-section .img-full-bleed {
+        height:     1300px !important;
+        min-height: 1300px !important;
+        object-fit: cover  !important;
+      }
+    }
     @media (min-width: 769px) {
       .page-partner-muvist .hero-wrap { margin-top: 68px !important; }
       .page-partner-muvist .hero-wrap .img-text-bottom { top: 50px !important; }
@@ -130,7 +137,7 @@
 </section>
 
 <!-- ── WHAT MUVIST CUSTOMERS GET ─────────────────────────────── -->
-<div class="img-section-wrap partner-image-section">
+<div class="img-section-wrap partner-image-section muvist-what-you-get-section">
   <picture>
     <source media="(max-width:768px)" srcset="../assets/images/RT-WEB-PARTNERS-MUVIST-what-muvist-customers-get-600X1300-mobile.jpg">
     <img src="../assets/images/RT-WEB-PARTNERS-MUVIST-what-muvist-customers-get-1920X800.jpg"
