@@ -15,6 +15,13 @@
     @media (min-width: 769px) {
       .page-partner-muvist .hero-wrap { margin-top: 68px !important; }
       .page-partner-muvist .hero-wrap .img-text-bottom { top: 50px !important; }
+      /* Push label + heading to bottom of cell so they align with last bullet */
+      .muvist-why-left {
+        display:         flex;
+        flex-direction:  column;
+        justify-content: flex-end;
+        height:          100%;
+      }
     }
   </style>
 </head>
@@ -156,15 +163,15 @@
   <div class="img-text-bottom">
     <div class="container">
       <div class="grid-2">
-        <div>
+        <div class="muvist-why-left">
           <span class="section-label">WHY CHARITIES NEED THIS NOW</span>
           <h2 class="section-title">The AI shift is harder on mission-driven organizations. Here&#8217;s why.</h2>
         </div>
         <div>
           <ul class="prod-bullets">
-            <li>Donors are filtering through AI before they ever visit your site, and if your expertise isn&#8217;t in well-structured published content, you&#8217;re not in the answer</li>
-            <li>Misinformation is cheap and authority is earned, charities that don&#8217;t publish clear, structured content lose ground to louder but less credible voices</li>
-            <li>Generic content damages trust faster in mission contexts, because donors are unusually sensitive to language that feels mass-produced</li>
+            <li>Donors are filtering through AI before they ever visit your site, and if your expertise isn&#8217;t in well-structured published content, you&#8217;re not in the answer.</li>
+            <li>Misinformation is cheap and authority is earned, charities that don&#8217;t publish clear, structured content lose ground to louder but less credible voices.</li>
+            <li>Generic content damages trust faster in mission contexts, because donors are unusually sensitive to language that feels mass-produced.</li>
           </ul>
         </div>
       </div>
