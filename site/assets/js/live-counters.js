@@ -42,10 +42,16 @@
       base: 39400000,
       epochMs: Date.UTC(2026, 3, 30, 16, 30, 0), // 2026-04-30 12:30 EDT
       intervalSeconds: 3,
-      // Each tick adds the next value in this cycle, then loops. Feels
-      // organic because consecutive jumps vary in size, but it's still
-      // deterministic — every visitor sees the same total at the same moment.
-      increments: [3, 14, 6, 11, 2, 17],
+      // Each tick pulls the next value in this pool, then loops. The pool
+      // is long enough (30 values = 90 seconds before repeat) that it
+      // feels random to a casual observer, while staying fully
+      // deterministic so every visitor sees the same total at the same
+      // moment regardless of when they loaded the page.
+      increments: [
+        3, 14, 6, 11, 2, 17, 8, 5, 13, 9,
+        4, 16, 7, 10, 12, 6, 15, 3, 18, 5,
+        11, 8, 14, 2, 17, 9, 6, 13, 4, 12
+      ],
     },
   };
   // ────────────────────────────────────────────────────────────────
