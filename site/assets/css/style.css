@@ -2889,7 +2889,15 @@ footer {
   text-decoration:  none;
   transition:       color 0.2s;
   cursor:           pointer;
-  white-space:      nowrap;
+}
+
+/* Desktop only: keep long links like "Malcolm in the Meeting™" on a
+   single line. On mobile, allow them to wrap so they never push the
+   layout wider than the viewport. */
+@media (min-width: 769px) {
+  .footer-col a {
+    white-space:    nowrap;
+  }
 }
 
 .footer-col a:hover {

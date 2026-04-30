@@ -742,6 +742,13 @@
     text-align: center;
   }
 
+  /* Shrink the live-counter font on mobile so 10-char numbers like
+     "39,400,000" fit inside the card without pushing the page wider
+     than the viewport. */
+  .number-big {
+    font-size: 40px;
+  }
+
   /* All body copy: 17px medium weight, white */
   p,
   .section-body,
