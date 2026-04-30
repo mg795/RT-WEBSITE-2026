@@ -1187,9 +1187,13 @@ h2                  { font-size: 30px; line-height: 1.3; }
   gap:        1px;
 }
 
-/* Ecosystem cards: no background block — cream fills from section */
+/* Ecosystem cards: no background block — cream fills from section.
+   Flex column so the button can vertically center in the leftover
+   space when the card is stretched taller than its content. */
 .ecosystem-section .prod-card {
-  background: var(--color-cream);
+  background:     var(--color-cream);
+  display:        flex;
+  flex-direction: column;
 }
 .ecosystem-section .prod-card:hover {
   background: var(--color-cream);
@@ -1233,11 +1237,12 @@ h2                  { font-size: 30px; line-height: 1.3; }
 
 .ecosystem-section .btn-red,
 .ecosystem-section .prod-card-btn {
-  display:      block;
-  width:        fit-content;
-  margin-left:  auto;
-  margin-right: auto;
-  margin-top:   3px;
+  display:       block;
+  width:         fit-content;
+  margin-left:   auto;
+  margin-right:  auto;
+  margin-top:    auto;
+  margin-bottom: auto;
 }
 
 /* ── HERO — white text, content 200px higher ────────────────── */
