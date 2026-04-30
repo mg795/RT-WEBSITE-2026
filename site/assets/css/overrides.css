@@ -528,7 +528,8 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 8px;
+  top: 0.85em;
+  transform: translateY(-50%);
   width: 6px;
   height: 2px;
   background: var(--color-red);
