@@ -1131,15 +1131,17 @@ footer,
   font-weight:      var(--fw-regular);
   font-size:        var(--text-md);
   color:            #ffffff;
-  display:          flex;
-  align-items:      center;
-  gap:              12px;
+  padding-left:     18px;
+  position:         relative;
   line-height:      1.84;
 }
 
 .prod-bullets li::before {
   content:          '';
-  flex:             0 0 auto;
+  position:         absolute;
+  left:             0;
+  top:              1.15em;
+  transform:        translateY(-50%);
   width:            6px;
   height:           2px;
   background:       var(--color-red);
