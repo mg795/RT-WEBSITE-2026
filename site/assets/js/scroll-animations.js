@@ -72,14 +72,17 @@
   });
 
   // ─── PRODUCT CARDS (Hot Take Engine, WebReno, etc.) ───────────
-  gsap.from('.prod-grid .prod-card', {
+  // Scoped to the navy products section so it doesn't also grab the
+  // ecosystem cards (whose grid has a red background that shows
+  // through if we fade the cards).
+  gsap.from('.section--navy .prod-grid .prod-card', {
     y: 50,
     opacity: 0,
     duration: 0.8,
     ease: 'power2.out',
     stagger: 0.12,
     scrollTrigger: {
-      trigger: '.prod-grid',
+      trigger: '.section--navy .prod-grid',
       start: 'top 78%',
       toggleActions: 'play none none none'
     }
@@ -101,12 +104,15 @@
   });
 
   // ─── ECOSYSTEM CARDS (Deli, ChatSales, etc.) ──────────────────
-  gsap.from('.ecosystem-section .prod-card', {
-    y: 40,
+  // The ecosystem grid has a red background with 1px gaps between
+  // cream cards — fading the cards exposes red. Animate the inner
+  // content instead so the cards themselves stay solid.
+  gsap.from('.ecosystem-section .prod-card > *', {
+    y: 30,
     opacity: 0,
     duration: 0.7,
     ease: 'power2.out',
-    stagger: 0.1,
+    stagger: 0.05,
     scrollTrigger: {
       trigger: '.ecosystem-section .prod-grid',
       start: 'top 80%',
@@ -129,21 +135,27 @@
   });
 
   // ─── SUBTLE PARALLAX ON FULL-BLEED SECTION IMAGES ─────────────
-  // Only on desktop — mobile parallax tends to feel janky.
+  // Pre-scale the image to 110% so the parallax shift never exposes
+  // empty space at the bottom of the wrap (which was showing through
+  // as a white bar). Desktop only — mobile parallax feels janky.
   if (window.matchMedia('(min-width: 769px)').matches) {
     gsap.utils.toArray('.img-section-wrap .img-full-bleed').forEach(function (img) {
       var wrap = img.closest('.img-section-wrap');
       if (!wrap) return;
-      gsap.to(img, {
-        yPercent: -8,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: wrap,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 0.5
+      gsap.set(img, { scale: 1.1, transformOrigin: 'center center' });
+      gsap.fromTo(img,
+        { yPercent: 4 },
+        {
+          yPercent: -4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: wrap,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 0.5
+          }
         }
-      });
+      );
     });
   }
 
