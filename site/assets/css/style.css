@@ -2814,7 +2814,7 @@ footer {
 
 .footer-top {
   display:          grid;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr auto auto auto;
   gap:              40px;
   margin-bottom:    56px;
 }
@@ -2840,7 +2840,22 @@ footer {
   letter-spacing:   0.14em;
   text-transform:   uppercase;
   color:            rgba(255, 255, 255, 0.4);
-  margin-bottom:    44px;
+  margin-bottom:    18px;
+}
+
+/* Desktop: anchor heading at top, push link list down to align
+   with the first line of the brand description on the left. */
+@media (min-width: 769px) {
+  .footer-col {
+    position:    relative;
+    padding-top: 54px;
+  }
+  .footer-col h5 {
+    position:      absolute;
+    top:           0;
+    left:          0;
+    margin-bottom: 0;
+  }
 }
 
 .footer-col ul {
@@ -2859,6 +2874,7 @@ footer {
   text-decoration:  none;
   transition:       color 0.2s;
   cursor:           pointer;
+  white-space:      nowrap;
 }
 
 .footer-col a:hover {
