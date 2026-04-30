@@ -160,6 +160,8 @@
   }
 
   // ─── CTA BUTTONS ──────────────────────────────────────────────
-  reveal('.btn-red:not(.hero-copy .btn-red)', { delay: 0.2 });
+  // Only animate standalone buttons that aren't already inside a
+  // container we're already revealing (cards, hero-copy, etc.).
+  reveal('.btn-red:not(.hero-copy .btn-red):not(.prod-card .btn-red):not(.market-tile .btn-red):not(.blog-preview-card .btn-red)', { delay: 0.2 });
 
 })();
