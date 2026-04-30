@@ -42,7 +42,10 @@
       base: 39400000,
       epochMs: Date.UTC(2026, 3, 30, 16, 30, 0), // 2026-04-30 12:30 EDT
       intervalSeconds: 3,
-      perTick: 5,
+      // Each tick adds the next value in this cycle, then loops. Feels
+      // organic because consecutive jumps vary in size, but it's still
+      // deterministic — every visitor sees the same total at the same moment.
+      increments: [3, 14, 6, 11, 2, 17],
     },
   };
   // ────────────────────────────────────────────────────────────────
@@ -53,7 +56,13 @@
     if (key === 'words') {
       const elapsed = nowMs - c.epochMs;
       if (elapsed < 0) return c.base;
-      return c.base + Math.floor(elapsed / (c.intervalSeconds * 1000)) * c.perTick;
+      const ticks = Math.floor(elapsed / (c.intervalSeconds * 1000));
+      const inc = c.increments;
+      const cycleSum = inc.reduce(function (a, b) { return a + b; }, 0);
+      const fullCycles = Math.floor(ticks / inc.length);
+      let partial = 0;
+      for (let i = 0; i < ticks % inc.length; i++) partial += inc[i];
+      return c.base + fullCycles * cycleSum + partial;
     }
     return c.base + scheduledTicks(c.epochMs, c.cycleDays, c.offsetsH, nowMs);
   }
