@@ -1559,8 +1559,33 @@ footer,
   line-height:      1;
 }
 
-.number-big span {
-  color:            var(--color-red);
+/* Live-counter slot animation: digits slide up from below and out the top. */
+.number-big[data-counter] {
+  font-variant-numeric: tabular-nums;
+  display:              inline-flex;
+  align-items:          baseline;
+}
+
+.number-big .cd {
+  display:        inline-block;
+  position:       relative;
+  height:         1em;
+  overflow:       hidden;
+  vertical-align: top;
+  line-height:    1;
+}
+
+.number-big .cd-stack {
+  display:        block;
+  line-height:    1;
+  transition:     transform 420ms cubic-bezier(0.55, 0.1, 0.4, 0.95);
+  will-change:    transform;
+}
+
+.number-big .cd-stack > span {
+  display:     block;
+  height:      1em;
+  line-height: 1;
 }
 
 .number-label {

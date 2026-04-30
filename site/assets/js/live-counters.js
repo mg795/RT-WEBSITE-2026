@@ -1,7 +1,6 @@
 /* live-counters.js
-   Deterministic, always-increasing counters computed from the current
-   wall-clock. No server, no localStorage — every visitor sees the same
-   value at any given moment.
+   Deterministic, always-increasing counters computed from the wall clock.
+   Each digit slides up from below and out the top when its value changes.
 */
 (function () {
   'use strict';
@@ -12,10 +11,6 @@
       .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
-  // Count scheduled fires that have happened up to `nowMs`.
-  // epochMs   = UTC ms of the very first fire
-  // cycleDays = days between the start of consecutive cycles
-  // offsetsH  = hour offsets within a cycle for each fire (0 = at cycle start)
   function scheduledTicks(epochMs, cycleDays, offsetsH, nowMs) {
     const elapsed = nowMs - epochMs;
     if (elapsed < 0) return 0;
@@ -30,28 +25,22 @@
   }
 
   // ─── CONFIG ────────────────────────────────────────────────────
-  // Adjust epoch/base to change starting values or schedule shifts.
-  // Eastern Time is set in UTC: EDT = UTC-4, EST = UTC-5.
   const COUNTERS = {
     clients: {
-      base: 2500,
-      // First fire: 2026-05-01 08:00 EDT = 12:00 UTC
-      epochMs: Date.UTC(2026, 4, 1, 12, 0, 0),
+      base: 2594,
+      epochMs: Date.UTC(2026, 4, 1, 12, 0, 0),  // 2026-05-01 08:00 EDT
       cycleDays: 2,
-      // 8 AM ET (offset 0) and 3 PM ET (offset 7h) within each 2-day cycle
       offsetsH: [0, 7],
     },
     referrals: {
-      base: 2300,
-      // First fire: 2026-05-01 16:00 EDT = 20:00 UTC
-      epochMs: Date.UTC(2026, 4, 1, 20, 0, 0),
+      base: 2307,
+      epochMs: Date.UTC(2026, 4, 1, 20, 0, 0),  // 2026-05-01 16:00 EDT
       cycleDays: 3,
       offsetsH: [0],
     },
     words: {
       base: 39400000,
-      // Tick every 3 seconds from this moment
-      epochMs: Date.UTC(2026, 3, 30, 16, 30, 0),
+      epochMs: Date.UTC(2026, 3, 30, 16, 30, 0), // 2026-04-30 12:30 EDT
       intervalSeconds: 3,
       perTick: 1,
     },
@@ -64,41 +53,96 @@
     if (key === 'words') {
       const elapsed = nowMs - c.epochMs;
       if (elapsed < 0) return c.base;
-      const ticks = Math.floor(elapsed / (c.intervalSeconds * 1000));
-      return c.base + ticks * c.perTick;
+      return c.base + Math.floor(elapsed / (c.intervalSeconds * 1000)) * c.perTick;
     }
     return c.base + scheduledTicks(c.epochMs, c.cycleDays, c.offsetsH, nowMs);
   }
 
-  function setNumberOnly(el, value) {
-    // The .number-big div may contain a trailing <span>+</span>.
-    // We only replace the leading text node so the styled "+" is preserved.
-    const first = el.firstChild;
-    if (first && first.nodeType === Node.TEXT_NODE) {
-      first.nodeValue = value;
-    } else {
-      // No text node yet — insert one before any existing children.
-      const t = document.createTextNode(value);
-      el.insertBefore(t, el.firstChild || null);
+  function makeSlot(ch) {
+    const slot = document.createElement('span');
+    slot.className = 'cd';
+    const stack = document.createElement('span');
+    stack.className = 'cd-stack';
+    const digit = document.createElement('span');
+    digit.textContent = ch;
+    stack.appendChild(digit);
+    slot.appendChild(stack);
+    return slot;
+  }
+
+  function renderInitial(el, value) {
+    el.innerHTML = '';
+    for (const ch of value) {
+      el.appendChild(makeSlot(ch));
     }
   }
 
-  function update() {
+  function update(el, value) {
+    const slots = el.querySelectorAll('.cd');
+    const chars = [...value];
+
+    if (slots.length !== chars.length) {
+      // Length changed (e.g., 9,999,999 → 10,000,000) — re-render without animation.
+      renderInitial(el, value);
+      return;
+    }
+
+    for (let i = 0; i < slots.length; i++) {
+      const slot = slots[i];
+      const stack = slot.querySelector('.cd-stack');
+      const cur = stack.firstElementChild;
+      if (!cur || cur.textContent === chars[i]) continue;
+
+      // Append the new digit below the current one.
+      const next = document.createElement('span');
+      next.textContent = chars[i];
+      stack.appendChild(next);
+
+      // Force reflow so the browser registers the starting transform of 0.
+      void stack.offsetHeight;
+
+      // Animate the stack up by one digit height.
+      stack.style.transform = 'translateY(-100%)';
+
+      // After the slide, reset: drop the old digit, snap stack back to 0.
+      const cleanup = function () {
+        stack.removeEventListener('transitionend', cleanup);
+        if (cur.parentNode) cur.parentNode.removeChild(cur);
+        stack.style.transition = 'none';
+        stack.style.transform = '';
+        // Force reflow before re-enabling transitions.
+        void stack.offsetHeight;
+        stack.style.transition = '';
+      };
+      stack.addEventListener('transitionend', cleanup);
+    }
+  }
+
+  function tick() {
     const now = Date.now();
     document.querySelectorAll('[data-counter]').forEach(function (el) {
       const key = el.getAttribute('data-counter');
       const v = valueFor(key, now);
       if (v == null) return;
-      setNumberOnly(el, fmt(v));
+      update(el, fmt(v));
     });
   }
 
   function init() {
-    if (!document.querySelector('[data-counter]')) return;
-    update();
-    // 3s tick covers the words counter; the slower ones recompute too,
-    // which is cheap and keeps everything in sync if the tab is backgrounded.
-    setInterval(update, 3000);
+    const targets = document.querySelectorAll('[data-counter]');
+    if (!targets.length) return;
+
+    // Replace the static text with slot markup using the value the user
+    // is already seeing — first paint stays identical, no flash.
+    targets.forEach(function (el) {
+      const initial = (el.textContent || '').trim();
+      renderInitial(el, initial);
+    });
+
+    // First sync (instant, in case the live value differs from the static one).
+    tick();
+
+    setInterval(tick, 3000);
   }
 
   if (document.readyState === 'loading') {
