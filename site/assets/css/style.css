@@ -1140,7 +1140,7 @@ footer,
   content:          '';
   position:         absolute;
   left:             0;
-  top:              1.25em;
+  top:              1.0em;
   transform:        translateY(-50%);
   width:            6px;
   height:           2px;
