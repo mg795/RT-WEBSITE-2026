@@ -1094,6 +1094,19 @@
   align-items: start;
 }
 
+/* While Malcolm in the Meeting is hidden the navy products grid has
+   only 3 visible cards. The 3rd one would otherwise sit alone in
+   the left column on row 2; span it across both columns and
+   constrain its width so it lands centered. Desktop only — mobile
+   already stacks one-per-row. */
+@media (min-width: 769px) {
+  .section--navy .prod-grid > .prod-card:nth-child(3):last-child {
+    grid-column:    1 / -1;
+    max-width:      calc((100% - var(--col-gap)) / 2);
+    justify-self:   center;
+  }
+}
+
 .prod-grid .prod-card {
   background: var(--color-navy-mid);
 }
