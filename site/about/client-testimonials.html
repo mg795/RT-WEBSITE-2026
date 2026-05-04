@@ -222,7 +222,7 @@
 
     .testimonial-card {
       background:    var(--color-cream);
-      padding:       40px 32px 32px;
+      padding:       20px 32px 32px;
       display:       flex;
       flex-direction: column;
       position:      relative;
@@ -337,12 +337,12 @@
       margin:          0;            /* card top-padding (40px) is the gap below */
       padding:         0;
     }
-    /* Match the section's vertical padding to the cards' 40px top
-       padding so the visible cream gap above the pagination equals
-       the gap below it (which is the card's own padding-top). */
+    /* Tight 20px symmetry: section padding-top equals card padding-top
+       so the cream gap above the pagination = gap below the
+       pagination = 20px. */
     #testimonials {
-      padding-top:     40px;
-      padding-bottom:  40px;
+      padding-top:     20px;
+      padding-bottom:  20px;
     }
 
     /* Mobile: force pagination to a 7-column grid so the 14-number
