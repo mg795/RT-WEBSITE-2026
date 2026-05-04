@@ -311,6 +311,31 @@
     }
     .post-body a:hover { color: var(--color-navy); }
 
+    /* Inline body images (and figures): always square, always the
+       full width of the column they're sitting in, never split
+       across the column break. Drop any inline-image into the
+       article and it conforms automatically. */
+    .post-body > img,
+    .post-body figure > img,
+    .post-body figure {
+      display:        block;
+      width:          100%;
+      aspect-ratio:   1 / 1;
+      object-fit:     cover;
+      margin:         24px 0;
+      break-inside:   avoid;
+    }
+    .post-body figure { aspect-ratio: auto; }
+    .post-body figcaption {
+      font-family:   var(--font);
+      font-weight:   var(--fw-regular);
+      font-size:     13px;
+      line-height:   1.5;
+      color:         var(--color-text-muted);
+      margin-top:    8px;
+      text-align:    center;
+    }
+
     /* Pull-quote callout the body can use mid-article. */
     .post-callout {
       padding: 0;
