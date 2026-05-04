@@ -349,6 +349,18 @@
       padding-top:     50px;        /* was 100px (--space-xl) */
       padding-bottom:  50px;
     }
+
+    /* Mobile: force pagination to a 7-column grid so the 14-number
+       row breaks cleanly into 2 rows of 7 instead of however many
+       fit on the line. */
+    @media (max-width: 768px) {
+      .testimonial-pages {
+        display:               grid;
+        grid-template-columns: repeat(7, max-content);
+        justify-content:       center;
+        gap:                   14px 16px;
+      }
+    }
     .testimonial-pages a {
       font-family:     var(--font);
       font-weight:     var(--fw-regular);
