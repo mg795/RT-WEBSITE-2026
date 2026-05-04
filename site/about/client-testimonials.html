@@ -278,6 +278,21 @@
     .testimonial-card.expanded .testimonial-expand {
       transform:       rotate(180deg);
     }
+
+    /* Mobile: center every piece of card content. */
+    @media (max-width: 768px) {
+      .testimonial-card,
+      .testimonial-card .testimonial-quote,
+      .testimonial-card .testimonial-attribution,
+      .testimonial-card .testimonial-name,
+      .testimonial-card .testimonial-role {
+        text-align: center;
+      }
+      .testimonial-card .testimonial-expand {
+        margin-left:  auto;
+        margin-right: auto;
+      }
+    }
     .testimonial-attribution {
       margin-top:    auto;
       padding-top:   16px;
