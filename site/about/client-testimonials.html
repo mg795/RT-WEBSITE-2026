@@ -116,10 +116,12 @@
   <link rel="stylesheet" href="../assets/css/about.css">
   <style>
     /* ── TESTIMONIALS GRID ──────────────────────────────────── */
+    /* No grid gap — the cards sit flush to each other so no "bar"
+       of any color appears between them on any breakpoint. */
     .testimonials-grid {
       display:               grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:                   var(--col-gap);
+      gap:                   0;
     }
     @media (max-width: 768px) {
       .testimonials-grid { grid-template-columns: 1fr; }
