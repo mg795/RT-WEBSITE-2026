@@ -334,14 +334,15 @@
       justify-content: center;
       align-items:     center;
       gap:             14px 18px;
-      margin:          0 0 9px;    /* was 18px — halved again */
+      margin:          0;            /* card top-padding (40px) is the gap below */
       padding:         0;
     }
-    /* Halve the cream section's vertical padding so the page-number
-       row sits closer to the grid above and the section above. */
+    /* Match the section's vertical padding to the cards' 40px top
+       padding so the visible cream gap above the pagination equals
+       the gap below it (which is the card's own padding-top). */
     #testimonials {
-      padding-top:     50px;        /* was 100px (--space-xl) */
-      padding-bottom:  50px;
+      padding-top:     40px;
+      padding-bottom:  40px;
     }
 
     /* Mobile: force pagination to a 7-column grid so the 14-number
@@ -1275,7 +1276,7 @@
         </div>
       </article>
     </div>
-    <nav class="testimonial-pages testimonial-pages-bottom" aria-label="Testimonial pages (bottom)" style="margin: 18px 0 0;">
+    <nav class="testimonial-pages testimonial-pages-bottom" aria-label="Testimonial pages (bottom)" style="margin: 0;">
       <!-- Mirrors the top pagination — JS keeps both in sync. -->
     </nav>
   </div>
