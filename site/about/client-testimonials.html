@@ -255,7 +255,7 @@
     }
 
     /* Expand / collapse arrow — shown only when quote overflows.
-       Red, 3× bigger, left-aligned with the testimonial content,
+       Red, 3× bigger, flush to the left edge of the card content,
        no circle/border. */
     .testimonial-expand {
       display:         none;
@@ -267,10 +267,14 @@
       line-height:     1;
       padding:         0;
       margin:          0 0 16px;
+      text-align:      left;
+      -webkit-appearance: none;
+      appearance:      none;
+      transform-origin: left center;
       transition:      transform 0.25s, opacity 0.2s;
     }
     .testimonial-card.has-overflow .testimonial-expand {
-      display:         block;
+      display:         inline-block;
     }
     .testimonial-expand:hover {
       opacity:         0.75;
