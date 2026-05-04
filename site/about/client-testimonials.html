@@ -120,7 +120,7 @@
        of any color appears between them on any breakpoint. */
     .testimonials-grid {
       display:               grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap:                   0;
     }
     @media (max-width: 768px) {
@@ -156,18 +156,21 @@
       padding-top:   16px;
       border-top:    1px solid rgba(11, 31, 44, 0.12);
     }
-    .testimonial-name {
+    /* !important to win against .section--cream p { color: white }
+       overrides that bleed in from the global cream-section rules. */
+    .testimonial-card .testimonial-name {
       font-family:   var(--font);
       font-weight:   var(--fw-bold);
       font-size:     15px;
-      color:         var(--color-navy);
+      color:         var(--color-navy) !important;
       margin:        0 0 4px;
     }
-    .testimonial-role {
+    .testimonial-card .testimonial-role {
       font-family:   var(--font);
       font-weight:   var(--fw-regular);
       font-size:     13px;
-      color:         var(--color-text-muted);
+      color:         var(--color-navy) !important;
+      opacity:       0.65;
       margin:        0;
     }
     .testimonial-tag {
