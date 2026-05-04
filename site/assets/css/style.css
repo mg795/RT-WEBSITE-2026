@@ -2908,8 +2908,11 @@ footer {
   border-top:       1px solid rgba(255, 255, 255, 0.08);
   padding-top:      28px;
   display:          flex;
-  justify-content:  space-between;
+  flex-direction:   column;
+  justify-content:  center;
   align-items:      center;
+  text-align:       center;
+  gap:              16px;
   flex-wrap:        wrap;
   gap:              16px;
 }
@@ -2926,6 +2929,7 @@ footer {
   display:          flex;
   gap:              24px;
   flex-wrap:        wrap;
+  justify-content:  center;
 }
 
 /* Mobile-only line break inside the copyright line. Hidden on
