@@ -198,14 +198,15 @@
         column-gap:   50px;
         column-fill:  balance;
       }
-      .post-body > .post-callout,
       .post-body > .post-cta-inline {
         column-span: all;
         -webkit-column-span: all;
       }
-      /* Lead stays inside the column flow so it takes the width
-         of the left column — same as a normal body paragraph. */
-      .post-body > .post-lead {
+      /* Lead and pull-quote callout stay inside the column flow so
+         they take the natural width of whichever column they land
+         in — same as a body paragraph. */
+      .post-body > .post-lead,
+      .post-body > .post-callout {
         break-inside: avoid;
       }
       /* Stop headings, paragraphs, and lists from splitting across
