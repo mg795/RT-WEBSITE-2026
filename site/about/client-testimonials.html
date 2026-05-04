@@ -337,12 +337,18 @@
       margin:          0;            /* card top-padding (40px) is the gap below */
       padding:         0;
     }
-    /* Tight 20px symmetry: section padding-top equals card padding-top
-       so the cream gap above the pagination = gap below the
-       pagination = 20px. */
+    /* Use a flex column on the container so the gaps between
+       top-pagination → grid → bottom-pagination are explicit and
+       equal. Section padding matches the gap value so the cream
+       space above the top pagination equals the gap below it. */
     #testimonials {
       padding-top:     20px;
       padding-bottom:  20px;
+    }
+    #testimonials > .container {
+      display:        flex;
+      flex-direction: column;
+      gap:            20px;
     }
 
     /* Mobile: force pagination to a 7-column grid so the 14-number
