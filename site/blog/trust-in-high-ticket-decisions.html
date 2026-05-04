@@ -175,7 +175,7 @@
       max-width: 760px;
       margin: 0 auto;
       padding-top: 64px;
-      padding-bottom: 64px;
+      padding-bottom: 0;
       text-align: left;
     }
     /* Desktop: 2-column body. ALL content (including H2s) flows
@@ -290,7 +290,7 @@
     .post-cta-inline {
       background: transparent;
       padding: 0;
-      margin: 40px 0;
+      margin: 40px 0 0;       /* zero bottom — author padding controls the gap */
       display: flex;
       flex-direction: column;
       gap: 22px;
@@ -316,7 +316,7 @@
     .post-author {
       max-width: 760px;
       margin: 0 auto;
-      padding: 64px 0;
+      padding: 75px 0 64px;     /* 75px top = exact gap from CTA button to author photo */
       text-align: center;
     }
     .post-author-photo {
