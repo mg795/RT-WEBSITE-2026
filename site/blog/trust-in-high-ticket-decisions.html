@@ -184,6 +184,30 @@
       margin: 0 auto;
       padding-top: 64px;
       padding-bottom: 64px;
+      text-align: left;
+    }
+    /* Desktop: magazine-style 2-column body. H2 headings, the lead
+       paragraph, callouts, and inline CTAs span across both columns;
+       everything else flows down column 1, then column 2. */
+    @media (min-width: 769px) {
+      .post-body {
+        max-width:    1080px;
+        column-count: 2;
+        column-gap:   50px;
+      }
+      .post-body > h2,
+      .post-body > .post-lead,
+      .post-body > .post-callout,
+      .post-body > .post-cta-inline {
+        column-span: all;
+        -webkit-column-span: all;
+      }
+      .post-body > p,
+      .post-body > h3,
+      .post-body > ol,
+      .post-body > ul {
+        break-inside: avoid;
+      }
     }
     .post-lead {
       font-family: var(--font);
