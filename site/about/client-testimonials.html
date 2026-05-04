@@ -254,32 +254,29 @@
       overflow:           visible;
     }
 
-    /* Expand / collapse arrow button — shown only when quote overflows */
+    /* Expand / collapse arrow — shown only when quote overflows.
+       Red, 3× bigger, left-aligned with the testimonial content,
+       no circle/border. */
     .testimonial-expand {
-      display:        none;
-      align-items:    center;
-      justify-content: center;
-      background:     transparent;
-      border:         1px solid rgba(11, 31, 44, 0.18);
-      color:          var(--color-navy);
-      width:          30px;
-      height:         30px;
-      border-radius:  50%;
-      cursor:         pointer;
-      font-size:      11px;
-      line-height:    1;
-      padding:        0;
-      margin:         0 auto 16px;
-      transition:     background 0.2s, transform 0.25s;
+      display:         none;
+      background:      transparent;
+      border:          none;
+      color:           var(--color-red);
+      cursor:          pointer;
+      font-size:       33px;
+      line-height:     1;
+      padding:         0;
+      margin:          0 0 16px;
+      transition:      transform 0.25s, opacity 0.2s;
     }
     .testimonial-card.has-overflow .testimonial-expand {
-      display:        flex;
+      display:         block;
     }
     .testimonial-expand:hover {
-      background:     rgba(11, 31, 44, 0.06);
+      opacity:         0.75;
     }
     .testimonial-card.expanded .testimonial-expand {
-      transform:      rotate(180deg);
+      transform:       rotate(180deg);
     }
     .testimonial-attribution {
       margin-top:    auto;
