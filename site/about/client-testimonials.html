@@ -340,8 +340,14 @@
       justify-content: center;
       align-items:     center;
       gap:             14px 18px;
-      margin:          0 0 36px;
+      margin:          0 0 18px;   /* was 36px — halved */
       padding:         0;
+    }
+    /* Halve the cream section's vertical padding so the page-number
+       row sits closer to the grid above and the section above. */
+    #testimonials {
+      padding-top:     50px;        /* was 100px (--space-xl) */
+      padding-bottom:  50px;
     }
     .testimonial-pages a {
       font-family:     var(--font);
@@ -440,7 +446,7 @@
 </section>
 
 <!-- ── TESTIMONIALS GRID ────────────────────────────────────── -->
-<section class="section section--cream">
+<section class="section section--cream" id="testimonials">
   <div class="container">
     <nav class="testimonial-pages testimonial-pages-top" aria-label="Testimonial pages (top)">
       <!-- Page numbers injected by inline JS below. -->
@@ -1311,7 +1317,7 @@
         </div>
       </article>
     </div>
-    <nav class="testimonial-pages testimonial-pages-bottom" aria-label="Testimonial pages (bottom)" style="margin: 36px 0 0;">
+    <nav class="testimonial-pages testimonial-pages-bottom" aria-label="Testimonial pages (bottom)" style="margin: 18px 0 0;">
       <!-- Mirrors the top pagination — JS keeps both in sync. -->
     </nav>
   </div>
