@@ -108,78 +108,66 @@
   <style>
     /* ── BLOG POST LAYOUT ────────────────────────────────────── */
     .post-hero {
-      position: relative;
       width: 100%;
-      min-height: 540px;
-      overflow: hidden;
       margin-top: 68px;
+      padding: 60px 0 40px;
+      text-align: center;
     }
-    .post-hero img.post-hero-img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-    .post-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(11,31,44,0.25) 0%, rgba(11,31,44,0.85) 100%);
-      z-index: 1;
+    /* 800x800 solid navy block, centered horizontally. Scales down
+       on narrow viewports while keeping a square aspect. */
+    .post-hero-box {
+      display:        block;
+      width:          800px;
+      max-width:      calc(100% - 48px);
+      aspect-ratio:   1 / 1;
+      background:     var(--color-navy);
+      margin:         0 auto 48px;
     }
     .post-hero .container {
-      position: relative;
-      z-index: 2;
-      min-height: 540px;
-      display: flex;
+      display:        flex;
       flex-direction: column;
-      justify-content: center;     /* vertical center */
-      align-items: center;         /* horizontal center */
-      padding-top: 80px;
-      padding-bottom: 60px;
-      text-align: center;
+      align-items:    center;
+      text-align:     center;
     }
     .post-eyebrow {
-      display: inline-block;
-      font-family: var(--font);
-      font-weight: var(--fw-bold);
-      font-size: 12px;
+      display:        inline-block;
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--color-red);
-      margin-bottom: 16px;
+      color:          var(--color-red);
+      margin-bottom:  16px;
     }
     .post-title {
-      font-family: var(--font);
-      font-weight: var(--fw-light);
-      font-size: 48px;
-      line-height: 1.15;
-      color: var(--color-white);
-      margin: 0 0 20px;
-      max-width: 22ch;
-      text-align: center;
-      text-wrap: balance;
+      font-family:    var(--font);
+      font-weight:    var(--fw-light);
+      font-size:      48px;
+      line-height:    1.15;
+      color:          var(--color-navy);
+      margin:         0 0 20px;
+      max-width:      22ch;
+      text-align:     center;
+      text-wrap:      balance;
     }
     .post-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      align-items: center;
+      display:         flex;
+      flex-wrap:       wrap;
+      gap:             8px 18px;
+      align-items:     center;
       justify-content: center;
-      font-family: var(--font);
-      font-weight: var(--fw-regular);
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.78);
+      font-family:     var(--font);
+      font-weight:     var(--fw-regular);
+      font-size:       13px;
+      letter-spacing:  0.04em;
+      color:           rgba(11, 31, 44, 0.65);
     }
     .post-meta .dot {
-      display: inline-block;
-      width: 4px;
-      height: 4px;
+      display:       inline-block;
+      width:         4px;
+      height:        4px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.4);
+      background:    rgba(11, 31, 44, 0.4);
     }
 
     /* ── BODY ──────────────────────────────────────────────── */
@@ -388,8 +376,8 @@
     /* ── MOBILE TYPE TIGHTENING ────────────────────────────── */
     @media (max-width: 768px) {
       .post-title       { font-size: 32px; }
-      .post-hero        { min-height: 420px; }
-      .post-hero .container { min-height: 420px; }
+      .post-hero        { padding: 40px 0 24px; }
+      .post-hero-box    { margin-bottom: 28px; }
       .post-body        { padding-top: 40px; padding-bottom: 40px; }
       .post-lead        { font-size: 20px; }
       .post-body h2     { font-size: 17px; }
@@ -459,9 +447,9 @@
 
 <!-- ── HERO ─────────────────────────────────────────────────── -->
 <header class="post-hero">
-  <img class="post-hero-img"
-       src="https://readtomato.com/wp-content/uploads/2026/02/trust-wins-decisions.webp"
-       alt="Trust in high-ticket decisions wins the deal">
+  <div class="post-hero-box"
+       role="img"
+       aria-label="Trust in high-ticket decisions wins the deal"></div>
   <div class="container">
     <span class="post-eyebrow">Marketing Strategy</span>
     <h1 class="post-title">Trust in High-Ticket Decisions Wins the Deal</h1>
