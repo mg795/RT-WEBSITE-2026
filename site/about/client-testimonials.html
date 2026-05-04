@@ -329,7 +329,7 @@
 
     /* ── PAGINATION (page-number links) ─────────────────────── */
     /* Padding inside the nav element controls the cream gap above
-       and below the row. 20px top, 10px bottom (50% of top). */
+       and below the row. Default: equal 20px top + 20px bottom. */
     .testimonial-pages {
       display:         flex;
       flex-wrap:       wrap;
@@ -337,7 +337,12 @@
       align-items:     center;
       gap:             14px 18px;
       margin:          0;
-      padding:         20px 0 10px;
+      padding:         20px 0;
+    }
+    /* Top pagination only: tighten the gap below the digits so the
+       testimonials grid sits closer to the page-number row. */
+    .testimonial-pages-top {
+      padding-bottom:  10px;
     }
     /* Section has zero vertical padding — the pagination nav owns
        its own 20px top + 20px bottom padding, which IS the cream
