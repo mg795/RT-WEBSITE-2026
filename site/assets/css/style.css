@@ -2928,6 +2928,11 @@ footer {
   flex-wrap:        wrap;
 }
 
+/* Mobile-only line break inside the copyright line. Hidden on
+   desktop so "Copyright … ReadTomato™. All rights reserved." stays
+   on one line; mobile breaks after the trademark. */
+.footer-mobile-break { display: none; }
+
 .footer-contact a {
   font-family:      var(--font);
   font-weight:      var(--fw-regular);

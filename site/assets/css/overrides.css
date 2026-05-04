@@ -935,7 +935,13 @@
 
   .footer-contact {
     justify-content: center;
+    flex-direction:  column;
+    gap:             14px;
   }
+
+  /* Show the mobile-only break inside the copyright line so
+     "All rights reserved." sits on its own row. */
+  .footer-mobile-break { display: inline; }
 
   .footer-col ul {
     padding-left: 0;
