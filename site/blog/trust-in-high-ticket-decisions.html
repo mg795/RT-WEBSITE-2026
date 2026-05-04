@@ -335,7 +335,9 @@
       letter-spacing: 0.10em;
       text-transform: uppercase;
       color: var(--color-red);
-      margin: 0 0 22px;
+      margin: 0 auto 22px;     /* auto sides center the 60ch <p> in its parent */
+      max-width: 60ch;
+      text-align: center;
     }
     .post-author .post-author-bio {
       font-family: var(--font);
@@ -345,6 +347,7 @@
       color: var(--color-text);
       margin: 0 auto;
       max-width: 640px;
+      text-align: center;
     }
 
     /* ── RELATED POSTS ─────────────────────────────────────── */
