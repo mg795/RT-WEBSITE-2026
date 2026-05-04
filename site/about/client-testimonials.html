@@ -328,27 +328,25 @@
     }
 
     /* ── PAGINATION (page-number links) ─────────────────────── */
+    /* The padding here IS the cream gap above and below the row.
+       Equal top and bottom values guarantee symmetry regardless of
+       what surrounds the nav. */
     .testimonial-pages {
       display:         flex;
       flex-wrap:       wrap;
       justify-content: center;
       align-items:     center;
       gap:             14px 18px;
-      margin:          0;            /* card top-padding (40px) is the gap below */
-      padding:         0;
+      margin:          0;
+      padding:         20px 0;
     }
-    /* Use a flex column on the container so the gaps between
-       top-pagination → grid → bottom-pagination are explicit and
-       equal. Section padding matches the gap value so the cream
-       space above the top pagination equals the gap below it. */
+    /* Section has zero vertical padding — the pagination nav owns
+       its own 20px top + 20px bottom padding, which IS the cream
+       gap on both sides of the row. Card padding-top is also 0
+       so nothing else stacks. */
     #testimonials {
-      padding-top:     20px;
-      padding-bottom:  20px;
-    }
-    #testimonials > .container {
-      display:        flex;
-      flex-direction: column;
-      gap:            20px;
+      padding-top:     0;
+      padding-bottom:  0;
     }
 
     /* Mobile: force pagination to a 7-column grid so the 14-number
