@@ -171,22 +171,38 @@
     }
     /* Share line sits between the hero meta and the navy box,
        with 25px above (margin-top from the meta line) and 25px
-       below (handled by .post-hero-box margin-top: 25px). */
+       below (handled by .post-hero-box margin-top: 25px).
+       Layout: line 1 — navy "Share This Article On…" label,
+       line 2 — uppercase red Facebook · Instagram · LinkedIn. */
     .post-share {
-      margin:         25px auto 0;
-      text-align:     center;
+      margin:     25px auto 0;
+      text-align: center;
+    }
+    .post-share-label {
+      display:        block;
       font-family:    var(--font);
       font-weight:    var(--fw-bold);
       font-size:      14px;
       letter-spacing: 0.04em;
-      color:          var(--color-red);
+      color:          var(--color-navy);
+      margin-bottom:  8px;
     }
-    .post-share a {
+    .post-share-links {
+      display:         flex;
+      flex-wrap:       wrap;
+      justify-content: center;
+      gap:             18px;
+    }
+    .post-share-links a {
+      font-family:     var(--font);
+      font-weight:     var(--fw-bold);
+      font-size:       14px;
+      letter-spacing:  0.10em;
+      text-transform:  uppercase;
       color:           var(--color-red);
       text-decoration: none;
-      margin:          0 6px;
     }
-    .post-share a:hover {
+    .post-share-links a:hover {
       text-decoration: underline;
     }
 
@@ -483,10 +499,12 @@
     </div>
   </div>
   <div class="post-share">
-    Share This Article On&#8230;
-    <a href="https://www.facebook.com/TheReadTomato" target="_blank" rel="noopener">Facebook</a>
-    <a href="https://www.instagram.com/retomato" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://www.linkedin.com/company/thereadtomato/" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="post-share-label">Share This Article On&#8230;</span>
+    <div class="post-share-links">
+      <a href="https://www.facebook.com/TheReadTomato" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/retomato" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/company/thereadtomato/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
   <div class="post-hero-box"
        role="img"
