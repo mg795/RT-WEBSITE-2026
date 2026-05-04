@@ -186,27 +186,43 @@
       padding-bottom: 64px;
       text-align: left;
     }
-    /* Desktop: magazine-style 2-column body. H2 headings, the lead
-       paragraph, callouts, and inline CTAs span across both columns;
-       everything else flows down column 1, then column 2. */
+    /* Desktop: 2-column body. ALL content (including H2s) flows
+       through both columns — column 1 fills first, then continues
+       in column 2. Only the lead, callout, and inline CTA span
+       full width since those are visual anchors that should break
+       the column flow. */
     @media (min-width: 769px) {
       .post-body {
         max-width:    1080px;
         column-count: 2;
         column-gap:   50px;
+        column-fill:  balance;
       }
-      .post-body > h2,
       .post-body > .post-lead,
       .post-body > .post-callout,
       .post-body > .post-cta-inline {
         column-span: all;
         -webkit-column-span: all;
       }
-      .post-body > p,
+      /* Stop headings, paragraphs, and lists from splitting across
+         the column break. Headings stay attached to the paragraph
+         that follows them. */
+      .post-body > h2,
       .post-body > h3,
+      .post-body > p,
       .post-body > ol,
       .post-body > ul {
         break-inside: avoid;
+      }
+      .post-body > h2,
+      .post-body > h3 {
+        break-after: avoid;
+      }
+      /* H2 right at the top of a column shouldn't have its 40px
+         top margin (would look like detached space). */
+      .post-body > h2:first-child,
+      .post-body > h3:first-child {
+        margin-top: 0;
       }
     }
     .post-lead {
