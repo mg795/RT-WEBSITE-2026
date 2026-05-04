@@ -442,11 +442,7 @@
 <!-- ── TESTIMONIALS GRID ────────────────────────────────────── -->
 <section class="section section--cream">
   <div class="container">
-    <div style="text-align:center;margin-bottom:48px">
-      <span class="section-label" style="color:var(--color-red)">WHAT CLIENTS SAY</span>
-      <h2 class="section-title" style="margin:12px auto 0;color:var(--color-navy)">Outcomes, not adjectives.</h2>
-    </div>
-    <nav class="testimonial-pages" aria-label="Testimonial pages">
+    <nav class="testimonial-pages testimonial-pages-top" aria-label="Testimonial pages (top)">
       <!-- Page numbers injected by inline JS below. -->
     </nav>
     <div class="testimonials-grid">
@@ -1311,10 +1307,13 @@
         <button class="testimonial-expand" type="button" aria-label="Read more">&#9662;</button>
         <div class="testimonial-attribution">
           <p class="testimonial-name">Yvette Auger</p>
-          
+
         </div>
       </article>
     </div>
+    <nav class="testimonial-pages testimonial-pages-bottom" aria-label="Testimonial pages (bottom)" style="margin: 36px 0 0;">
+      <!-- Mirrors the top pagination — JS keeps both in sync. -->
+    </nav>
   </div>
 </section>
 
@@ -1401,8 +1400,8 @@
   var perPage = 8;
   var grid    = document.querySelector('.testimonials-grid');
   var cards   = document.querySelectorAll('.testimonials-grid .testimonial-card');
-  var nav     = document.querySelector('.testimonial-pages');
-  if (!cards.length || !nav || !grid) return;
+  var navs    = document.querySelectorAll('.testimonial-pages');
+  if (!cards.length || !navs.length || !grid) return;
 
   // ─── Overflow detection ─────────────────────────────────────
   // Mark each card whose quote is taller than the 5-line clamp so the
@@ -1428,8 +1427,10 @@
       // Reset expanded state when paginating away from a card.
       c.classList.remove('expanded');
     });
-    nav.querySelectorAll('a').forEach(function (a, i) {
-      a.classList.toggle('active', i === page - 1);
+    navs.forEach(function (nav) {
+      nav.querySelectorAll('a').forEach(function (a, i) {
+        a.classList.toggle('active', i === page - 1);
+      });
     });
     // Detect overflow on whatever cards are now visible (only runs once
     // per card thanks to the dataset.overflowChecked flag).
@@ -1437,20 +1438,25 @@
   }
 
   var pages = Math.ceil(cards.length / perPage);
-  for (var i = 1; i <= pages; i++) {
-    (function (n) {
-      var a = document.createElement('a');
-      a.href = '#';
-      a.textContent = n;
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        showPage(n);
-        var section = nav.closest('section');
-        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-      nav.appendChild(a);
-    })(i);
-  }
+  navs.forEach(function (nav) {
+    for (var i = 1; i <= pages; i++) {
+      (function (n) {
+        var a = document.createElement('a');
+        a.href = '#';
+        a.textContent = n;
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          showPage(n);
+          // Always scroll back to the top of the testimonials section so
+          // the new page is in view (matters most when the click came
+          // from the bottom pagination).
+          var section = navs[0].closest('section');
+          if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        nav.appendChild(a);
+      })(i);
+    }
+  });
 
   // ─── Expand button click handler (delegated) ────────────────
   grid.addEventListener('click', function (e) {
