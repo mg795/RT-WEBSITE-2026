@@ -198,11 +198,15 @@
         column-gap:   50px;
         column-fill:  balance;
       }
-      .post-body > .post-lead,
       .post-body > .post-callout,
       .post-body > .post-cta-inline {
         column-span: all;
         -webkit-column-span: all;
+      }
+      /* Lead stays inside the column flow so it takes the width
+         of the left column — same as a normal body paragraph. */
+      .post-body > .post-lead {
+        break-inside: avoid;
       }
       /* Stop headings, paragraphs, and lists from splitting across
          the column break. Headings stay attached to the paragraph
