@@ -121,7 +121,7 @@
       max-width:      calc(100% - 48px);
       aspect-ratio:   1 / 1;
       background:     var(--color-navy);
-      margin:         0 auto 48px;
+      margin:         48px auto 0;
     }
     .post-hero .container {
       display:        flex;
@@ -377,7 +377,7 @@
     @media (max-width: 768px) {
       .post-title       { font-size: 32px; }
       .post-hero        { padding: 40px 0 24px; }
-      .post-hero-box    { margin-bottom: 28px; }
+      .post-hero-box    { margin-top: 28px; }
       .post-body        { padding-top: 40px; padding-bottom: 40px; }
       .post-lead        { font-size: 20px; }
       .post-body h2     { font-size: 17px; }
@@ -447,9 +447,6 @@
 
 <!-- ── HERO ─────────────────────────────────────────────────── -->
 <header class="post-hero">
-  <div class="post-hero-box"
-       role="img"
-       aria-label="Trust in high-ticket decisions wins the deal"></div>
   <div class="container">
     <span class="post-eyebrow">Marketing Strategy</span>
     <h1 class="post-title">Trust in High-Ticket Decisions Wins the Deal</h1>
@@ -461,6 +458,9 @@
       <span>4 min read</span>
     </div>
   </div>
+  <div class="post-hero-box"
+       role="img"
+       aria-label="Trust in high-ticket decisions wins the deal"></div>
 </header>
 
 <!-- ── BODY ────────────────────────────────────────────────── -->
