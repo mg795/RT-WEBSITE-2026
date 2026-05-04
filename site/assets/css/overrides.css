@@ -1105,6 +1105,35 @@
     max-width:      calc((100% - var(--col-gap)) / 2);
     justify-self:   center;
   }
+
+  /* Center every line of content inside the homepage navy product
+     cards (tag, name, tagline, bullets, button). The red bullet
+     dashes are hidden in this context because they only make
+     visual sense flush-left. */
+  .section--navy .prod-card,
+  .section--navy .prod-card .prod-tag,
+  .section--navy .prod-card .prod-name,
+  .section--navy .prod-card .prod-tagline,
+  .section--navy .prod-card .prod-bullets,
+  .section--navy .prod-card .prod-bullets li {
+    text-align: center;
+  }
+  .section--navy .prod-card .prod-bullets {
+    align-items: center;
+  }
+  .section--navy .prod-card .prod-bullets li {
+    padding-left: 0;
+  }
+  .section--navy .prod-card .prod-bullets li::before {
+    display: none;
+  }
+  .section--navy .prod-card .btn-red,
+  .section--navy .prod-card .prod-card-btn {
+    display:      block;
+    width:        fit-content;
+    margin-left:  auto;
+    margin-right: auto;
+  }
 }
 
 .prod-grid .prod-card {
