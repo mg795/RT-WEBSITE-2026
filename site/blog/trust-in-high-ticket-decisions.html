@@ -135,9 +135,11 @@
       min-height: 540px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;     /* vertical center */
+      align-items: center;         /* horizontal center */
       padding-top: 80px;
       padding-bottom: 60px;
+      text-align: center;
     }
     .post-eyebrow {
       display: inline-block;
@@ -157,6 +159,7 @@
       color: var(--color-white);
       margin: 0 0 20px;
       max-width: 22ch;
+      text-align: center;
       text-wrap: balance;
     }
     .post-meta {
@@ -164,6 +167,7 @@
       flex-wrap: wrap;
       gap: 8px 18px;
       align-items: center;
+      justify-content: center;
       font-family: var(--font);
       font-weight: var(--fw-regular);
       font-size: 13px;
