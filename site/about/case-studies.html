@@ -76,9 +76,14 @@
       height:       auto;
       object-fit:   contain;
     }
+    /* Lake Life logo renders visually heavier than SuperForm / Century 21 — scale down 30%. */
+    .feat-case-logo[src*="lake-life-logo"] {
+      width: 196px;
+    }
     @media (max-width: 768px) {
       .feat-case-top  { grid-template-columns: 1fr; gap: 24px; }
       .feat-case-logo { width: 200px; margin-top: 0; }
+      .feat-case-logo[src*="lake-life-logo"] { width: 140px; }
     }
 
     /* ── Three case-study photos under the stat cards ───────── */
