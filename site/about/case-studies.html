@@ -96,6 +96,18 @@
         display:    block;
         text-align: center;
       }
+      /* Center every red button on mobile across the case-studies page:
+         the hero CTA, "THE RESULTS" CTA, and all 5 case-study CTAs. */
+      .feat-case-actions { justify-content: center; }
+    }
+    @media (max-width: 768px) {
+      .page-about-case-studies .hero-actions { justify-content: center; }
+      .page-about-case-studies .about-overview-btn {
+        display:    block;
+        margin:     0 auto;
+        width:      max-content;
+        max-width:  100%;
+      }
     }
 
     /* ── Three case-study photos under the stat cards ───────── */
