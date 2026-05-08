@@ -13,6 +13,25 @@
   <link rel="stylesheet" href="../assets/css/about.css">
 
   <style>
+    /* ── CASE STUDIES PAGE: every white text region → navy ─── */
+    /* Hero text overlay */
+    .page-about-case-studies .hero-wrap .page-hero-eyebrow,
+    .page-about-case-studies .hero-wrap .hero-headline,
+    .page-about-case-studies .hero-wrap .hero-sub {
+      color: var(--color-navy) !important;
+    }
+    /* THE RESULTS — flip the navy background to cream so the
+       navy text stays readable. */
+    .page-about-case-studies .section--navy.about-overview {
+      background: var(--color-cream) !important;
+    }
+    .page-about-case-studies .section--navy.about-overview .section-label,
+    .page-about-case-studies .section--navy.about-overview .section-title,
+    .page-about-case-studies .section--navy.about-overview .section-body,
+    .page-about-case-studies .section--navy.about-overview .about-testimonial,
+    .page-about-case-studies .section--navy.about-overview p {
+      color: var(--color-navy) !important;
+    }
     /* ── FEATURED CASE STUDY PREVIEW (SuperForm + industries) ─── */
     .feat-case {
       background:    var(--color-cream);
