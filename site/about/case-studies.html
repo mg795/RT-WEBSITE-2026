@@ -92,11 +92,14 @@
       margin:                0 0 40px;     /* mirrors .feat-case-top bottom margin above the red blocks */
     }
     .feat-case-images img {
-      width:         100%;
-      aspect-ratio:  1 / 1;
-      object-fit:    cover;
-      border-radius: 6px;
-      transition:    transform 0.3s cubic-bezier(0.2, 0.7, 0.4, 1);
+      width:            100%;
+      aspect-ratio:     1 / 1;
+      object-fit:       cover;
+      border-radius:    6px;
+      /* Navy fallback shows through until the real client image is uploaded
+         to GitHub. Once it is, the photo covers it edge-to-edge. */
+      background-color: var(--color-navy);
+      transition:       transform 0.3s cubic-bezier(0.2, 0.7, 0.4, 1);
     }
     .feat-case-images img:hover {
       transform:     scale(1.02);
@@ -573,6 +576,87 @@
 
     <div class="feat-case-actions">
       <a href="../contact.html" class="btn-red">Be Part of Google Gemini&#8217;s AI Answer</a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY #2 — Kelly Smith / Century 21 Tahoe North (background #fdfcf5) -->
+<section class="feat-case feat-case--alt">
+  <div class="container">
+    <div class="feat-case-top">
+      <div>
+        <span class="feat-case-eyebrow">Featured Case Study</span>
+        <h2 class="feat-case-headline"><span class="feat-case-num">0 &rarr; 17K</span> Impressions in 5 Weeks. 35 Years of Expertise, Finally Visible.</h2>
+        <p class="feat-case-setup">Kelly Smith has $500M+ in career sales and 35 years in North Lake Tahoe luxury real estate. <strong>Her website was a ghost town.</strong> Zero clicks. Zero impressions. Zero search presence. One run through the Hot Take Engine&#8482; changed that.</p>
+      </div>
+      <img class="feat-case-logo"
+           src="../assets/images/RT-ABOUT-US-CASE-STUDIES-c21-tahoe-north-logo.png"
+           alt="Century 21 Tahoe North &mdash; Kelly Smith, Broker/Owner">
+    </div>
+
+    <div class="feat-case-stats">
+      <div class="feat-case-stat">
+        <span class="feat-case-stat-eyebrow">Search Impressions</span>
+        <div class="feat-case-compare">
+          <div class="feat-case-compare-cell">
+            <span class="label">Before:</span>
+            <span class="num">0</span>
+          </div>
+          <div class="feat-case-compare-cell">
+            <span class="label">After:</span>
+            <span class="num">17,000</span>
+          </div>
+        </div>
+        <p class="feat-case-stat-bottom-label">Impressions in 5 Weeks</p>
+      </div>
+
+      <div class="feat-case-stat">
+        <span class="feat-case-stat-eyebrow">Organic Clicks</span>
+        <div class="feat-case-compare">
+          <div class="feat-case-compare-cell">
+            <span class="label">Before:</span>
+            <span class="num">0</span>
+          </div>
+          <div class="feat-case-compare-cell">
+            <span class="label">After:</span>
+            <span class="num">170</span>
+          </div>
+        </div>
+        <p class="feat-case-stat-bottom-label">Organic Clicks From a Zero Baseline</p>
+      </div>
+
+      <div class="feat-case-stat">
+        <span class="feat-case-stat-eyebrow">Content Quality Score</span>
+        <div class="feat-case-compare">
+          <div class="feat-case-compare-cell">
+            <span class="label">Before:</span>
+            <span class="num">&mdash;</span>
+          </div>
+          <div class="feat-case-compare-cell">
+            <span class="label">After:</span>
+            <span class="num">10.6/12</span>
+          </div>
+        </div>
+        <p class="feat-case-stat-bottom-label">Highest Score in the Entire Fleet</p>
+      </div>
+    </div>
+
+    <div class="feat-case-images">
+      <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-c21-tahoe-north-image-1.jpg"
+           alt="North Lake Tahoe luxury lakefront property at dusk">
+      <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-c21-tahoe-north-image-2.jpg"
+           alt="Lake Tahoe shoreline with private pier and boathouse">
+      <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-c21-tahoe-north-image-3.jpg"
+           alt="Kelly Smith showing a luxury home to clients in Tahoe">
+    </div>
+
+    <blockquote class="feat-case-quote">
+      <p class="feat-case-quote-text">&ldquo;We went from completely invisible in search to showing up for the exact lake-specific queries buyers are typing in. In five weeks.&rdquo;</p>
+      <p class="feat-case-eyebrow feat-case-quote-cite">Kelly Smith, Broker/Owner, Century 21 Tahoe North</p>
+    </blockquote>
+
+    <div class="feat-case-actions">
+      <a href="../contact.html" class="btn-red">Get Found Where Your Buyers Search</a>
     </div>
   </div>
 </section>
