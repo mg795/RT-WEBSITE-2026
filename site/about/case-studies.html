@@ -79,11 +79,12 @@
 
     /* ── Three case-study photos under the stat cards ───────── */
     /* Same column layout + horizontal gap as .feat-case-stats so
-       each photo sits directly below its red stat card. */
+       each photo sits directly below its red stat card, with the
+       same 14px gutter both horizontally and vertically. */
     .feat-case-images {
       display:               grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:                   24px;
+      gap:                   14px;
       margin:                0 0 64px;
     }
     .feat-case-images img {
@@ -122,8 +123,8 @@
     .feat-case-stats {
       display:               grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:                   24px;
-      margin:                0 0 14px;     /* tight gap above the 3 case-study photos */
+      gap:                   14px;          /* matches vertical gap below */
+      margin:                0 0 14px;
     }
     @media (max-width: 768px) {
       .feat-case-stats { grid-template-columns: 1fr; }
