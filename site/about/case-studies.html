@@ -249,8 +249,7 @@
     /* Customer pull-quote (replaces the old "Same Playbook" list). */
     .feat-case-quote {
       margin:        0 0 36px;
-      padding:       0 0 0 24px;
-      border-left:   3px solid var(--color-red);
+      padding:       0;
       max-width:     820px;
     }
     .feat-case-quote-text {
@@ -263,16 +262,16 @@
       text-wrap:     balance;
     }
     .feat-case-quote-cite {
+      display:        inline-block;
       font-family:    var(--font);
       font-weight:    var(--fw-bold);
-      font-size:      13px;
-      letter-spacing: 0.14em;
+      font-size:      12px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color:          var(--color-red);
       margin:         0;
     }
     @media (max-width: 768px) {
-      .feat-case-quote      { padding-left: 18px; }
       .feat-case-quote-text { font-size: 20px; }
     }
     .feat-case-actions {
@@ -536,7 +535,7 @@
 
     <blockquote class="feat-case-quote">
       <p class="feat-case-quote-text">&ldquo;The other day I was looking up something in Gemini, a question I had about ICF, and our website, one of the blogs from HTE, showed up as the #1 result to answer my own question!&rdquo;</p>
-      <p class="feat-case-quote-cite">&mdash; Keelan Unruh&#8217;s team, SuperForm ICF</p>
+      <p class="feat-case-quote-cite">Keelan Unruh&#8217;s team, SuperForm ICF</p>
     </blockquote>
 
     <div class="feat-case-actions">
