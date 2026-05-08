@@ -31,6 +31,12 @@
     .page-about-case-studies .feat-case .btn-red:hover {
       color: var(--color-white) !important;
     }
+    /* The 3 BEFORE/AFTER stat cards are red — every text element
+       inside stays white. */
+    .page-about-case-studies .feat-case .feat-case-stat,
+    .page-about-case-studies .feat-case .feat-case-stat * {
+      color: var(--color-white) !important;
+    }
     /* ── FEATURED CASE STUDY PREVIEW (SuperForm + industries) ─── */
     .feat-case {
       background:    var(--color-cream);
@@ -80,67 +86,69 @@
       .feat-case-stats { grid-template-columns: 1fr; }
     }
     .feat-case-stat {
-      position:       relative;
-      overflow:       hidden;
-      background:     #ffffff;
-      padding:        38px 30px 32px;
+      background:     var(--color-red);
+      padding:        40px 28px 32px;
       border-radius:  6px;
-      box-shadow:     0 1px 0 rgba(11, 31, 44, 0.05);
+      text-align:     center;
       transition:     transform 0.3s cubic-bezier(0.2, 0.7, 0.4, 1),
                       box-shadow 0.3s ease;
     }
     .feat-case-stat:hover {
       transform:      translateY(-6px);
-      box-shadow:     0 18px 36px rgba(11, 31, 44, 0.14);
+      box-shadow:     0 18px 36px rgba(11, 31, 44, 0.18);
     }
-    /* Decorative diagonal red accent in the top-right corner. */
-    .feat-case-stat::before {
-      content:        '';
-      position:       absolute;
-      top:            -32px;
-      right:          -32px;
-      width:          90px;
-      height:         90px;
-      background:     var(--color-red);
-      transform:      rotate(45deg);
-      opacity:        0.12;
-      transition:     opacity 0.25s, transform 0.3s;
-      pointer-events: none;
-    }
-    .feat-case-stat:hover::before {
-      opacity:        0.22;
-      transform:      rotate(45deg) scale(1.08);
-    }
-    .feat-case-stat-icon {
+    .feat-case-stat-eyebrow {
       display:        block;
       font-family:    var(--font);
       font-weight:    var(--fw-bold);
-      font-size:      11px;
+      font-size:      12px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color:          var(--color-red);
-      margin:         0 0 10px;
+      color:          var(--color-white);
+      margin:         0 0 26px;
     }
-    .feat-case-stat-number {
-      font-family:   var(--font);
-      font-weight:   var(--fw-bold);
-      font-size:     54px;
-      line-height:   1.0;
-      color:         var(--color-navy);
-      margin:        0 0 12px;
+    .feat-case-compare {
+      display:               grid;
+      grid-template-columns: 1fr 1fr;
+      gap:                   12px;
+      margin:                0 0 22px;
+    }
+    .feat-case-compare-cell {
+      text-align: center;
+    }
+    .feat-case-compare-cell .label {
+      display:        block;
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color:          var(--color-white);
+      opacity:        0.85;
+      margin:         0 0 6px;
+    }
+    .feat-case-compare-cell .num {
+      display:        block;
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      40px;
+      line-height:    1.0;
+      color:          var(--color-white);
       letter-spacing: -0.02em;
     }
-    .feat-case-stat-label {
+    .feat-case-stat-bottom-label {
       font-family:   var(--font);
       font-weight:   var(--fw-regular);
-      font-size:     15px;
-      line-height:   1.5;
-      color:         var(--color-text);
+      font-size:     13px;
+      line-height:   1.45;
+      color:         var(--color-white);
       margin:        0;
+      opacity:       0.95;
     }
     @media (max-width: 768px) {
-      .feat-case-stat        { padding: 28px 24px 24px; }
-      .feat-case-stat-number { font-size: 38px; }
+      .feat-case-stat                  { padding: 32px 22px 26px; }
+      .feat-case-compare-cell .num     { font-size: 30px; }
+      .feat-case-stat-eyebrow          { margin-bottom: 20px; }
     }
     .feat-case-section-label {
       display:        inline-block;
@@ -381,19 +389,48 @@
 
     <div class="feat-case-stats">
       <div class="feat-case-stat">
-        <span class="feat-case-stat-icon">Traffic Lift</span>
-        <p class="feat-case-stat-number">6,154 → 25,145</p>
-        <p class="feat-case-stat-label">Monthly sessions in 30 days.</p>
+        <span class="feat-case-stat-eyebrow">User Traffic Lift</span>
+        <div class="feat-case-compare">
+          <div class="feat-case-compare-cell">
+            <span class="label">Before:</span>
+            <span class="num">6,154</span>
+          </div>
+          <div class="feat-case-compare-cell">
+            <span class="label">After:</span>
+            <span class="num">25,145</span>
+          </div>
+        </div>
+        <p class="feat-case-stat-bottom-label">Onpage Sessions in 30 Days</p>
       </div>
+
       <div class="feat-case-stat">
-        <span class="feat-case-stat-icon">Blog Growth</span>
-        <p class="feat-case-stat-number">4×</p>
-        <p class="feat-case-stat-label">Blog traffic vs. baseline.</p>
+        <span class="feat-case-stat-eyebrow">Blog Growth</span>
+        <div class="feat-case-compare">
+          <div class="feat-case-compare-cell">
+            <span class="label">Before:</span>
+            <span class="num">17%</span>
+          </div>
+          <div class="feat-case-compare-cell">
+            <span class="label">After:</span>
+            <span class="num">402%</span>
+          </div>
+        </div>
+        <p class="feat-case-stat-bottom-label">Blog Traffic vs. Baseline</p>
       </div>
+
       <div class="feat-case-stat">
-        <span class="feat-case-stat-icon">AI Visibility</span>
-        <p class="feat-case-stat-number">#1</p>
-        <p class="feat-case-stat-label">Result in Gemini AI for ICF questions.</p>
+        <span class="feat-case-stat-eyebrow">AI Engine Visibility</span>
+        <div class="feat-case-compare">
+          <div class="feat-case-compare-cell">
+            <span class="label">Before:</span>
+            <span class="num">&mdash;</span>
+          </div>
+          <div class="feat-case-compare-cell">
+            <span class="label">After:</span>
+            <span class="num">#1</span>
+          </div>
+        </div>
+        <p class="feat-case-stat-bottom-label">In Google Gemini for ICF Questions</p>
       </div>
     </div>
 
