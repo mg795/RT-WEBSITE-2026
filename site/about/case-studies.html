@@ -11,6 +11,159 @@
   <link rel="stylesheet" href="../assets/css/style.css?v=20260504b">
   <link rel="stylesheet" href="../assets/css/overrides.css?v=20260504a">
   <link rel="stylesheet" href="../assets/css/about.css">
+
+  <style>
+    /* ── FEATURED CASE STUDY PREVIEW (SuperForm + industries) ─── */
+    .feat-case {
+      background:    var(--color-cream);
+      padding:       96px 0;
+    }
+    .feat-case-headline {
+      font-family:   var(--font);
+      font-weight:   var(--fw-light);
+      font-size:     44px;
+      line-height:   1.15;
+      color:         var(--color-navy);
+      max-width:     22ch;
+      margin:        0 0 18px;
+      text-wrap:     balance;
+    }
+    .feat-case-headline .feat-case-num {
+      color:         var(--color-red);
+      font-weight:   var(--fw-bold);
+    }
+    .feat-case-eyebrow {
+      display:        inline-block;
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color:          var(--color-red);
+      margin-bottom:  16px;
+    }
+    .feat-case-setup {
+      font-family:   var(--font);
+      font-weight:   var(--fw-regular);
+      font-size:     17px;
+      line-height:   1.7;
+      color:         var(--color-text);
+      max-width:     560px;
+      margin:        0 0 36px;
+    }
+    .feat-case-setup strong { color: var(--color-navy); }
+    .feat-case-stats {
+      display:               grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:                   24px;
+      margin:                0 0 56px;
+    }
+    @media (max-width: 768px) {
+      .feat-case-stats { grid-template-columns: 1fr; }
+    }
+    .feat-case-stat {
+      background:    var(--color-white);
+      padding:       28px 24px;
+      border-top:    3px solid var(--color-red);
+    }
+    .feat-case-stat-number {
+      font-family:   var(--font);
+      font-weight:   var(--fw-bold);
+      font-size:     32px;
+      line-height:   1.1;
+      color:         var(--color-navy);
+      margin:        0 0 8px;
+      letter-spacing: -0.01em;
+    }
+    .feat-case-stat-label {
+      font-family:   var(--font);
+      font-weight:   var(--fw-regular);
+      font-size:     14px;
+      line-height:   1.45;
+      color:         var(--color-text);
+      margin:        0;
+    }
+    .feat-case-section-label {
+      display:        inline-block;
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color:          var(--color-red);
+      margin:         0 0 12px;
+    }
+    .feat-case-subhead {
+      font-family:   var(--font);
+      font-weight:   var(--fw-bold);
+      font-size:     22px;
+      color:         var(--color-navy);
+      margin:        0 0 18px;
+    }
+    .feat-case-list {
+      list-style:    none;
+      padding:       0;
+      margin:        0 0 36px;
+      display:       flex;
+      flex-direction: column;
+      gap:           14px;
+    }
+    .feat-case-list li {
+      font-family:   var(--font);
+      font-weight:   var(--fw-regular);
+      font-size:     17px;
+      line-height:   1.55;
+      color:         var(--color-text);
+      padding-left:  24px;
+      position:      relative;
+    }
+    .feat-case-list li::before {
+      content:       '';
+      position:      absolute;
+      left:          0;
+      top:           0.92em;
+      transform:     translateY(-50%);
+      width:         8px;
+      height:        2px;
+      background:    var(--color-red);
+    }
+    .feat-case-list li strong { color: var(--color-navy); }
+    .feat-case-closer {
+      font-family:   var(--font);
+      font-weight:   var(--fw-bold);
+      font-size:     20px;
+      line-height:   1.4;
+      color:         var(--color-navy);
+      margin:        0 0 36px;
+    }
+    .feat-case-actions {
+      display:    flex;
+      flex-wrap:  wrap;
+      gap:        20px 32px;
+      align-items: center;
+    }
+    .feat-case-actions .btn-red {
+      display:    inline-block;
+    }
+    .feat-case-actions .feat-case-readmore {
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color:          var(--color-red);
+      text-decoration: none;
+      transition:     opacity 0.2s;
+    }
+    .feat-case-actions .feat-case-readmore:hover { opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .feat-case             { padding: 64px 0; }
+      .feat-case-headline    { font-size: 30px; }
+      .feat-case-stat-number { font-size: 26px; }
+      .feat-case-subhead     { font-size: 18px; }
+    }
+  </style>
 </head>
 <body class="page-about page-about-case-studies">
 
@@ -111,8 +264,47 @@
   </div>
 </section>
 
+<!-- ── FEATURED CASE STUDY PREVIEW ──────────────────────────── -->
+<section class="feat-case">
+  <div class="container">
+    <span class="feat-case-eyebrow">Featured Case Study</span>
+    <h2 class="feat-case-headline"><span class="feat-case-num">+309%</span> Traffic in 30 Days. Same Company. Different Result.</h2>
+    <p class="feat-case-setup">SuperForm builds one of the best ICF products on the market. <strong>Builders couldn&#8217;t find them.</strong> Thin content, weak traffic, no plan. One run through the Hot Take Engine&#8482; changed that.</p>
+
+    <div class="feat-case-stats">
+      <div class="feat-case-stat">
+        <p class="feat-case-stat-number">6,154 → 25,145</p>
+        <p class="feat-case-stat-label">Monthly sessions in 30 days.</p>
+      </div>
+      <div class="feat-case-stat">
+        <p class="feat-case-stat-number">4×</p>
+        <p class="feat-case-stat-label">Blog traffic.</p>
+      </div>
+      <div class="feat-case-stat">
+        <p class="feat-case-stat-number">#1</p>
+        <p class="feat-case-stat-label">Result in Gemini AI for ICF questions.</p>
+      </div>
+    </div>
+
+    <span class="feat-case-section-label">Same Playbook. Other Industries.</span>
+    <h3 class="feat-case-subhead">The Hot Take Engine&#8482; works wherever expertise meets buyer intent.</h3>
+    <ul class="feat-case-list">
+      <li><strong>Lake Tahoe luxury broker:</strong> 0 → 17K impressions in 5 weeks.</li>
+      <li><strong>Michigan lake broker:</strong> +55% YoY while the industry lost 40%.</li>
+      <li><strong>Chicago&#8217;s #1 real estate team:</strong> 155K+ monthly impressions, 38 interlinked articles.</li>
+    </ul>
+
+    <p class="feat-case-closer">Same engine. Different industries. Real numbers.</p>
+
+    <div class="feat-case-actions">
+      <a href="../contact.html" class="btn-red">Talk to ReadTomato</a>
+      <a href="#all-case-studies" class="feat-case-readmore">Read the full case studies →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ── CLIENT LOGOS ───────────────────────────────────────────── -->
-<section class="section about-clients">
+<section class="section about-clients" id="all-case-studies">
   <div class="container">
     <span class="section-label">OUR CLIENTS</span>
     <h2 class="section-title">Businesses we've helped win online.</h2>
