@@ -80,26 +80,67 @@
       .feat-case-stats { grid-template-columns: 1fr; }
     }
     .feat-case-stat {
-      background:    transparent;
-      padding:       0 0 0 18px;
-      border-left:   3px solid var(--color-red);
+      position:       relative;
+      overflow:       hidden;
+      background:     #ffffff;
+      padding:        38px 30px 32px;
+      border-radius:  6px;
+      box-shadow:     0 1px 0 rgba(11, 31, 44, 0.05);
+      transition:     transform 0.3s cubic-bezier(0.2, 0.7, 0.4, 1),
+                      box-shadow 0.3s ease;
+    }
+    .feat-case-stat:hover {
+      transform:      translateY(-6px);
+      box-shadow:     0 18px 36px rgba(11, 31, 44, 0.14);
+    }
+    /* Decorative diagonal red accent in the top-right corner. */
+    .feat-case-stat::before {
+      content:        '';
+      position:       absolute;
+      top:            -32px;
+      right:          -32px;
+      width:          90px;
+      height:         90px;
+      background:     var(--color-red);
+      transform:      rotate(45deg);
+      opacity:        0.12;
+      transition:     opacity 0.25s, transform 0.3s;
+      pointer-events: none;
+    }
+    .feat-case-stat:hover::before {
+      opacity:        0.22;
+      transform:      rotate(45deg) scale(1.08);
+    }
+    .feat-case-stat-icon {
+      display:        block;
+      font-family:    var(--font);
+      font-weight:    var(--fw-bold);
+      font-size:      11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color:          var(--color-red);
+      margin:         0 0 10px;
     }
     .feat-case-stat-number {
       font-family:   var(--font);
       font-weight:   var(--fw-bold);
-      font-size:     32px;
-      line-height:   1.1;
+      font-size:     54px;
+      line-height:   1.0;
       color:         var(--color-navy);
-      margin:        0 0 8px;
-      letter-spacing: -0.01em;
+      margin:        0 0 12px;
+      letter-spacing: -0.02em;
     }
     .feat-case-stat-label {
       font-family:   var(--font);
       font-weight:   var(--fw-regular);
-      font-size:     14px;
-      line-height:   1.45;
+      font-size:     15px;
+      line-height:   1.5;
       color:         var(--color-text);
       margin:        0;
+    }
+    @media (max-width: 768px) {
+      .feat-case-stat        { padding: 28px 24px 24px; }
+      .feat-case-stat-number { font-size: 38px; }
     }
     .feat-case-section-label {
       display:        inline-block;
@@ -340,14 +381,17 @@
 
     <div class="feat-case-stats">
       <div class="feat-case-stat">
+        <span class="feat-case-stat-icon">Traffic Lift</span>
         <p class="feat-case-stat-number">6,154 → 25,145</p>
         <p class="feat-case-stat-label">Monthly sessions in 30 days.</p>
       </div>
       <div class="feat-case-stat">
+        <span class="feat-case-stat-icon">Blog Growth</span>
         <p class="feat-case-stat-number">4×</p>
-        <p class="feat-case-stat-label">Blog traffic.</p>
+        <p class="feat-case-stat-label">Blog traffic vs. baseline.</p>
       </div>
       <div class="feat-case-stat">
+        <span class="feat-case-stat-icon">AI Visibility</span>
         <p class="feat-case-stat-number">#1</p>
         <p class="feat-case-stat-label">Result in Gemini AI for ICF questions.</p>
       </div>
