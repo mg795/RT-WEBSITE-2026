@@ -332,8 +332,9 @@
       filter:  none;
       opacity: 1;
     }
-    /* SuperForm logo runs taller than the others — scale down 30%. */
-    .logo-track img[src*="superform-logo"] {
+    /* SuperForm + Century 21 logos run taller than the others — scale down 30%. */
+    .logo-track img[src*="superform-logo"],
+    .logo-track img[src*="century21-logo"] {
       height: 35px;
     }
     /* Pause the scroll while a visitor is looking at it. */
@@ -354,7 +355,8 @@
     @media (max-width: 768px) {
       .logo-track     { gap: 40px; animation-duration: 45s; }
       .logo-track img { height: 38px; }
-      .logo-track img[src*="superform-logo"] { height: 27px; }
+      .logo-track img[src*="superform-logo"],
+      .logo-track img[src*="century21-logo"] { height: 27px; }
     }
 
     /* ── Anchor hero copy 200px above the bottom of the hero image. */
@@ -751,6 +753,8 @@
       <div class="logo-track" id="client-logo-track">
       <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-superform-logo.png"
            alt="SuperForm">
+      <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-century21-logo.png"
+           alt="Century 21 Tahoe North">
       <img src="../assets/images/RT-WEB-HOMEPAGE-CLIENT-LOGO-canopy-senior-living.png"
            alt="Canopy Senior Living">
       <img src="../assets/images/RT-WEB-HOMEPAGE-CLIENT-LOGO-lake-life-realty.png"
