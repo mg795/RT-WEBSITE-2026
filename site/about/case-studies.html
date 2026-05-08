@@ -13,24 +13,23 @@
   <link rel="stylesheet" href="../assets/css/about.css">
 
   <style>
-    /* ── CASE STUDIES PAGE: every white text region → navy ─── */
-    /* Hero text overlay */
-    .page-about-case-studies .hero-wrap .page-hero-eyebrow,
-    .page-about-case-studies .hero-wrap .hero-headline,
-    .page-about-case-studies .hero-wrap .hero-sub {
+    /* ── FEATURED CASE STUDY: force every text element to navy ──
+       (Hero overlay + THE RESULTS keep their original styling.) */
+    .page-about-case-studies .feat-case,
+    .page-about-case-studies .feat-case * {
       color: var(--color-navy) !important;
     }
-    /* THE RESULTS — flip the navy background to cream so the
-       navy text stays readable. */
-    .page-about-case-studies .section--navy.about-overview {
-      background: var(--color-cream) !important;
+    /* Re-enable the brand accents that were never meant to be navy. */
+    .page-about-case-studies .feat-case .feat-case-num,
+    .page-about-case-studies .feat-case .feat-case-eyebrow,
+    .page-about-case-studies .feat-case .feat-case-section-label,
+    .page-about-case-studies .feat-case .feat-case-readmore {
+      color: var(--color-red) !important;
     }
-    .page-about-case-studies .section--navy.about-overview .section-label,
-    .page-about-case-studies .section--navy.about-overview .section-title,
-    .page-about-case-studies .section--navy.about-overview .section-body,
-    .page-about-case-studies .section--navy.about-overview .about-testimonial,
-    .page-about-case-studies .section--navy.about-overview p {
-      color: var(--color-navy) !important;
+    /* Keep the CTA button text white on the red background. */
+    .page-about-case-studies .feat-case .btn-red,
+    .page-about-case-studies .feat-case .btn-red:hover {
+      color: var(--color-white) !important;
     }
     /* ── FEATURED CASE STUDY PREVIEW (SuperForm + industries) ─── */
     .feat-case {
