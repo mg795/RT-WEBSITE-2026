@@ -56,6 +56,46 @@
       color:         var(--color-red);
       font-weight:   var(--fw-bold);
     }
+
+    /* ── Top 2-column: text left, client logo right ─────────── */
+    .feat-case-top {
+      display:               grid;
+      grid-template-columns: 1fr auto;
+      gap:                   60px;
+      align-items:           center;
+      margin:                0 0 56px;
+    }
+    .feat-case-logo {
+      width:        280px;
+      max-width:    100%;
+      height:       auto;
+      object-fit:   contain;
+    }
+    @media (max-width: 768px) {
+      .feat-case-top  { grid-template-columns: 1fr; gap: 32px; }
+      .feat-case-logo { width: 200px; }
+    }
+
+    /* ── Three case-study photos under the stat cards ───────── */
+    .feat-case-images {
+      display:               grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:                   24px;
+      margin:                0 0 56px;
+    }
+    .feat-case-images img {
+      width:         100%;
+      aspect-ratio:  1 / 1;
+      object-fit:    cover;
+      border-radius: 6px;
+      transition:    transform 0.3s cubic-bezier(0.2, 0.7, 0.4, 1);
+    }
+    .feat-case-images img:hover {
+      transform:     scale(1.02);
+    }
+    @media (max-width: 768px) {
+      .feat-case-images { grid-template-columns: 1fr; }
+    }
     .feat-case-eyebrow {
       display:        inline-block;
       font-family:    var(--font);
@@ -383,9 +423,16 @@
 <!-- ── FEATURED CASE STUDY PREVIEW ──────────────────────────── -->
 <section class="feat-case">
   <div class="container">
-    <span class="feat-case-eyebrow">Featured Case Study</span>
-    <h2 class="feat-case-headline"><span class="feat-case-num">+309%</span> Traffic in 30 Days. Same Company. Different Result.</h2>
-    <p class="feat-case-setup">SuperForm builds one of the best ICF products on the market. <strong>Builders couldn&#8217;t find them.</strong> Thin content, weak traffic, no plan. One run through the Hot Take Engine&#8482; changed that.</p>
+    <div class="feat-case-top">
+      <div>
+        <span class="feat-case-eyebrow">Featured Case Study</span>
+        <h2 class="feat-case-headline"><span class="feat-case-num">+309%</span> Traffic in 30 Days. Same Company. Different Result.</h2>
+        <p class="feat-case-setup">SuperForm builds one of the best ICF products on the market. <strong>Builders couldn&#8217;t find them.</strong> Thin content, weak traffic, no plan. One run through the Hot Take Engine&#8482; changed that.</p>
+      </div>
+      <img class="feat-case-logo"
+           src="../assets/images/RT-CASE-SUPERFORM-LOGO.png"
+           alt="SuperForm — insulated concrete forms for builders">
+    </div>
 
     <div class="feat-case-stats">
       <div class="feat-case-stat">
@@ -432,6 +479,15 @@
         </div>
         <p class="feat-case-stat-bottom-label">In Google Gemini for ICF Questions</p>
       </div>
+    </div>
+
+    <div class="feat-case-images">
+      <img src="../assets/images/RT-CASE-SUPERFORM-image-1.jpg"
+           alt="SuperForm ICF wall under construction with red bracing">
+      <img src="../assets/images/RT-CASE-SUPERFORM-image-2.jpg"
+           alt="Aerial view of a SuperForm ICF residential construction site">
+      <img src="../assets/images/RT-CASE-SUPERFORM-image-3.jpg"
+           alt="Multiple SuperForm ICF buildings under construction">
     </div>
 
     <span class="feat-case-section-label">Same Playbook. Other Industries.</span>
