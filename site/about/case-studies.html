@@ -82,7 +82,13 @@
     }
     @media (max-width: 768px) {
       .feat-case-top  { grid-template-columns: 1fr; gap: 24px; }
-      .feat-case-logo { height: 44px; margin-top: 0; }
+      /* Center every case-study logo horizontally on mobile. */
+      .feat-case-logo {
+        height:        44px;
+        margin:        0 auto;
+        display:       block;
+        justify-self:  center;
+      }
     }
 
     /* ── Three case-study photos under the stat cards ───────── */
