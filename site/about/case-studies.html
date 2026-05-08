@@ -76,16 +76,19 @@
       height:       auto;
       object-fit:   contain;
     }
-    /* Lake Life + Standard Agency logos render visually heavier than SuperForm / Century 21 — scale down 30%. */
-    .feat-case-logo[src*="lake-life-logo"],
-    .feat-case-logo[src*="standard-agency-logo"] {
+    /* Lake Life logo renders visually heavier than SuperForm / Century 21 — scale down 30%. */
+    .feat-case-logo[src*="lake-life-logo"] {
       width: 196px;
+    }
+    /* Standard Agency logo: scale down 15%. */
+    .feat-case-logo[src*="standard-agency-logo"] {
+      width: 238px;
     }
     @media (max-width: 768px) {
       .feat-case-top  { grid-template-columns: 1fr; gap: 24px; }
       .feat-case-logo { width: 200px; margin-top: 0; }
-      .feat-case-logo[src*="lake-life-logo"],
-      .feat-case-logo[src*="standard-agency-logo"] { width: 140px; }
+      .feat-case-logo[src*="lake-life-logo"]      { width: 140px; }
+      .feat-case-logo[src*="standard-agency-logo"] { width: 170px; }
     }
 
     /* ── Three case-study photos under the stat cards ───────── */
