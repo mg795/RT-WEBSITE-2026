@@ -76,14 +76,16 @@
       height:       auto;
       object-fit:   contain;
     }
-    /* Lake Life logo renders visually heavier than SuperForm / Century 21 — scale down 30%. */
-    .feat-case-logo[src*="lake-life-logo"] {
+    /* Lake Life + Standard Agency logos render visually heavier than SuperForm / Century 21 — scale down 30%. */
+    .feat-case-logo[src*="lake-life-logo"],
+    .feat-case-logo[src*="standard-agency-logo"] {
       width: 196px;
     }
     @media (max-width: 768px) {
       .feat-case-top  { grid-template-columns: 1fr; gap: 24px; }
       .feat-case-logo { width: 200px; margin-top: 0; }
-      .feat-case-logo[src*="lake-life-logo"] { width: 140px; }
+      .feat-case-logo[src*="lake-life-logo"],
+      .feat-case-logo[src*="standard-agency-logo"] { width: 140px; }
     }
 
     /* ── Three case-study photos under the stat cards ───────── */
@@ -841,6 +843,8 @@
            alt="SuperForm">
       <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-century21-logo.png"
            alt="Century 21 Tahoe North">
+      <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-standard-agency-logo.png"
+           alt="The Standard Agency">
       <img src="../assets/images/RT-WEB-HOMEPAGE-CLIENT-LOGO-canopy-senior-living.png"
            alt="Canopy Senior Living">
       <img src="../assets/images/RT-ABOUT-US-CASE-STUDIES-lake-life-logo.png"
