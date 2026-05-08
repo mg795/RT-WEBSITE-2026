@@ -62,7 +62,7 @@
       display:               grid;
       grid-template-columns: 1fr auto;
       gap:                   60px;
-      align-items:           start;        /* logo top-aligned, not vertical-centered */
+      align-items:           end;          /* logo baseline-aligned with last line of setup copy */
       margin:                0 0 40px;
     }
     .feat-case-logo {
@@ -70,7 +70,6 @@
       max-width:    100%;
       height:       auto;
       object-fit:   contain;
-      margin-top:   8px;                   /* nudge to align with eyebrow's optical line */
     }
     @media (max-width: 768px) {
       .feat-case-top  { grid-template-columns: 1fr; gap: 24px; }
@@ -85,7 +84,7 @@
       display:               grid;
       grid-template-columns: repeat(3, 1fr);
       gap:                   14px;
-      margin:                0 0 64px;
+      margin:                0 0 40px;     /* mirrors .feat-case-top bottom margin above the red blocks */
     }
     .feat-case-images img {
       width:         100%;
@@ -327,6 +326,13 @@
       .logo-track     { gap: 40px; animation-duration: 45s; }
       .logo-track img { height: 38px; }
       .logo-track img[src*="superform-logo"] { height: 27px; }
+    }
+
+    /* ── Anchor hero copy 350px above the bottom of the hero image. */
+    @media (min-width: 769px) {
+      .page-about-case-studies .hero-wrap .img-text-bottom {
+        padding-bottom: 350px;
+      }
     }
   </style>
 </head>
