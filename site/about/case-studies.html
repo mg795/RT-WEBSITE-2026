@@ -38,9 +38,14 @@
       color: var(--color-white) !important;
     }
     /* ── FEATURED CASE STUDY PREVIEW (SuperForm + industries) ─── */
+    /* Case study background alternates: case #1 = #eae7d4, #2 = #fdfcf5,
+       #3 = #eae7d4, etc. Add .feat-case--alt to every EVEN instance. */
     .feat-case {
-      background:    var(--color-cream);
+      background:    #eae7d4;
       padding:       96px 0;
+    }
+    .feat-case--alt {
+      background:    #fdfcf5;
     }
     .feat-case-headline {
       font-family:   var(--font);
@@ -456,7 +461,42 @@
   </div>
 </section>
 
-<!-- ── FEATURED CASE STUDY PREVIEW ──────────────────────────── -->
+<!-- ============================================================= -->
+<!--  FEATURED CASE STUDY TEMPLATE                                  -->
+<!--                                                                -->
+<!--  Locked structure for every case study on this page.           -->
+<!--  To add the NEXT case study, copy the entire <section> below   -->
+<!--  and swap the per-study inputs:                                -->
+<!--                                                                -->
+<!--    1. Section background — alternates by position:             -->
+<!--         Case #1 (this one) = #eae7d4   → class="feat-case"     -->
+<!--         Case #2            = #fdfcf5   → class="feat-case feat-case--alt" -->
+<!--         Case #3            = #eae7d4   → class="feat-case"     -->
+<!--         Case #4            = #fdfcf5   → class="feat-case feat-case--alt" -->
+<!--         …and so on. Always keep this alternation.              -->
+<!--                                                                -->
+<!--    2. Eyebrow text (defaults: "Featured Case Study")           -->
+<!--    3. .feat-case-num (the % / ratio hero number, in red)       -->
+<!--    4. Headline copy (rest of the headline after the number)    -->
+<!--    5. .feat-case-setup paragraph (~3 short sentences,          -->
+<!--       wrap one phrase in <strong> for emphasis)                -->
+<!--    6. .feat-case-logo (client logo PNG, transparent BG)        -->
+<!--    7. The 3 .feat-case-stat cards — each has:                  -->
+<!--         · eyebrow (UPPERCASE category like "User Traffic Lift")-->
+<!--         · before number   · after number                       -->
+<!--         · bottom label (one short metric description)          -->
+<!--    8. The 3 .feat-case-images (square JPGs/WEBPs, 1:1)         -->
+<!--    9. .feat-case-quote-text (real customer quote, in curly     -->
+<!--       quotes &ldquo; &rdquo;)                                  -->
+<!--   10. .feat-case-quote-cite (attribution — uses the same       -->
+<!--       eyebrow style as #1 so they bookend the section)         -->
+<!--   11. .btn-red CTA copy (action that ties to the proof above)  -->
+<!--                                                                -->
+<!--  Do NOT change the inner markup or class names. The CSS in     -->
+<!--  the <head> block handles all styling, hover, and responsive   -->
+<!--  behavior automatically.                                       -->
+<!-- ============================================================= -->
+<!-- CASE STUDY #1 — SuperForm (background #eae7d4) -->
 <section class="feat-case">
   <div class="container">
     <div class="feat-case-top">
