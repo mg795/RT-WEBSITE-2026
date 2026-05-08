@@ -182,6 +182,55 @@
       .feat-case-stat-number { font-size: 26px; }
       .feat-case-subhead     { font-size: 18px; }
     }
+
+    /* ── CLIENT LOGO MARQUEE (single line, slow auto-scroll) ─── */
+    .logo-marquee {
+      width:      100%;
+      overflow:   hidden;
+      margin:     32px 0 0;
+      /* Soft fade on the left and right edges so logos don't pop in/out abruptly. */
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 60px, #000 calc(100% - 60px), transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 60px, #000 calc(100% - 60px), transparent);
+    }
+    .logo-track {
+      display:        flex;
+      align-items:    center;
+      gap:            64px;
+      width:          max-content;
+      will-change:    transform;
+      animation:      logo-marquee 60s linear infinite;
+    }
+    .logo-track img {
+      height:        50px;
+      width:         auto;
+      flex-shrink:   0;
+      filter:        grayscale(100%);
+      opacity:       0.55;
+      transition:    filter 0.25s, opacity 0.25s;
+    }
+    .logo-track img:hover {
+      filter:  none;
+      opacity: 1;
+    }
+    /* Pause the scroll while a visitor is looking at it. */
+    .logo-marquee:hover .logo-track {
+      animation-play-state: paused;
+    }
+    /* Move from -50% (showing the duplicated 2nd half) to 0% (back at
+       the start) so logos visually scroll left → right. The track holds
+       two identical copies of the logo set so the loop is seamless. */
+    @keyframes logo-marquee {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+    /* Respect reduced-motion preferences. */
+    @media (prefers-reduced-motion: reduce) {
+      .logo-track { animation: none; }
+    }
+    @media (max-width: 768px) {
+      .logo-track     { gap: 40px; animation-duration: 45s; }
+      .logo-track img { height: 38px; }
+    }
   </style>
 </head>
 <body class="page-about page-about-case-studies">
@@ -327,7 +376,8 @@
   <div class="container">
     <span class="section-label">OUR CLIENTS</span>
     <h2 class="section-title">Businesses we've helped win online.</h2>
-    <div class="client-logo-grid">
+    <div class="logo-marquee" aria-label="Clients we’ve helped win online">
+      <div class="logo-track" id="client-logo-track">
       <img src="../assets/images/RT-WEB-HOMEPAGE-CLIENT-LOGO-canopy-senior-living.png"
            alt="Canopy Senior Living">
       <img src="../assets/images/RT-WEB-HOMEPAGE-CLIENT-LOGO-lake-life-realty.png"
@@ -360,6 +410,7 @@
            alt="Source Data Products">
       <img src="../assets/images/RT-WEB-HOMEPAGE-CLIENT-LOGO-biofen-pharaceutical.png"
            alt="Biofen Pharmaceutical">
+      </div>
     </div>
   </div>
 </section>
@@ -465,6 +516,22 @@
       menu.classList.toggle('open');
       ham.classList.toggle('open');
     });
+  }
+})();
+</script>
+
+<script>
+// Clone the logo track once so the CSS marquee loops seamlessly
+// (animation runs from translateX(-50%) → 0; we need two identical
+// halves end to end for that to look continuous).
+(function () {
+  var track = document.getElementById('client-logo-track');
+  if (!track) return;
+  track.innerHTML += track.innerHTML;
+  // Mark cloned half as aria-hidden so screen readers don't read 32 logos.
+  var imgs = track.querySelectorAll('img');
+  for (var i = imgs.length / 2; i < imgs.length; i++) {
+    imgs[i].setAttribute('aria-hidden', 'true');
   }
 })();
 </script>
