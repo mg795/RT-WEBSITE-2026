@@ -304,6 +304,10 @@
       filter:  none;
       opacity: 1;
     }
+    /* SuperForm logo runs taller than the others — scale down 30%. */
+    .logo-track img[src*="superform-logo"] {
+      height: 35px;
+    }
     /* Pause the scroll while a visitor is looking at it. */
     .logo-marquee:hover .logo-track {
       animation-play-state: paused;
@@ -322,6 +326,7 @@
     @media (max-width: 768px) {
       .logo-track     { gap: 40px; animation-duration: 45s; }
       .logo-track img { height: 38px; }
+      .logo-track img[src*="superform-logo"] { height: 27px; }
     }
   </style>
 </head>
